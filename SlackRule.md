@@ -24,7 +24,7 @@
 
 #### スレッド
 - チャンネル投稿と、スレッドの使い方はこちらを参考に。
-　　　- 　https://slack.com/intl/ja-jp/resources/using-slack/tips-on-how-best-to-use-threaded-messages
+  - https://slack.com/intl/ja-jp/resources/using-slack/tips-on-how-best-to-use-threaded-messages
 - スレッドはあまり使わないで、チャンネルへ投稿しましょう。スレッドは、スレッド参加者にしか更新が伝わらないのでチャンネル参加者は見落とします。
 - 全員に周知する必要のない個別の議論のみ、スレッドで行ってください。スレッド内は、スレッド参加者しか通知が行かないので、スレッドに参加していない人に通知が必要な場合は個別にメンションをしてください。スレッドをメインチャンネルに投稿する機能は原則禁止です。
 

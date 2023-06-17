@@ -8,3 +8,5 @@ We are focusing on
 - VR（仮想現実）
 - AR（拡張現実）
 - Web3
+- 教育
+- UBI（Universal Basic Income）

@@ -79,6 +79,8 @@ SSでは、参加者が発案したアイデアを実現するためのサポー
     - 応募されたURLの内容は、SS、ブートキャンプ参加者に公開します
     - 特にエンジニアが興味を持つように書くと良いです
 
+こちらの [応募フォーム](https://docs.google.com/forms/d/e/1FAIpQLSddMJZvNsK31SvqHj5H5OQ7mf3I8r5778RKVx7f1srwlEvuKA/viewform?usp=sf_link) からお申し込みください
+
 ## イベント
 - 月１回の非同期の進捗報告。
   - Google DocsやGitHub上のmarkdownのドキュメントで進捗を報告していただきます。(中島さんのアドバイスもあり）

@@ -1,7 +1,7 @@
 
 # Singularity Society Boot Camp
 
-Singularity Society（以下、SS）は、SSと中島聡が[現在注目しているテクノロジー](https://github.com/SingularitySociety/societys_statement/blob/main/topics.md)に関連したサービスやアプリケーションを立ち上げるブートキャンプを開催します。
+Singularity Society（以下、SS）は、SSと中島聡が [現在注目しているテクノロジー](https://github.com/SingularitySociety/societys_statement/blob/main/topics.md) に関連したサービスやアプリケーションを立ち上げるブートキャンプを開催します。
 SSでは、参加者が発案したアイデアを実現するためのサポートを行います。
 
 ## 目的

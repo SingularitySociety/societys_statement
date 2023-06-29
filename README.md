@@ -5,4 +5,4 @@
 - [ブートキャンプ](./bootcamp.md)
 - [Slackのルール](./SlackRule.md)
 - [ミーティング（会議）の進め方](./meeting.md)
-
+- [議論上の注意点](./pointsOfDiscussion.md)

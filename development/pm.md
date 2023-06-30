@@ -52,7 +52,7 @@
 
 ### チケットの動かし方
 
-| &nbsp;&nbsp;&nbsp;スタータス | &nbsp;&nbsp;意味 | 説明 |
+|&nbsp;&nbsp;&nbsp;スタータス&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;意味 | 説明 |
 | ------------- | ------------- | ------------- |
 | Idea  |  |  |
 | ToDo  |  |  |

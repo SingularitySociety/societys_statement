@@ -2,7 +2,8 @@
 
 以下のような使い方を推奨しています。
 - 2人以上での開発の場合は、Pull Request + Reviewを必ず行う
-- rebaseではなくmerge。
+- rebaseではなくmerge
+  - 履歴を綺麗にする必要はない。コードを綺麗にする。
 - commit/Pull Request
   - commitの粒度は極力小さめに。
   - 最大でも数時間、できれば数分でreviewできる程度にPull Requestをつくる

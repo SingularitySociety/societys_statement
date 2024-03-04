@@ -63,8 +63,11 @@ https://zenn.dev/isamua/scraps/87d5afa819aaa1
 [参加フォーム](https://docs.google.com/forms/d/e/1FAIpQLSehJKVl5EJwHF8vbDBV-UBdYC1mNvvweCR2SHnZ7AevUlSs0Q/viewform?usp=sf_link)
 
 ## Slackの招待が届いたら
-- Slackに参加したら、自己紹介をお願いします。
-  - [シンギュラリティ・ソサエティ Slackルール](./SlackRule.md)をご一読ください。
+- Slackに参加したら、自己紹介をお願いします。以下の内容を含めてください
+  - ([シンギュラリティ・ソサエティ Slackルール](./SlackRule.md)をご一読ください。)
+  - 今まで、生成AIを使ったどのようなプログラムの開発（業務、プライベート含め）/学習をしていたか
+  - 得意なプログラム言語
+  - AI Innovators Hubに参加して、達成したい目標
 - 活動を通して作りたいものなどがあれば共有してください！同じような目的を持った人がいるかもしれません。
 - GitHubでそれぞれの活動の情報を管理します。プレイベートレポジトリに招待するので、フォーマットにしたがってアップデートをお願いします。
 - 調べたことや行ったことは定期的に Zenn や Qiita、シンギュラリティ・ソサエティのWebサイト、ご自身のブログなどでアウトプットしていただきます。

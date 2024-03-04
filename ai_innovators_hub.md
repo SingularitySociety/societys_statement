@@ -57,7 +57,7 @@ GitHub や Zenn、ブログなどで、すでにAI関連の活動をしている
 
 **例：** 
 https://zenn.dev/singularity/articles/stable-diffusion-webui-2
-
+https://zenn.dev/isamua/scraps/87d5afa819aaa1
 
 以下の参加フォームからお申し込みください。<br>
 [参加フォーム](https://docs.google.com/forms/d/e/1FAIpQLSehJKVl5EJwHF8vbDBV-UBdYC1mNvvweCR2SHnZ7AevUlSs0Q/viewform?usp=sf_link)

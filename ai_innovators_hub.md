@@ -57,10 +57,11 @@ Zennの記事は、シンギュラリティ・ソサエティOrganizationアカ�
 GitHub や Zenn、ブログなどで、すでにAI関連の活動をしていることがわかる資料を提出してください。活動はしているけど資料がない方は、これを機会にどれかにアウトプットし、それを提出してください。
 
 **例：** 
-https://zenn.dev/singularity/articles/stable-diffusion-webui-2
-https://zenn.dev/isamua/scraps/87d5afa819aaa1
+- https://zenn.dev/singularity/articles/stable-diffusion-webui-2
+- https://zenn.dev/isamua/scraps/87d5afa819aaa1
 
-以下の参加フォームからお申し込みください。<br>
+以下の参加フォームからお申し込みください。
+
 [参加フォーム](https://docs.google.com/forms/d/e/1FAIpQLSehJKVl5EJwHF8vbDBV-UBdYC1mNvvweCR2SHnZ7AevUlSs0Q/viewform?usp=sf_link)
 
 ## Slackの招待が届いたら

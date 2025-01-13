@@ -2,7 +2,7 @@
 
 [メルマガ「週刊 Life is Beautiful」](https://www.mag2.com/m/0001323030)やGitHubですでに告知しておりますが、**GraphAI Contribution Fes 2025** を開催します。
 
-本イベントは、メルマガ「週刊 Life is Beautiful」が主催し、NPO法人 [Singularity Society](https://singularitysociety.org/)/[Raycast Community Japan](https://raycast.connpass.com/)/[DevX](https://devx.jp/) がサポートする形で実施されます。
+本イベントは、[メルマガ「週刊 Life is Beautiful」](https://www.mag2.com/m/0001323030) / [Receptron](https://github.com/receptron/) が主催し、NPO法人 [Singularity Society](https://singularitysociety.org/)/[Raycast Community Japan](https://raycast.connpass.com/)/[DevX](https://devx.jp/) がサポートする形で実施されます。
 
 イベント概要や詳細については、次のリンクをご参照ください: [イベント概要 - GitHub](https://github.com/snakajima/life-is-beautiful)
 

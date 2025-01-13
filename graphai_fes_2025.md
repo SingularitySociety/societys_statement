@@ -38,6 +38,8 @@ TODO
 以下の内容を Singularity Society の問い合わせフォームから送信してください：  
 [問い合わせフォーム](https://docs.google.com/forms/u/7/d/e/1FAIpQLSfk1cnTUwBvalTqm9un_p9Oyl9LckVgmKC40ifyhtAU3BcTuw/viewform)
 
+* 参加申し込み、Slackへの参加をしていないと、いくらコントリビュートしても審査の対象にならないので忘れず参加をお願いします
+
 ### 必要情報
 1. **名前**（個人またはチーム）  
    - チームの場合、全メンバーの氏名を記載（本名、旧姓の本名、通名のいずれか）  

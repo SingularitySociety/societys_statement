@@ -2,7 +2,7 @@
 
 [メルマガ「週刊 Life is Beautiful」](https://www.mag2.com/m/0001323030)やGitHubですでに告知しておりますが、**GraphAI Contribution Fes 2025** を開催します。
 
-本イベントは、[メルマガ「週刊 Life is Beautiful」](https://www.mag2.com/m/0001323030) / [Receptron](https://github.com/receptron/) が主催し、NPO法人 [Singularity Society](https://singularitysociety.org/)/[Raycast Community Japan](https://raycast.connpass.com/)/[DevX](https://devx.jp/) がサポートする形で実施されます。
+本イベントは、[メルマガ「週刊 Life is Beautiful」](https://www.mag2.com/m/0001323030) / [Receptron](https://github.com/receptron/) が主催し、NPO法人 [Singularity Society](https://singularitysociety.org/) / [Raycast Community Japan](https://raycast.connpass.com/) / [DevX](https://devx.jp/) がサポートする形で実施されます。
 
 イベント概要や詳細については、次のリンクをご参照ください: [イベント概要 - GitHub](https://github.com/snakajima/life-is-beautiful)
 
@@ -94,12 +94,19 @@ Contribution Fes参加者を対象にハッカソンを行います。ハッカ�
 ### Contribution Fes 成果物提出締切
 - **3 月 22 日(土)** までに成果物を一覧を[GitHub上](https://github.com/snakajima/life-is-beautiful) のmdファイルに、PRの形で提出してください。mergeでコンフリクトには気をつけてください。
 - 3 月 23 日(日)のプレゼン終了後、審査結果を発表予定です。
+- スケジュール（予定）
+
+   |     | 3/22(土) | 3/23(日) |
+   |:--- | :---     | :---  |
+   |午前  | ハッカソン | ハッカソン  |
+   |午後  | ハッカソン | Contribution Fes <br> - プレゼン <br> - 審査 <br> - 結果発表
 
 ## 審査
 - 2025年3月23日までに行った全コントリビューションが評価対象となります。  
 - 成果物を一覧提出してください
 - 3月23日(日)プレゼンの発表終了後、審査、結果発表の予定です
 - ハッカソンへの参加、3/23のプレゼンは任意です。参加、発表をしなくても審査の対象になります。
+- ハッカソン参加および 3/23 プレゼンの登録は別途行います。
 
 ---
 

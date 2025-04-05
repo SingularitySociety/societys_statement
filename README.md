@@ -1,6 +1,7 @@
 # societys_statement
 
 - [シンギュラリティ・ソサイエティ行動規範](./code-of-conduct.md)
+- [行動と思考のカルチャーガイド](./action-thinking-culture-guide.md)
 - [シンギュラリティ・ソサイエティの技術 Topics](https://github.com/SingularitySociety/societys_statement/blob/main/topics.md)
 - [ブートキャンプ](./bootcamp.md)
 - [AI Innovators Hub](./ai_innovators_hub.md)

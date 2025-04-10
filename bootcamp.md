@@ -140,6 +140,7 @@ SSでは、参加者が発案したアイデアを実現するためのサポー
 
 - テーマ:
   - GraphAI/AI Podcaster
+  - １人ユニコーン
   - 生成AI/LLM/Multi Agent AI System/AI基盤/AIプラットフォームなどAI全般
   - 自動運転、MaaS、ライドシェアなどのモビリティーサービス全般
   - ドローン, ロボット, VR（仮想現実）, AR, VisionOS, Web3、ゲーム

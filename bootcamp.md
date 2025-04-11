@@ -71,6 +71,7 @@ SSでは、参加者が発案したアイデアを実現するためのサポー
 - PMやbizDev
 - 3rd限定でPR/広報/マーケティングも募集
   - BootCamp全体や、各チームの広報
+- その他Compound Startup構想に共感して、なにかデキる人
 
 ## 応募方法
 
@@ -90,7 +91,7 @@ SSでは、参加者が発案したアイデアを実現するためのサポー
 - 上記以外
   - PMやbizDevなど、サービス立ち上げや売り込みをサポートできる人
     - 個人で参加する場合は、最初の1〜4週間で他エンジニアとマッチングし開発チームに参加できた場合のみ継続可能
-  - 経歴、何をサポートして何を作りたいか、といった情報をドキュメントにまとめ、公開可能なURLで応募ください
+  - 今までの「あなた」は何の成果をだしてきたか、BootCampでどういう貢献ができるかを、公開可能なdocument（できればGitHub)で共有
     - 応募されたURLの内容は、SS、ブートキャンプ参加者に公開します
     - 特にエンジニアが興味を持つように書くと良いです
 
@@ -155,6 +156,7 @@ SSでは、参加者が発案したアイデアを実現するためのサポー
 
 Web/アプリ/AI以外に、Apple VisionPro / 人工衛星やドローンを活用したサービス / ロボット開発をしているチームのもあります。
 
+
 ## 第２回 SS BootCamp
 
 - テーマ:
@@ -178,3 +180,9 @@ Web/アプリ/AI以外に、Apple VisionPro / 人工衛星やドローンを活�
 - BootCamp期間: 2023/7/1 ~ 2023/12/31
 - 最終発表 2024年1月〜２月に開催予定
 
+## リンク
+[Compound Startup構想](https://note.com/singsoc/n/n9e5065e14b95)
+[Fireside Chat 対談：日本発のイノベーションが世界を変える](https://note.com/singsoc/n/ndf35f31d0bdb)
+[Singularity Society BootCamp 2nd 最終発表会開催しました](https://note.com/singsoc/n/n6db0d7c98bf0)
+[Singularity Society 第１回 BootCamp 最終発表](https://note.com/singsoc/n/nb895ca875d60)
+[日本の大きい会社で働く若者へのメッセージ](https://note.com/singsoc/n/nc9d8c1d116cd)

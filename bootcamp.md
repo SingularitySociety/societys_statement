@@ -188,8 +188,15 @@ Web/アプリ/AI以外に、Apple VisionPro / 人工衛星やドローンを活�
 - 最終発表 2024年1月〜２月に開催予定
 
 ## リンク
-[Compound Startup構想](https://note.com/singsoc/n/n9e5065e14b95)
-[Fireside Chat 対談：日本発のイノベーションが世界を変える](https://note.com/singsoc/n/ndf35f31d0bdb)
-[Singularity Society BootCamp 2nd 最終発表会開催しました](https://note.com/singsoc/n/n6db0d7c98bf0)
-[Singularity Society 第１回 BootCamp 最終発表](https://note.com/singsoc/n/nb895ca875d60)
-[日本の大きい会社で働く若者へのメッセージ](https://note.com/singsoc/n/nc9d8c1d116cd)
+- [Compound Startup構想](https://note.com/singsoc/n/n9e5065e14b95)
+- [Fireside Chat 対談：日本発のイノベーションが世界を変える](https://note.com/singsoc/n/ndf35f31d0bdb)
+- [Singularity Society BootCamp 2nd 最終発表会開催しました](https://note.com/singsoc/n/n6db0d7c98bf0)
+- [Singularity Society 第１回 BootCamp 最終発表](https://note.com/singsoc/n/nb895ca875d60)
+- [日本の大きい会社で働く若者へのメッセージ](https://note.com/singsoc/n/nc9d8c1d116cd)
+
+## 過去の参加者のレポート
+- [地域課題への挑戦 — SSブートキャンプから生まれた若葉台コミュニティラジオ](https://note.com/yuki0627/n/n5b371547f148)
+- [Singularity Society Boot Campに参加して刺激的だった：おしゃべり猫型ロボット「ミーア」を開発](https://kazulog.fun/business/singularity-society-boot-camp/)
+- [エンジニア未経験のPMがChatGPTを使って簡単なプログラミングだけでプロダクトを作った話](https://note.com/singsoc/n/n55d035a3e9f9)
+- [visionOSアプリ、Teegardenの開発物語](https://note.com/singsoc/n/n1fefbc0fcaca)
+- [Vision Proで空間ジェスチャーアプリを作った物語](https://note.com/singsoc/n/n86955f6b092a)

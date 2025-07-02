@@ -7,6 +7,7 @@
 - commit/Pull Request
   - commitの粒度は極力小さめに。
   - 最大でも数時間、できれば数分でreviewできる程度にPull Requestをつくる
+    - PRはreviewerが読むものです。読めない大きさ、量のPRは、PRとして破綻しています
     - review時間がかかると
       - マージされないので、開発がとまる。
       - conflictする可能性も増える

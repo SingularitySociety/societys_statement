@@ -16,3 +16,9 @@
 - [Gitを使った開発について](./development/git.md)
 - [Product Manageについて](./development/pm.md)
 - [Productについて](./development/Product.md)
+
+
+# 参考になる記事
+
+- https://b.log456.com/entry/20120110/p1
+- https://www.youtube.com/watch?v=bnfPUrJQh1I

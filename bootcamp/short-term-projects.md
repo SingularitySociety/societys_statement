@@ -1,3 +1,5 @@
+- ai-pm
+- multi modal viewer
 
 - grapysのUI(Graph Flow)をコンポーネント化して、他でも簡単に使えるようにする
 - visionのテンプレート増やす

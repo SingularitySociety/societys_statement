@@ -136,6 +136,7 @@ SSでは、参加者が発案したアイデアを実現するためのサポー
 - [AIでは大企業よりも小さなチームが有利](https://note.com/singsoc/n/n44b621c57498)
 - [舶来ツール依存から、自分たちのプロダクト創出へ ──「使う」から「つくる」へ、文化を変える決意](https://note.com/singsoc/n/nabb743419a28)
 - [破壊的イノベーションは「異常」から始まる](https://note.com/singsoc/n/nc4f0d6a58ea1)
+- [一人で大規模OSSに立ち向かうには](https://speakerdeck.com/sosukesuzuki/ren-deda-gui-mo-ossnili-tixiang-kauniha)
 
 - [「OSS エンジニアの Better than Nothing という生き方」](https://www.youtube.com/watch?v=bnfPUrJQh1I)
 - [セバスチャン・スラン「Googleの自動運転車で目指していること」](https://www.ted.com/talks/sebastian_thrun_google_s_driverless_car?language=ja)

@@ -25,6 +25,7 @@ SSでは、参加者が発案したアイデアを実現するためのサポー
 - 非同期かつオンラインのテキスト中心のコミュニケーションに抵抗がない方
   - 運営とのコミュニケーションは全てSlack上で非同期に行います
   - [Slackのルール](./SlackRule.md)
+  - [非同期コミュニケーションの本質的なコスト](https://note.com/singsoc/n/nbecbcf2205e3)
 - 開発に必要な環境の用意が自力でできる方（初歩的な技術サポートは行いません）
 - GitHubの操作ができる方（エンジニア以外でもGitHubは必須)
   - Gitの操作は現代で必要なリテラシーです
@@ -127,6 +128,20 @@ SSでは、参加者が発案したアイデアを実現するためのサポー
 - Slack以外にかかる実費(各種クラウドなど）は各自で負担ください。
 - オフラインでの活動の交通費等は、各自でご負担ください。
   
+## 参加前に読むべき文章/動画
+- [「本気ではない人に、いくら教えても、無駄」と言われた時の話。](https://blog.tinect.jp/?p=72453)
+- [僕は自分が思っていたほどは頭がよくなかった](https://b.log456.com/entry/20120110/p1)
+- [Why “内発的動機” Is All You Need](https://note.com/singsoc/n/n3e03950f898f)
+- [AIが「人件費の構造」を変える時代、プログラマー起業家が狙うべき市場](https://note.com/singsoc/n/n3ae6da796bfa)
+- [AIでは大企業よりも小さなチームが有利](https://note.com/singsoc/n/n44b621c57498)
+- [舶来ツール依存から、自分たちのプロダクト創出へ ──「使う」から「つくる」へ、文化を変える決意](https://note.com/singsoc/n/nabb743419a28)
+- [破壊的イノベーションは「異常」から始まる](https://note.com/singsoc/n/nc4f0d6a58ea1)
+- [一人で大規模OSSに立ち向かうには](https://speakerdeck.com/sosukesuzuki/ren-deda-gui-mo-ossnili-tixiang-kauniha)
+
+- [「OSS エンジニアの Better than Nothing という生き方」](https://www.youtube.com/watch?v=bnfPUrJQh1I)
+- [セバスチャン・スラン「Googleの自動運転車で目指していること」](https://www.ted.com/talks/sebastian_thrun_google_s_driverless_car?language=ja)
+- [社会運動はどうやって起こすか](https://www.ted.com/talks/derek_sivers_how_to_start_a_movement)
+
 ## Rocket Incubator && Booster
 
 第３回から、グローバル市場を狙った起業をするチーム/個人向けのプログラムを開始します。

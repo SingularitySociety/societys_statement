@@ -4,7 +4,6 @@
 - [行動と思考のカルチャーガイド](./action-thinking-culture-guide.md)
 - [シンギュラリティ・ソサイエティの技術 Topics](https://github.com/SingularitySociety/societys_statement/blob/main/topics.md)
 - [ブートキャンプ](./bootcamp.md)
-- [AI Innovators Hub](./ai_innovators_hub.md)
 - [Slackのルール](./SlackRule.md)
 - [ミーティング（会議）の進め方](./meeting.md)
 - [議論上の注意点](./pointsOfDiscussion.md)

@@ -306,6 +306,121 @@
 - [ ] **GitHub Secrets** の使い分けを決める（repo / environment / org）
 - [ ] **コミット前 secret スキャン**（`gitleaks` or `trufflehog` を pre-commit に）
 
+### Git hooks / pre-commit / pre-push
+
+「**間違ったコードがリポジトリに入る前に止める**」第一防衛線。CI で気づくより 100 倍速い。
+
+- [ ] **hook フレームワークを最初に決定**：
+  - **`lefthook`**（Go バイナリ、高速、設定 YAML、推奨）
+  - **`husky`** + **`lint-staged`**（Node エコシステム標準）
+  - **`simple-git-hooks`**（軽量、設定は package.json）
+  - **`pre-commit`**（Python 製、多言語プロジェクト向き）
+- [ ] **pre-commit hook**（速いものだけ、3 秒以内目標）：
+  - prettier / ESLint（`lint-staged` で変更ファイルのみ）
+  - secret スキャン（`gitleaks`）
+  - 大きすぎるファイル検知（`>1MB` で警告）
+  - merge conflict マーカー検知（`<<<<<<<`）
+  - private key / `.env` 誤コミット検知
+- [ ] **commit-msg hook**：`commitlint` で `feat:` / `fix:` / `refactor:` 等の prefix 強制
+- [ ] **pre-push hook**（重い検証、push 前の最後の砦）：
+  - 型チェック（`tsc --noEmit`）
+  - 単体テスト（変更影響範囲のみ、`vitest related` 等）
+  - **main / master への直接 push を hook で拒否**
+- [ ] **hook を bypass しない文化**：`--no-verify` を使うのは緊急時のみ、使ったら理由をコミットメッセージに
+- [ ] **CI でも同じチェックを必ず動かす**（hook はあくまで補助、信頼は CI に置く）
+
+### CI / CD 自動化
+
+- [ ] **CI プラットフォームを最初に決定**：GitHub Actions / GitLab CI / CircleCI / Buildkite
+  - GitHub なら Actions、コスト面で他に出す理由が無ければ
+- [ ] **`.github/workflows/` の構造を最初に整理**：
+  ```
+  .github/workflows/
+    ci.yml              ← PR / push トリガ：lint + typecheck + test + build
+    e2e.yml             ← 重い E2E（並列、shard 分割）
+    release.yml         ← tag push トリガ：build + publish
+    deploy-staging.yml  ← main push トリガ
+    deploy-prod.yml     ← manual / tag トリガ
+    nightly.yml         ← 定期実行（依存更新・脆弱性スキャン）
+    codeql.yml          ← SAST
+  ```
+- [ ] **必須チェック（required checks）を branch protection で強制**：CI 緑じゃないと merge 不可
+- [ ] **concurrency でキャンセル**：同 PR の古いビルドを止める
+  ```yaml
+  concurrency:
+    group: ${{ github.workflow }}-${{ github.ref }}
+    cancel-in-progress: true
+  ```
+- [ ] **path filters でスキップ**：docs 変更で重い E2E は走らせない
+  ```yaml
+  on:
+    pull_request:
+      paths-ignore: ["docs/**", "*.md"]
+  ```
+- [ ] **キャッシュ徹底**：`actions/cache` で `node_modules`、`.next/cache`、Playwright browsers、Docker layer
+  - cache key は lockfile hash ベース（`hashFiles('yarn.lock')`）
+- [ ] **matrix 戦略**：OS（ubuntu/windows/macos）× Node version で並列
+  - `fail-fast: false` で 1 つ落ちても他を続行（全失敗を一度に把握）
+- [ ] **再利用可能 workflow**（`workflows/_setup.yml` 等）or **composite action** で重複削減
+- [ ] **Reusable workflows** で複数リポ横断の共通化（モノリポ運用なら不要）
+- [ ] **環境保護ルール**：
+  - production environment は manual approval 必須（指定 reviewer）
+  - deploy 履歴を environment ページで可視化
+- [ ] **OIDC でクラウド認証**（`aws-actions/configure-aws-credentials@v4` など）— 長期 access key 廃止
+- [ ] **secrets スコープ最小化**：repo-wide ではなく environment 単位で
+- [ ] **bot の権限を絞る**：`permissions:` を workflow ごとに最小に（default は `contents: read` のみ）
+
+### CI で動かすチェック一覧（最低ライン）
+
+- [ ] **format**：`prettier --check`（変えてしまうと差分が出るので check モード）
+- [ ] **lint**：`eslint .`
+- [ ] **typecheck**：`tsc --noEmit`
+- [ ] **unit test**：`vitest` / `node --test`
+- [ ] **build**：`yarn build` 通ること
+- [ ] **integration test / e2e**：別 job で並列、shard で分割
+- [ ] **依存脆弱性**：`npm audit --audit-level=high` or Snyk
+- [ ] **SAST**：CodeQL / Semgrep
+- [ ] **secret スキャン**：gitleaks
+- [ ] **license チェック**：`license-checker` で禁則ライセンス検知
+- [ ] **bundle size**：`size-limit` で前回比増加に警告
+- [ ] **a11y**：`axe-core` を E2E に組み込み
+- [ ] **dead link**：docs の link checker
+
+### CI 高速化
+
+- [ ] **「3 分以内」を目標**（PR レビューのテンポを保つ）
+- [ ] **ジョブ並列化**：format/lint/test/build を分離
+- [ ] **テスト並列化**：vitest の `--shard`、Playwright の sharding
+- [ ] **incremental build**：Turborepo / Nx で変更パッケージのみ
+- [ ] **重い workflow は別トリガ**（nightly や手動 dispatch）
+- [ ] **flaky test を許さない**：再実行で誤魔化さず、原因を直す or quarantine
+
+### 通知・可視化
+
+- [ ] **失敗通知を Slack / Discord に**（特に main ブランチ・本番 deploy）
+- [ ] **PR への CI 結果コメント**（coverage 増減、bundle size diff、screenshot diff）
+- [ ] **status badge を README に**
+- [ ] **CI dashboard**（GitHub の Actions タブで十分なことが多い、複雑なら Datadog CI Visibility）
+
+### 自動化系
+
+- [ ] **Dependabot / Renovate** で依存自動更新 PR
+  - patch / minor は auto-merge 設定可（テスト緑なら）
+  - major は人レビュー必須
+- [ ] **release 自動化**：`changesets` / `semantic-release` / `release-please`
+  - PR マージ時に CHANGELOG 更新 → version bump → tag → npm publish を自動
+- [ ] **PR labeler**（`actions/labeler`）：path ベースで自動ラベル付け
+- [ ] **stale bot**：放置 issue / PR を自動クローズ
+- [ ] **auto-assign reviewer**（CODEOWNERS or `auto-assign-action`）
+- [ ] **PR title lint**（`amannn/action-semantic-pull-request`）：merge commit が綺麗になる
+- [ ] **AI レビュー bot**（CodeRabbit, Sourcery）— bot コメントを triage する運用ルールも併せて
+
+### ローカルで CI を再現
+
+- [ ] **`act`**（GitHub Actions をローカル実行）を導入検討
+- [ ] **CI と同じコマンドを `package.json` script に**：`yarn ci` で全チェック走る
+- [ ] **CI YAML に shell スクリプトを直書きしない**：`scripts/ci-*.sh` に出してローカルでも叩ける状態に
+
 ### 観測性（observability）
 
 - [ ] **エラートラッキング**（Sentry, Rollbar 等）を入れるか初日決定

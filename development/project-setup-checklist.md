@@ -6,20 +6,20 @@
 
 | セクション | 由来 |
 |---|---|
-| **§1〜§15** | MulmoClaude（Web アプリ）の履歴で「後付けで大規模リファクタを強いられた」領域を実際に git log から洗い出したもの。リファレンスとなった主要 PR / コミットを括弧内に併記。 |
-| **§16〜§24** | MulmoClaude の履歴には現れないが、Web アプリ以外（ライブラリ・CLI）や、より広い領域（DB / 公開 API / クラウド / セキュリティ / ドキュメント）で同じく「後で困りやすい」経験則として追加した一般項目。MulmoClaude の PR 番号は付かない。 |
+| **§1〜§16** | MulmoClaude（Web アプリ）の履歴で「後付けで大規模リファクタを強いられた」領域を実際に git log から洗い出したもの。リファレンスとなった主要 PR / コミットを括弧内に併記。 |
+| **§17〜§25** | MulmoClaude の履歴には現れないが、Web アプリ以外（ライブラリ・CLI）や、より広い領域（DB / 公開 API / クラウド / セキュリティ / ドキュメント）で同じく「後で困りやすい」経験則として追加した一般項目。MulmoClaude の PR 番号は付かない。 |
 
 セクション分け：
-- §1〜§15：**Web アプリ**（このプロジェクトが該当・実履歴ベース）
-- §16：**ライブラリ（npm package）固有**（一般項目）
-- §17：**CLI ツール固有**（一般項目）
-- §18：**全プロジェクト共通の追加項目**（一般項目）
-- §19：**DB を使う / ネット公開する場合のセキュリティ準備**（一般項目）
-- §20：**クラウドアカウント・課金・API キー管理**（一般項目）
-- §21：**ドキュメント管理**（一般項目）
-- §22：**API キーの命名・設計（Stripe 流）**（一般項目）
-- §23：**外部公開する API**（一般項目）
-- §24：**WAF・クラウドセキュリティ**（一般項目）
+- §1〜§16：**Web アプリ**（このプロジェクトが該当・実履歴ベース）
+- §17：**ライブラリ（npm package）固有**（一般項目）
+- §18：**CLI ツール固有**（一般項目）
+- §19：**全プロジェクト共通の追加項目**（一般項目）
+- §20：**DB を使う / ネット公開する場合のセキュリティ準備**（一般項目）
+- §21：**クラウドアカウント・課金・API キー管理**（一般項目）
+- §22：**ドキュメント管理**（一般項目）
+- §23：**API キーの命名・設計（Stripe 流）**（一般項目）
+- §24：**外部公開する API**（一般項目）
+- §25：**WAF・クラウドセキュリティ**（一般項目）
 
 ---
 
@@ -96,14 +96,21 @@
 - [ ] **npm scripts**：`rm -rf` → `rimraf`、`cp` → `shx` か Node スクリプト
 - [ ] **case-insensitive FS** 前提（macOS/Windows）でファイル名衝突しない命名
 
-## 10. パッケージング / モジュール
+## 10. 時系列で増える生成物・データの保存
+
+- [ ] **件数が時間と共に増えるファイルは `YYYY/MM/` か `YYYY/MM/DD/` のディレクトリに分けて保存**（フラットに 1 ディレクトリへ積むと、一覧・検索・バックアップ・ローテーション・移行が後から全部破綻する。試作段階でも先に階層を入れておくと本運用時の移行コストがゼロ）
+- [ ] 例：日次ジャーナル `summaries/daily/YYYY/MM/DD.md`、ニュース / 生成物 `news/daily/YYYY/MM/DD.md`、アクセスログ `logs/YYYY/MM/` など（MulmoClaude は journal / sources 両方でこの形 — `server/workspace/journal/paths.ts#dailyPathFor` を参照）
+- [ ] **パス生成は helper に集約**（`dailyPathFor(isoDate)` 等）、呼び出し側で `date.split("-")` を手書きしない ― フォーマット変更・タイムゾーン扱いが一箇所に閉じる
+- [ ] **ローカル日付 vs UTC を最初に決める**（生成物の「今日」は書き込み側のどのゾーンか）。混在させるとパス同士が 1 日ズレて検索不能になる
+
+## 11. パッケージング / モジュール
 
 - [ ] **`exports` フィールド**に `import` / `require` / `default` 全部入れる（Docker CJS 対応 — PR #429）
 - [ ] **monorepo** にするなら最初から workspaces + `packages/<scope>/<name>` 構造を決める（bridges のサブディレクトリ移動 PR #ba0ebf1 で全パス書き換え）
 - [ ] **再エクスポート barrel ファイル禁止**（理由のないものは作らない）
 - [ ] **dynamic import は条件付き依存だけ**、常用は top-level import
 
-## 11. テスト
+## 12. テスト
 
 - [ ] **`node:test` + `node:assert`**
 - [ ] **E2E は Playwright**、`mockAllApis(page)` パターンを最初から
@@ -111,34 +118,76 @@
 - [ ] **`data-testid` 属性**を全 UI 要素に — クラス名/位置で取らない
 - [ ] **テストを CI matrix の全 OS で走らせる**
 
-## 12. 型安全
+## 13. 型安全
 
 - [ ] **`as` キャスト禁止** → 型ガード関数 `isXxx(x): x is Type`
 - [ ] **Zod スキーマ → `z.infer` で型派生**、ローカル type 二重定義禁止
 - [ ] **既存ライブラリの型ガード使う** (`isObject` from graphai 等) — 自前で書かない
 
-## 13. プラグイン / 拡張アーキテクチャ
+## 14. プラグイン / 拡張アーキテクチャ
 
 - [ ] **拡張ポイント**（プラグイン、ブリッジ、bridge 種別など）を最初に設計
 - [ ] **追加に必要な変更箇所をドキュメント化** — このプロジェクトは「local plugin 追加で 8 ファイル変更」と CLAUDE.md に明記してある
 - [ ] **共有プロトコル**は npm package として最初から切る（後から切ると依存関係解きほぐしが苦痛）
 
-## 14. リリース / バージョニング
+## 15. リリース / バージョニング
 
 - [ ] **`docs/CHANGELOG.md`** を初日に作る（PR #ec3cee4 で後付け）
 - [ ] **タグ規約**を決める：`vX.Y.Z`（アプリ）/ `@scope/name@X.Y.Z`（パッケージ）
 - [ ] **release script** (`/release-app`, `/publish`) を最初に整える
 
-## 15. リポジトリ運用
+## 16. リポジトリ運用
 
-- [ ] **main 直 push 禁止**（PR 必須、admin もバイパス不可）
-- [ ] **review/CI 必須化**
-- [ ] **bot レビュー**（CodeRabbit, Sourcery）を初日から有効化
-- [ ] **PR テンプレ** に「User Prompt」「Summary」「Items to Confirm」セクションを入れる
+ルール文書だけだと守られない。**GitHub の機能で物理的に止める**ことを最優先で固める。Git の使い方（merge vs rebase、commit 粒度、PR review の考え方）は同じディレクトリの [`git.md`](git.md) を参照。
+
+### Branch protection（Settings → Branches → `main` に rule 追加）
+
+- [ ] **Require a pull request before merging** — `main` への直接 push 禁止
+  - [ ] **Require approvals: 1 以上** — review 必須化
+  - [ ] **Dismiss stale pull request approvals when new commits are pushed** — 古い approval は自動失効
+  - [ ] **Require review from Code Owners**（`CODEOWNERS` を置いている場合）
+- [ ] **Require status checks to pass before merging** — CI 必須
+  - [ ] **Require branches to be up to date before merging** — `main` 取り込み済みで CI を通す（古い branch のまま merge 不可）
+  - [ ] 必要な CI ジョブを **Selected status checks** に明示登録（lint, typecheck, test, build, e2e など）
+- [ ] **Require conversation resolution before merging** — review コメントの未解決スレッドが残ったまま merge できない
+- [ ] **Do not allow bypassing the above settings** — admin / repo owner もバイパス不可（自分で抜け道を作らない）
+- [ ] **Allow force pushes**: **OFF** — force push を全面禁止（誤って `git push --force` しても reject される）
+- [ ] **Allow deletions**: **OFF** — protected branch の削除禁止
+- [ ] **Require linear history**: **OFF**（merge commit を使うため。`git.md` の方針）
+- [ ] **Require signed commits**（任意。組織で署名運用が決まっているなら ON）
+
+### Pull request 設定（Settings → General → Pull Requests）
+
+ここで merge ボタンに表示される選択肢自体を制限する。「rebase を使わない」とドキュメントに書くより、**ボタンを消す**方が確実。
+
+- [ ] **Allow merge commits**: **ON** — 採用（履歴に「Merge pull request #N」が残り、PR 単位で revert / blame できる）
+- [ ] **Allow squash merging**: **OFF** — commit 単位の履歴を潰さない
+- [ ] **Allow rebase merging**: **OFF** — rebase merge は使わない（`git.md` の方針）
+- [ ] **Always suggest updating pull request branches**: **ON** — 古い branch を更新するボタンを出す
+- [ ] **Allow auto-merge**: **ON** — CI が通ったら自動 merge できる
+- [ ] **Automatically delete head branches**: **ON** — merge 済の feature branch を自動削除（リポジトリが branch だらけにならない）
+
+### bot レビュー / 自動チェック
+
+- [ ] **CodeRabbit** / **Sourcery** などの AI レビュー bot を初日から有効化
+- [ ] **Dependabot**（Settings → Code security → **Dependabot alerts** / **Dependabot security updates** / **Dependabot version updates**）を ON
+- [ ] **Secret scanning**（Settings → Code security → **Secret scanning** / **Push protection**）を ON
+  - Push protection で `.env` や API key の誤 push を `git push` の段階で reject
+
+### PR テンプレ / 規約
+
+- [ ] **`.github/pull_request_template.md`** に以下のセクションを入れる:
+  - User Prompt（依頼の原文）
+  - Summary（変更概要）
+  - Items to Confirm / Review（reviewer に特に確認してほしい点）
+  - Test plan（実施した検証）
+- [ ] **`.github/CODEOWNERS`** に owner を書く — review 自動アサイン
+- [ ] **commit message prefix**（`feat:` / `fix:` / `refactor:` / `docs:` / `chore:`）を `CONTRIBUTING.md` または `git.md` に明記
+- [ ] **PR タイトルにも prefix を強制したい場合**: `action-semantic-pull-request` 等の GitHub Action を入れる（CI で reject）
 
 ---
 
-## 16. ライブラリ（npm package）固有
+## 17. ライブラリ（npm package）固有
 
 公開する npm パッケージで後から困りやすい点。
 
@@ -193,7 +242,7 @@
 
 ---
 
-## 17. CLI ツール固有
+## 18. CLI ツール固有
 
 ツール（`npx foo` で動く類）で後から困りやすい点。
 
@@ -237,7 +286,7 @@
 
 ---
 
-## 18. 全プロジェクト共通の追加項目
+## 19. 全プロジェクト共通の追加項目
 
 ### リポジトリ初期化（initial commit に入れる）
 
@@ -441,6 +490,18 @@
 - [ ] **キーボード操作のみで全機能**動くことを E2E で検証
 - [ ] **prefers-reduced-motion / prefers-color-scheme** を最初から想定
 
+### フロントエンド / SPA ルーティング（Web）
+
+- [ ] **ページ遷移は URL ベース**に最初から設計 — 画面状態を component state だけで切り替えると **ブラウザの history back / forward / リロード / 共有が効かない**。後から直すと全画面の state 管理を書き直すハメになる
+- [ ] **ルータを初日から導入**（Vue なら `vue-router`、React なら `react-router` / TanStack Router）— 画面が 1 枚でも最初から通す。後付けは必ず大手術になる
+- [ ] **path param を優先、query string は補助的に**
+  - 「リソースの identity」（`/users/:userId`, `/projects/:projectId/tasks/:taskId`）は **path param**
+  - 「表示の調整」（フィルタ・ソート・ページ番号）は **query string**
+- [ ] **ルート定義を 1 箇所に集約**（`src/router/routes.ts` 等）— 文字列直書きの `router.push('/users/' + id)` を禁止、**名前付きルート or 型付き helper** で組み立てる
+- [ ] **戻る / 進む / リロード / 直 URL 共有**の 4 つを E2E / 手動テストのチェックリストに入れる
+- [ ] **404 ルート**（`path: '/:pathMatch(.*)*'` 等）を最初から用意
+- [ ] **スクロール位置の復元**（`scrollBehavior`）をルータ設定で明示
+
 ### ローカル開発体験（DX）
 
 - [ ] **`make dev` / `npm run dev`** 一発で全部立ち上がる
@@ -478,7 +539,7 @@
 
 ---
 
-## 19. DB を使う / ネット公開する場合のセキュリティ準備
+## 20. DB を使う / ネット公開する場合のセキュリティ準備
 
 「動いてから後付け」が一番しんどい領域。**初日に骨格だけでも入れておく**ことを強く推奨。
 
@@ -655,7 +716,7 @@
 
 ---
 
-## 20. クラウドアカウント・課金・API キー管理
+## 21. クラウドアカウント・課金・API キー管理
 
 「いつの間にか月数十万円」「root アカウント乗っ取り」が一番怖い領域。**請求書が飛んでくる前**に固める。
 
@@ -742,7 +803,7 @@
 
 ---
 
-## 21. ドキュメント管理
+## 22. ドキュメント管理
 
 「コードはあるがドキュメントがない」「ドキュメントはあるが古い」「どこに何が書いてあるか分からない」を最初に防ぐ。
 
@@ -851,7 +912,7 @@
 
 ---
 
-## 22. API キーの命名・設計（Stripe 流）
+## 23. API キーの命名・設計（Stripe 流）
 
 API キーは「**見ただけで何のキーか・どの環境か・公開可否か分かる**」設計が事故防止に効く。Stripe の命名規則がデファクト。
 
@@ -906,7 +967,7 @@ whsec_1234...      ← Webhook 署名検証
 
 ---
 
-## 23. 外部公開する API
+## 24. 外部公開する API
 
 社内・自社製品内部の API と違い、**契約**として扱う必要がある。
 
@@ -993,7 +1054,7 @@ whsec_1234...      ← Webhook 署名検証
 
 ---
 
-## 24. WAF・クラウドセキュリティ
+## 25. WAF・クラウドセキュリティ
 
 「**アプリの前段で防げるものはアプリより前で防ぐ**」が鉄則。
 

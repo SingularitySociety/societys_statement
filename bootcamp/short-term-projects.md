@@ -180,7 +180,8 @@
   - GraphAI agent ライブラリ拡充（音声・画像・OCR・コード実行・SaaS 連携など実用パターンを網羅）
   - GraphAI 本体の改良（ストリーミング・エラーリカバリー・実行観測・並列性能の強化）
   - GraphAI の graph／フローを簡単に作成するための補助ツール
-- **MulmoCast / マルチメディア**
+- **MulmoCast / MulmoClaude**
+  - **MulmoClaude を使った独自のマルチモーダル AI ツール**（独自の用途・業界向け／個人の働き方向けなど）
   - MulmoScript からインタラクティブ e-learning コンテンツを自動生成（動画＋クイズ＋進捗管理）
   - iPhone / Vision Pro 空間写真・空間動画の SNS プラットフォーム（Instagram for Spatial）
   - PDF やノートに空間コンテンツを埋め込めるツール（NoteSP）

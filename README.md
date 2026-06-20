@@ -6,6 +6,7 @@
 - [ブートキャンプ](./bootcamp.md)
 - [Slackのルール](./SlackRule.md)
 - [ミーティング（会議）の進め方](./meeting.md)
+- [ライブ議事録で会議を回す](./live-meeting-minutes.md)
 - [議論上の注意点](./pointsOfDiscussion.md)
 - [守秘義務について](./confidentiality.md)
 

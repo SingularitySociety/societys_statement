@@ -5,4 +5,5 @@
   - [Vibe Coding 入門（非エンジニア向け）](./vibe_coding_simple.md)
 - [Product Manageについて](./pm.md)
 - [Productについて](./Product.md)
+- [セキュリティ（攻撃の入口を知る教育ドキュメント）](./security/README.md)
 

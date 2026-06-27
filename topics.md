@@ -1,6 +1,6 @@
 ---
 title: "技術 Topics"
-nav_order: 10
+nav_order: 8
 ---
 
 # 技術 Topics

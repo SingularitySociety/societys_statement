@@ -110,3 +110,10 @@ nav_order: 7
 - IPA「映像で知る情報セキュリティ」 — <https://www.ipa.go.jp/security/videos/index.html>
 - JPCERT/CC（インシデント対応・注意喚起）
 - NIST（アクセス制御・最小権限などのベストプラクティス）
+
+
+---
+
+## 合わせて読む
+
+- [セキュリティ脅威マップ](./README.md)

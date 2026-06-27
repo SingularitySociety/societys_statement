@@ -103,3 +103,10 @@ DNS／ドメインだけに特化したIPA公式動画はIDの確証が取れな
 - JPCERT/CC（DNS・ドメイン乗っ取り／DDoSの注意喚起）
 - ICANN および各レジストラ（Registrar Lock・移管・DNSSEC の公式ガイド）
 - NIST（DNSSEC・DNSセキュリティのガイドライン）
+
+
+---
+
+## 合わせて読む
+
+- [セキュリティ脅威マップ](./README.md)

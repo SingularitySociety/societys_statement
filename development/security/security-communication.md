@@ -116,3 +116,10 @@ nav_order: 3
 - IPA「情報セキュリティ10大脅威」 — <https://www.ipa.go.jp/security/10threats/>
 - JPCERT/CC（不正ログイン・アカウント乗っ取り注意喚起）
 - NIST / OWASP（認証・MFA・セッション管理のベストプラクティス）
+
+
+---
+
+## 合わせて読む
+
+- [セキュリティ脅威マップ](./README.md)

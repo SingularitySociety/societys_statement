@@ -1,6 +1,6 @@
 ---
 title: "アイデア"
-nav_order: 23
+nav_order: 21
 ---
 
 # 作りたいプロダクトのアイデア
@@ -14,3 +14,10 @@ nav_order: 23
   - slackの一定のログを記事化
 - メタバース書店
   - [メタバース時代に掘り起こせそうな本屋さん](https://singularitysociety.org/articles/blog/2022-01-06-metaverse-book-store/)
+
+
+---
+
+## 合わせて読む
+
+- [短期/長期プロジェクトアイデア](./bootcamp/short-term-projects.md)

@@ -147,3 +147,10 @@ nav_order: 99
 - CNN / Fortune ほか（Arup ディープフェイク約2,560万ドル事案, 2024）
 - Wikipedia / Akamai ほか「XZ Utils backdoor（CVE-2024-3094）」
 - MITRE ATT&CK（手口の体系的カタログ）
+
+
+---
+
+## 合わせて読む
+
+- [セキュリティ脅威マップ](./README.md)

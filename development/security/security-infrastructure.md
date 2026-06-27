@@ -105,3 +105,10 @@ OS（WindowsやLinuxなどの基本ソフト）、ミドルウェア（Apacheや
 - JPCERT/CC — 脆弱性・VPN機器等への攻撃に関する注意喚起
 - NIST — Cybersecurity Framework（CSF）／脆弱性・パッチ管理のガイドライン
 - CIS Benchmarks — OS・ミドルウェア・機器の設定ハードニング基準
+
+
+---
+
+## 合わせて読む
+
+- [セキュリティ脅威マップ](./README.md)

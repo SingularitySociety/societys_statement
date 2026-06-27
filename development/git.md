@@ -29,3 +29,10 @@ nav_order: 1
     - 思っていた通りに動かない場合、躊躇せず、全部捨ててやり直す。それぐらい粒度を小さくする。
 - 整形
   - editor configや、prettierなどのformatterを使って、各環境、エディターによる差分はなくす
+
+
+---
+
+## 合わせて読む
+
+- [Vibe Coding について](./vibe_coding.md)

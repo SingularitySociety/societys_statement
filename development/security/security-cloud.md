@@ -97,3 +97,10 @@ nav_order: 2
 - 各クラウドのベストプラクティス — AWS（Well-Architected／IAMベストプラクティス）、Google Cloud（セキュリティのベストプラクティス）、Microsoft（Azure セキュリティ ベンチマーク）
 - CIS（Center for Internet Security）Benchmarks — クラウド設定の基準
 - NIST — Cybersecurity Framework（CSF）／クラウドセキュリティのガイドライン
+
+
+---
+
+## 合わせて読む
+
+- [セキュリティ脅威マップ](./README.md)

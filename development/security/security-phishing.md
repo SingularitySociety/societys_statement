@@ -121,3 +121,10 @@ nav_order: 10
 - IPA「情報セキュリティ10大脅威」 — <https://www.ipa.go.jp/security/10threats/>
 - JPCERT/CC（フィッシング・なりすまし注意喚起）
 - OWASP / NIST（MFA・認証のベストプラクティス）
+
+
+---
+
+## 合わせて読む
+
+- [セキュリティ脅威マップ](./README.md)

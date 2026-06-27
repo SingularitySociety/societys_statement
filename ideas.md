@@ -13,4 +13,4 @@ nav_order: 23
     - インタビューを整える、インタビューから普通の記事に仕上げる
   - slackの一定のログを記事化
 - メタバース書店
-  - https://singularitysociety.org/articles/blog/2022-01-06-metaverse-book-store/
+  - [メタバース時代に掘り起こせそうな本屋さん](https://singularitysociety.org/articles/blog/2022-01-06-metaverse-book-store/)

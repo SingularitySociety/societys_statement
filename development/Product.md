@@ -1,3 +1,9 @@
+---
+title: "Productについて"
+parent: "開発の心得"
+nav_order: 3
+---
+
 # Productについて
 
 ## アイデア

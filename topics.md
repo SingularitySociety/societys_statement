@@ -1,3 +1,8 @@
+---
+title: "技術 Topics"
+nav_order: 10
+---
+
 We are focusing on
 
 - 人工知能

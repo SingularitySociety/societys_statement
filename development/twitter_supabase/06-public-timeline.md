@@ -1,3 +1,10 @@
+---
+title: "第6章　公開タイムライン"
+parent: "Twitterクローンで学ぶWeb開発入門"
+grandparent: "開発の心得"
+nav_order: 6
+---
+
 
 # 第6章　公開タイムライン — 「自分だけ」と「みんな」をRLSで両立
 

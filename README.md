@@ -2,7 +2,7 @@
 
 - [シンギュラリティ・ソサイエティ行動規範](./code-of-conduct.md)
 - [行動と思考のカルチャーガイド](./action-thinking-culture-guide.md)
-- [シンギュラリティ・ソサイエティの技術 Topics](https://github.com/SingularitySociety/societys_statement/blob/main/topics.md)
+- [シンギュラリティ・ソサイエティの技術 Topics](./topics.md)
 - [ブートキャンプ](./bootcamp.md)
 - [Slackのルール](./SlackRule.md)
 - [ミーティング（会議）の進め方](./meeting.md)

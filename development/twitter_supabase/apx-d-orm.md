@@ -1,3 +1,10 @@
+---
+title: "付録D　ORマッパー（ORM）入門"
+parent: "Twitterクローンで学ぶWeb開発入門"
+grandparent: "開発の心得"
+nav_order: 16
+---
+
 
 # 付録D　ORマッパー（ORM）入門 — SQLを書かずにデータを扱う道具
 

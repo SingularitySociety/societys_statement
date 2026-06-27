@@ -1,3 +1,10 @@
+---
+title: "付録C　普通のDB（PostgreSQL / MySQL）入門"
+parent: "Twitterクローンで学ぶWeb開発入門"
+grandparent: "開発の心得"
+nav_order: 15
+---
+
 
 # 付録C　普通のDB（PostgreSQL / MySQL）入門 — RLSがない世界での守り方
 

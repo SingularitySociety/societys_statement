@@ -1,3 +1,8 @@
+---
+title: "AI Innovators Hub"
+nav_order: 22
+---
+
 ## AI Innovators Hubを開始します
 
 生成AIを使ったサービスや、オープンソースのモデルなど、爆発的に生成AIは増えています。

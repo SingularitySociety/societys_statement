@@ -1,3 +1,10 @@
+---
+title: "付録A　Supabaseセットアップ手順"
+parent: "Twitterクローンで学ぶWeb開発入門"
+grandparent: "開発の心得"
+nav_order: 13
+---
+
 
 # 付録A　Supabaseセットアップ手順
 

@@ -1,3 +1,9 @@
+---
+title: "Product Manager について"
+parent: "開発の心得"
+nav_order: 2
+---
+
 # Product Manager について
 
 基本的にはエンジニアドリブンなので、ブートキャンプで求められる Product Manager (PM) についてのイメージをシェアします。

@@ -1,3 +1,10 @@
+---
+title: "第3章　ツイートしてみる"
+parent: "Twitterクローンで学ぶWeb開発入門"
+grandparent: "開発の心得"
+nav_order: 3
+---
+
 
 # 第3章　ツイートしてみる — はじめてのデータ保存
 

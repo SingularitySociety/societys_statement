@@ -1,3 +1,9 @@
+---
+title: "Vibe Coding 入門（非エンジニア向け）"
+parent: "開発の心得"
+nav_order: 5
+---
+
 # Vibe Coding 入門（非エンジニア向け）
 
 AI（Claude Code など）と一緒に開発するときの、**いちばん大事な基本だけ**をまとめた入門版です。

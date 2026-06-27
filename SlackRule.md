@@ -1,3 +1,8 @@
+---
+title: "Slackのルール"
+nav_order: 6
+---
+
 # Slackの使い方
 
 ## 最初に要点を箇条書すると

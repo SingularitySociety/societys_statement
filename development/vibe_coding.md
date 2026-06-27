@@ -1,3 +1,9 @@
+---
+title: "Vibe Coding について"
+parent: "開発の心得"
+nav_order: 4
+---
+
 # Vibe Coding について
 
 AI（Claude Code など）と一緒に開発を進めるための心得です。

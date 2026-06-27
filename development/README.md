@@ -1,3 +1,9 @@
+---
+title: "開発の心得"
+nav_order: 9
+has_children: true
+---
+
 # 　開発の心得
 
 - [Gitを使った開発について](./git.md)

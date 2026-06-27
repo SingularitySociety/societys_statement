@@ -1,3 +1,10 @@
+---
+title: "第12章 スケールの物語"
+parent: "Twitterクローンで学ぶWeb開発入門"
+grandparent: "開発の心得"
+nav_order: 12
+---
+
 
 # 第12章 スケールの物語 — フォロワー1億人をTwitterはどう捌いたか
 

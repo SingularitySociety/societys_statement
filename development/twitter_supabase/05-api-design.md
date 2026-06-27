@@ -1,3 +1,10 @@
+---
+title: "第5章　APIって何？"
+parent: "Twitterクローンで学ぶWeb開発入門"
+grandparent: "開発の心得"
+nav_order: 5
+---
+
 
 # 第5章　APIって何？ — データの出し入れ窓口を「設計」する
 

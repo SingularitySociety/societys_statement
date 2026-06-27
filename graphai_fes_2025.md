@@ -1,3 +1,8 @@
+---
+title: "GraphAI Fes 2025"
+nav_order: 21
+---
+
 # GraphAI Contribution Fes 2025 開催のお知らせ
 
 [メルマガ「週刊 Life is Beautiful」](https://www.mag2.com/m/0001323030)やGitHubですでに告知しておりますが、**GraphAI Contribution Fes 2025** を開催します。

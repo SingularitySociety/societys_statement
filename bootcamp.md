@@ -1,3 +1,9 @@
+---
+title: "ブートキャンプ"
+nav_order: 8
+has_children: true
+---
+
 
 # Singularity Society BootCamp
 

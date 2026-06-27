@@ -1,3 +1,9 @@
+---
+title: "AI as a Service"
+parent: "開発の心得"
+nav_order: 7
+---
+
 # AI as a Service. なぜ「Firebase for AI Apps」が必要なのか
 
 AIアプリを作るとき、多くの開発者は同じ問題にぶつかります。

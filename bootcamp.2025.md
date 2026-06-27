@@ -1,3 +1,9 @@
+---
+title: "BootCamp 2025"
+parent: "ブートキャンプ"
+nav_order: 1
+---
+
 
 # Singularity Society BootCamp
 

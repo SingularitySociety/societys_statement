@@ -1,3 +1,10 @@
+---
+title: "Twitterクローンで学ぶWeb開発入門"
+parent: "開発の心得"
+nav_order: 10
+has_children: true
+---
+
 
 # Twitterクローンで学ぶWeb開発入門 — はじめに・目次
 

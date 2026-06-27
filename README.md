@@ -1,5 +1,7 @@
 # societys_statement
 
+📖 **Web版（ドキュメントサイト）**: https://singularitysociety.github.io/societys_statement/
+
 - [シンギュラリティ・ソサイエティ行動規範](./code-of-conduct.md)
 - [行動と思考のカルチャーガイド](./action-thinking-culture-guide.md)
 - [シンギュラリティ・ソサイエティの技術 Topics](./topics.md)

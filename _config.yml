@@ -46,4 +46,5 @@ exclude:
   - node_modules/
   - plans/
   - scratchpad/
+  - deprecated/
   - presentation.md

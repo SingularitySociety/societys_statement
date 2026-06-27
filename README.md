@@ -23,4 +23,4 @@
 # 参考になる記事
 
 - [僕は自分が思っていたほどは頭がよくなかった - しのごの録](https://b.log456.com/entry/20120110/p1)
-- [OSS エンジニアの Better than Nothing という生き方 | AWS Dev Day 2022 Japan](https://www.youtube.com/watch?v=bnfPUrJQh1I)
+- [OSS エンジニアの Better than Nothing という生き方 (AWS Dev Day 2022 Japan)](https://www.youtube.com/watch?v=bnfPUrJQh1I)

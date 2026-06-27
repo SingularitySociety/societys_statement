@@ -109,3 +109,10 @@ nav_order: 12
 - JPCERT/CC — サプライチェーン攻撃・OSS脆弱性の注意喚起
 - NIST — SSDF（セキュアソフトウェア開発フレームワーク）／ SLSA（サプライチェーン保証レベル）
 - OpenSSF（Open Source Security Foundation） — OSS供給網セキュリティの実践とツール（Sigstore 等）
+
+
+---
+
+## 合わせて読む
+
+- [セキュリティ脅威マップ](./README.md)

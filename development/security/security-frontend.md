@@ -103,3 +103,10 @@ Webページは、サーバーから送られてきた文章だけでなく、**
 - OWASP — [Top 10](https://owasp.org/www-project-top-ten/)、Cheat Sheet Series（XSS / CSRF / Clickjacking 等の実装ガイド）
 - IPA「映像で知る情報セキュリティ」 — <https://www.ipa.go.jp/security/videos/index.html>
 - MDN Web Docs — CSP / Cookie属性 / X-Frame-Options などWeb標準のリファレンス
+
+
+---
+
+## 合わせて読む
+
+- [セキュリティ脅威マップ](./README.md)

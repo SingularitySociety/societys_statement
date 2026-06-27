@@ -104,3 +104,10 @@ nav_order: 1
 - OWASP「Cheat Sheet Series」 — 手口別の具体的な実装対策ガイド（SQLi/認可/SSRF/デシリアライズ など）
 - IPA「安全なウェブサイトの作り方」 — <https://www.ipa.go.jp/security/vuln/websecurity.html>（日本語の定番。脆弱性ごとに対策を解説）
 - MITRE ATT&CK — 攻撃手口のカタログ（応用・実務向け）
+
+
+---
+
+## 合わせて読む
+
+- [セキュリティ脅威マップ](./README.md)

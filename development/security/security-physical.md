@@ -108,3 +108,10 @@ nav_order: 11
 - IPA「情報セキュリティ10大脅威」 — <https://www.ipa.go.jp/security/10threats/>
 - JPCERT/CC（標的型攻撃・物理的な情報持ち出しへの注意喚起）
 - NIST（Cybersecurity Framework／物理アクセス制御のガイドライン）
+
+
+---
+
+## 合わせて読む
+
+- [セキュリティ脅威マップ](./README.md)

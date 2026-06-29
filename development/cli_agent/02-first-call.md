@@ -136,7 +136,7 @@ import Anthropic from "@anthropic-ai/sdk";
 import * as readline from "node:readline/promises";
 
 const anthropic = new Anthropic(); // 環境変数 ANTHROPIC_API_KEY を自動で読む
-const MODEL = "claude-opus-4-7"; // 賢い既定。コストは付録Fで安いモデルに替えられる
+const MODEL = "claude-opus-4-8"; // 賢い既定。コストは付録Fで安いモデルに替えられる
 
 const SYSTEM_PROMPT = "あなたは親切なアシスタントです。日本語で簡潔に答えてください。";
 
@@ -175,7 +175,7 @@ rl.close();
 - `import Anthropic from "@anthropic-ai/sdk";`：さっき入れた**公式の道具箱**を読み込みます。
 - `import * as readline from "node:readline/promises";`：**ターミナルから1行ずつ入力を読む**ための、Node.js標準の部品です（`promises` 版だと `await` で待てて読みやすい）。
 - `const anthropic = new Anthropic();`：LLMに電話する**受話器**を用意。**鍵は環境変数から自動で読む**ので、ここに鍵を書く必要はありません（だから安全）。
-- `const MODEL = "claude-opus-4-7";`：使うモデル（頭脳の種類）を**定数**にします。賢い既定。**コストが気になれば、ここ1か所を安いモデルに替えるだけ**（やり方は付録F）。
+- `const MODEL = "claude-opus-4-8";`：使うモデル（頭脳の種類）を**定数**にします。賢い既定。**コストが気になれば、ここ1か所を安いモデルに替えるだけ**（やり方は付録F）。
 - `const SYSTEM_PROMPT = "...";`：頭脳に**最初に渡しておく「性格・やり方」の指示**（第1章で出てきたあれ）。いまは1文だけ。深掘りは第10章。
 - `const messages: Anthropic.MessageParam[] = [];`：**会話の履歴**を入れる箱。`MessageParam` は「1つの発言（誰が・何を言ったか）」の型。最初は空っぽです。
 - `readline.createInterface(...)`：ターミナルの**入力（キーボード）と出力（画面）をつなぐ**準備です。
@@ -228,7 +228,7 @@ npx tsx agent.ts
 > 「TypeScript（Node.js, ESM）と `@anthropic-ai/sdk` で、**ターミナルで動くチャットCLI**を作って。条件は4つ。
 > ① **APIキーは `.env` から**読む（`dotenv` を使い、コードに直書きしない。`.gitignore` に `.env` を足すことも書いて）。
 > ② **会話の履歴を `messages` 配列に積んで毎回渡す**（`user` と `assistant` の両方を積み、何往復でも会話が続くようにする）。
-> ③ モデルは定数 `const MODEL = "claude-opus-4-7";` にする。
+> ③ モデルは定数 `const MODEL = "claude-opus-4-8";` にする。
 > ④ `readline` でループ入力にして、`exit` で終了。
 > `temperature` などの追加パラメータは入れないで。コードは短く、各行に日本語コメントを付けて。」
 

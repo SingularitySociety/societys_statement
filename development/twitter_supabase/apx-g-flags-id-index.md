@@ -1,10 +1,10 @@
 ---
-title: "付録G　テーブル設計の小道具"
+title: "付録G　テーブル設計の小道具 — フラグ・ID・インデックス"
 parent: "Twitterクローンで学ぶWeb開発入門"
-grandparent: "開発の心得"
+grand_parent: "開発の心得"
 nav_order: 19
+nav_exclude: true
 ---
-
 
 # 付録G　テーブル設計の小道具 — フラグ・ID・インデックス
 

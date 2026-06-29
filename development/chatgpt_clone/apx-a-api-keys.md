@@ -1,3 +1,11 @@
+---
+title: "付録A　各LLMのAPIキーの取り方（OpenAI / Anthropic）"
+parent: "ChatGPTクローンで学ぶ LLMアプリ開発入門"
+grand_parent: "開発の心得"
+nav_order: 15
+nav_exclude: true
+---
+
 # 付録A　各LLMのAPIキーの取り方（OpenAI / Anthropic）
 
 > 📖 このページのゴール：自分のAPIキーを発行し、使いすぎないよう上限も設定する。

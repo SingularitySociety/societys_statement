@@ -1,10 +1,10 @@
 ---
-title: "第7章 フォローする"
+title: "第7章 フォローする — 人と人を結ぶ（中間テーブル）"
 parent: "Twitterクローンで学ぶWeb開発入門"
-grandparent: "開発の心得"
+grand_parent: "開発の心得"
 nav_order: 7
+nav_exclude: true
 ---
-
 
 # 第7章 フォローする — 人と人を結ぶ（中間テーブル）
 

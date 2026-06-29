@@ -1,3 +1,11 @@
+---
+title: "付録A　APIキーの取り方（Anthropic / OpenAI）"
+parent: "自作CLIエージェントで学ぶ AIエージェント開発入門"
+grand_parent: "開発の心得"
+nav_order: 16
+nav_exclude: true
+---
+
 # 付録A　APIキーの取り方（Anthropic / OpenAI）
 
 > 📖 このページのゴール：自分の **APIキー（えーぴーあいきー）** を発行して `.env` に置き、**使いすぎないよう上限（予算）も設定**する。エージェントを動かす“最初の一歩”をここで済ませます。

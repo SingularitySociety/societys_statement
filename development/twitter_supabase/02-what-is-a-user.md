@@ -1,10 +1,10 @@
 ---
-title: "第2章　「ユーザー」って何？"
+title: "第2章　「ユーザー」って何？ — Google認証と、いろいろなID"
 parent: "Twitterクローンで学ぶWeb開発入門"
-grandparent: "開発の心得"
+grand_parent: "開発の心得"
 nav_order: 2
+nav_exclude: true
 ---
-
 
 # 第2章　「ユーザー」って何？ — Google認証と、いろいろなID
 

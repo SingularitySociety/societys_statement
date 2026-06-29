@@ -1,3 +1,11 @@
+---
+title: "付録C　ツール定義（JSON Schema）の書き方ミニ辞典"
+parent: "自作CLIエージェントで学ぶ AIエージェント開発入門"
+grand_parent: "開発の心得"
+nav_order: 18
+nav_exclude: true
+---
+
 # 付録C　ツール定義（JSON Schema）の書き方ミニ辞典
 
 > 📖 この付録のゴール：道具(tool)を渡すときの **`input_schema`（＝引数の設計図）** を、こわがらずに書けるようになる。「どんな形の引数を、どう説明すればLLMが正しく道具を使ってくれるか」を、本編の道具（`read_file` / `write_file` / `run_command`）を題材に、1行ずつ読み解きます。

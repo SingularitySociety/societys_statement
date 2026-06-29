@@ -1,10 +1,10 @@
 ---
 title: "付録B　Google認証 設定手順"
 parent: "Twitterクローンで学ぶWeb開発入門"
-grandparent: "開発の心得"
+grand_parent: "開発の心得"
 nav_order: 14
+nav_exclude: true
 ---
-
 
 # 付録B　Google認証 設定手順
 

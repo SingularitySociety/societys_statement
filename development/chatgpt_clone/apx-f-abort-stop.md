@@ -1,3 +1,11 @@
+---
+title: "付録F　会話中の割り込み・中断の作り込み（AbortController / stop）"
+parent: "ChatGPTクローンで学ぶ LLMアプリ開発入門"
+grand_parent: "開発の心得"
+nav_order: 20
+nav_exclude: true
+---
+
 # 付録F　会話中の割り込み・中断の作り込み（AbortController / stop）
 
 > 📖 このページのゴール：生成を途中で「止める」を安全に作る。

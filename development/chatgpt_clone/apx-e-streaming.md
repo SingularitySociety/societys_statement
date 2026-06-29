@@ -1,3 +1,11 @@
+---
+title: "付録E　ストリーミングの中身 — SSE と WebSocket の実装詳細"
+parent: "ChatGPTクローンで学ぶ LLMアプリ開発入門"
+grand_parent: "開発の心得"
+nav_order: 19
+nav_exclude: true
+---
+
 # 付録E　ストリーミングの中身 — SSE と WebSocket の実装詳細
 
 > 📖 このページのゴール：SSEとWebSocketを実際に書けるようになる。

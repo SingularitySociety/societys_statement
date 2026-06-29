@@ -1,3 +1,11 @@
+---
+title: "第11章　ストリーミング（SSE編）— ChatGPTの「1文字ずつ」"
+parent: "ChatGPTクローンで学ぶ LLMアプリ開発入門"
+grand_parent: "開発の心得"
+nav_order: 11
+nav_exclude: true
+---
+
 # 第11章　ストリーミング（SSE編）— ChatGPTの「1文字ずつ」
 
 > 📖 この章のゴール：**なぜChatGPTは1文字ずつ出るのか**を理解し、**SSE**で「できたそばから流す」最小の仕組みを作れるようになる。

@@ -1,3 +1,11 @@
+---
+title: "ChatGPTクローンで学ぶ LLMアプリ開発入門"
+parent: "開発の心得"
+nav_order: 11
+has_children: true
+has_toc: false
+---
+
 # ChatGPTクローンで学ぶ LLMアプリ開発入門 — はじめに・目次
 
 > このページは教材の入口（ハブ）です。**まずここを読んで、上から順に各章へ進んでください。**

@@ -3,7 +3,6 @@ title: "第10章 メモリ — 会話をまたいで覚える"
 parent: "ChatGPTクローンで学ぶ LLMアプリ開発入門"
 grand_parent: "開発の心得"
 nav_order: 10
-nav_exclude: true
 ---
 
 # 第10章 メモリ — 会話をまたいで覚える

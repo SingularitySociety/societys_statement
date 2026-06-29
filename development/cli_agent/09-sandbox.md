@@ -3,7 +3,6 @@ title: "第9章　サンドボックスと最小権限 — 取り消せる設計
 parent: "自作CLIエージェントで学ぶ AIエージェント開発入門"
 grand_parent: "開発の心得"
 nav_order: 9
-nav_exclude: true
 ---
 
 # 第9章　サンドボックスと最小権限 — 取り消せる設計で守る

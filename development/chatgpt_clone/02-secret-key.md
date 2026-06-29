@@ -3,7 +3,6 @@ title: "第2章　【守り①】秘密のAPIキーを守る"
 parent: "ChatGPTクローンで学ぶ LLMアプリ開発入門"
 grand_parent: "開発の心得"
 nav_order: 2
-nav_exclude: true
 ---
 
 # 第2章　【守り①】秘密のAPIキーを守る

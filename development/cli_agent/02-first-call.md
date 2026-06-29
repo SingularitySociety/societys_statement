@@ -3,7 +3,6 @@ title: "第2章　まずLLMと往復するだけのCLIを作る"
 parent: "自作CLIエージェントで学ぶ AIエージェント開発入門"
 grand_parent: "開発の心得"
 nav_order: 2
-nav_exclude: true
 ---
 
 # 第2章　まずLLMと往復するだけのCLIを作る

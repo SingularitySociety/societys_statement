@@ -3,7 +3,6 @@ title: "第6章　【守り②】使いすぎを防ぐ — 認証ユーザーご
 parent: "ChatGPTクローンで学ぶ LLMアプリ開発入門"
 grand_parent: "開発の心得"
 nav_order: 6
-nav_exclude: true
 ---
 
 # 第6章　【守り②】使いすぎを防ぐ — 認証ユーザーごとの上限

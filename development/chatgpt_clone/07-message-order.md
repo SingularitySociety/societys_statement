@@ -3,7 +3,6 @@ title: "第7章　順番が崩れるとき — 中断・エラーと user→assi
 parent: "ChatGPTクローンで学ぶ LLMアプリ開発入門"
 grand_parent: "開発の心得"
 nav_order: 7
-nav_exclude: true
 ---
 
 # 第7章　順番が崩れるとき — 中断・エラーと user→assistant の交互

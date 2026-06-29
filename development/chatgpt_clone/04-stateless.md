@@ -87,6 +87,50 @@ const messages = [
 > 📌 **覚えること：会話継続＝「これまでの全 `messages`」を毎回まるごと渡す。**
 > 差分（新しい発言だけ）を送るのではありません。**毎回、最初から今までの全部** です。
 
+### 📦 実際に送られる「payload（中身）」を見てみる
+
+第3章で作った `fetch("/api/chat", ...)` の `body` を文字にすると、**こういうJSON**です（これが“台本”の正体）。
+
+```json
+// ① ブラウザ → 自分のサーバー（POST /api/chat の body）
+{
+  "messages": [
+    { "role": "system",    "content": "あなたは親切なアシスタントです。" },
+    { "role": "user",      "content": "東京タワーの高さは？" },
+    { "role": "assistant", "content": "333メートルです。" },
+    { "role": "user",      "content": "それ、いつ建てられたの？" }
+  ]
+}
+```
+
+サーバーは、これに `model` を足して **ほぼそのまま** OpenAI へ渡します。
+
+```json
+// ② 自分のサーバー → OpenAI（POST https://api.openai.com/v1/chat/completions の body）
+{
+  "model": "gpt-4o-mini",
+  "messages": [
+    { "role": "system",    "content": "あなたは親切なアシスタントです。" },
+    { "role": "user",      "content": "東京タワーの高さは？" },
+    { "role": "assistant", "content": "333メートルです。" },
+    { "role": "user",      "content": "それ、いつ建てられたの？" }
+  ]
+}
+```
+
+返ってくる返事（payload）は、ざっくりこんな形。実際に使うのは `choices[0].message.content` の1行だけです。
+
+```json
+// ③ OpenAI → 自分のサーバー（返事・一部省略）
+{
+  "choices": [
+    { "message": { "role": "assistant", "content": "東京タワーは1958年に完成しました。" } }
+  ]
+}
+```
+
+`messages` の中身が①と②で **ほぼ同じ**＝**毎回この配列ぜんぶ**が行き来しているのが分かります。次のターンでは、ここに③の `assistant` と新しい `user` が **さらに足されて長くなって**いきます（だから第8章の「トークンあふれ」につながります）。
+
 ---
 
 ## 🛠 こう作る — 会話履歴を積み上げて毎回渡す（🟢 基礎）

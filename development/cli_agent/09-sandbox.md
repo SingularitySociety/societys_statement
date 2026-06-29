@@ -95,6 +95,8 @@ function resolveInside(p: string): string {
 - `throw new Error("作業フォルダの外は触れません")` … その場合は**エラーで止めます**。これで `../` を使った“外への抜け道”が塞がります。
 - `return abs` … 安全だと分かったパスだけを返します。
 
+> ⚠️ この `startsWith` チェックは **学習用の簡易版** です。`/home/me/work-secret` のような“似た名前”や、symlink（近道）で抜けられる穴があります。理由と厳密な書き方（`WORK_DIR + path.sep` で確認・`fs.realpath`）は、本章末の「⚠️ ハマりどころ」で説明します。
+
 あとは、これを **ファイル系の道具すべてに通す**だけ。第5・6章の `read_file` / `write_file` を、こう書き換えます。
 
 ```ts

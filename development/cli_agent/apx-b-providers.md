@@ -30,7 +30,7 @@
 import Anthropic from "@anthropic-ai/sdk";
 
 const anthropic = new Anthropic(); // ANTHROPIC_API_KEY を自動で読む
-const MODEL = "claude-opus-4-7";
+const MODEL = "claude-opus-4-8";
 
 async function callLLM(
   messages: Anthropic.MessageParam[],
@@ -50,7 +50,7 @@ async function callLLM(
 **1行ずつ読むと：**
 - `import Anthropic from "@anthropic-ai/sdk"`：Anthropic を呼ぶための **道具箱（SDK）** を読み込む。
 - `const anthropic = new Anthropic()`：電話機を用意。鍵（`ANTHROPIC_API_KEY`）は `.env` から自動で読む（付録A・第2章と同じ）。
-- `const MODEL = "claude-opus-4-7"`：頭脳の名前（モデルID）。**ここを1か所変えるだけ**で別のClaudeにも替えられる（コストは付録F）。
+- `const MODEL = "claude-opus-4-8"`：頭脳の名前（モデルID）。**ここを1か所変えるだけ**で別のClaudeにも替えられる（コストは付録F）。
 - `async function callLLM(messages, tools, system)`：**唯一の窓口**。会話・道具メニュー・性格（システムプロンプト）を受け取る。
 - `anthropic.messages.create({...})`：実際の電話。返事（`res`）をそのまま返す。本編のループは、この返事の `stop_reason` や `content` を**今まで通り**見ればよい。
 
@@ -195,7 +195,7 @@ async function runAgent(userInput: string) {
 ```
 
 **1行ずつ読むと：**
-- `const OPENAI_MODEL = "gpt-4o"`：OpenAI の頭脳の名前。`claude-opus-4-7` は OpenAI には通じない（モデル名は各社別物）。
+- `const OPENAI_MODEL = "gpt-4o"`：OpenAI の頭脳の名前。`claude-opus-4-8` は OpenAI には通じない（モデル名は各社別物）。
 - `openai.chat.completions.create({...})`：OpenAI への電話。メソッド名が `messages.create` ではなく **`chat.completions.create`**（違い）。
 - `res.choices[0].message`：返事の本体。中に `content`（文章）と `tool_calls`（道具のお願い）が入る。**ここから取り出すのが OpenAI 流**。
 - `messages.push({ role: "system", content: SYSTEM_PROMPT })`：OpenAI は **system を `messages` の中（先頭）に入れる**（Anthropic は別パラメータ）。

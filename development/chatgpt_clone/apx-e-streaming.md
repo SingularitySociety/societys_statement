@@ -5,7 +5,7 @@
 
 ---
 
-第11章（SSE）と第12章（WebSocket）では「感覚」をつかみました。この付録では、その**中身を手を動かして書ける**ところまで踏み込みます。鍵を知っているのは**サーバーだけ**、という背骨はここでも変わりません。
+第11章（SSE）で「1文字ずつ流す」感覚をつかみました。この付録では、その**中身を手を動かして書ける**ところまで踏み込みます。**双方向の WebSocket** は本編からは外していますが、必要になったとき用にここで参考としてまとめます。鍵を知っているのは**サーバーだけ**、という背骨はここでも変わりません。
 
 ## 📡 SSE の中身
 
@@ -113,6 +113,48 @@ while (true) {
 - `decoder.decode(value).split("\n")`：届いたかたまりを文字にもどし、**行ごと**に分ける（複数行まとめて届くこともある）。
 - `line.slice(6)`：`"data: "`（6文字）の**後ろが本当の中身**。
 - `replyArea.textContent += piece`：**足していく**。`innerHTML` は使わず `textContent` で安全に。
+
+---
+
+## 🎁 ストリームの後に「REST と同じ形」の最終レスポンスを取る
+
+上の `stream: true` の生ループは、**届く断片（delta）を自分でつなぐ**やり方でした。表示にはこれで十分ですが、**保存**には少し不便です——`tool_calls`（ツール呼び出し）や `usage`（使ったトークン数）、`finish_reason`（終わり方）は断片に散らばっていて、手で組み立て直すのが面倒だからです。
+
+そこで多くのSDKは、**「ストリームで流しつつ、終わったら REST（非ストリーミング）と同じ形の“完成レスポンス”を1発で受け取る」ヘルパー**を用意しています。**表示はストリーム、保存は完成レスポンス**と役割を分けられて、`tool_calls` も `usage` も取りこぼしません（→ 保存は付録J）。
+
+```ts
+// OpenAI（openai）: client.chat.completions.stream(...)
+const stream = openai.chat.completions.stream({ model: "gpt-4o-mini", messages });
+stream.on("content", (delta) => res.write(`data: ${delta}\n\n`)); // 表示はストリーム
+const final = await stream.finalChatCompletion();                  // ← REST と同じ ChatCompletion
+// final.choices[0].message（content / tool_calls）・final.usage・final.choices[0].finish_reason
+await saveMessage(conversationId, final.choices[0].message);        // 保存はこれ1発でOK
+```
+
+```ts
+// Anthropic（@anthropic-ai/sdk）: client.messages.stream(...)
+const stream = anthropic.messages.stream({ model, max_tokens: 1024, messages });
+stream.on("text", (t) => res.write(`data: ${t}\n\n`));   // 表示はストリーム
+const final = await stream.finalMessage();                // ← messages.create と同じ Message
+// final.content（text / tool_use ブロック）・final.stop_reason・final.usage
+```
+
+```ts
+// Vercel AI SDK（ai）: streamText(...)
+const result = streamText({ model, messages });
+// 表示：result.textStream を画面へ流す（フレームに合わせて pipe / Response 化）
+const text   = await result.text;          // 完成テキスト
+const usage  = await result.usage;         // トークン使用量
+const finish = await result.finishReason;  // 終わり方
+// もしくは onFinish: ({ text, usage, finishReason, response }) => save(...) コールバックで受ける
+```
+
+**1行ずつ読むと（共通の考え方）：**
+- `stream.on("content" / "text", ...)`：**届いた断片を画面へ流す**（ユーザー体験＝1文字ずつ）。
+- `await stream.finalChatCompletion()` ／ `finalMessage()` ／ `await result.text`：**ストリームが終わるのを待って、完成した“まるごと”を受け取る**。中身は非ストリーミングの戻り値と**同じ形**。
+- だから**保存**は、手で `full += piece` するより、この**完成レスポンスをそのまま使う**ほうが安全（`tool_calls`・`usage`・`finish_reason` 込み）。
+
+> 💡 生ループ（`for await`）で自前管理してもOKですが、その場合 `usage` を取るには OpenAI なら `stream_options: { include_usage: true }` を足す、`tool_calls` は `delta.tool_calls` を id ごとに継ぎ足す、といった**手作業**が増えます。**ヘルパーが使えるなら使う**のが楽で安全です。
 
 ---
 

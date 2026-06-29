@@ -81,6 +81,8 @@ await saveMessage(conversationId, { role: "assistant", content: full }); // ③ 
 
 途中で切れたら（ユーザーが停止／回線断、付録F）、`full` は半端なので **保存しない**か、`status:'aborted'` で残して復元から外します。`pending` 行を先に作る方式なら、③を `update`（pending → done / aborted）に変えるだけです。
 
+> 💡 **SDKのヘルパーを使うともっと楽**：OpenAI `client.chat.completions.stream(...).finalChatCompletion()`／Anthropic `client.messages.stream(...).finalMessage()`／Vercel AI SDK `await result.text`（＋`usage`）など、**ストリームの後に「REST と同じ形の完成レスポンス」を1発で取れる**SDKが多いです。これなら手で `full += piece` せずに、**`tool_calls`・`usage` 込み**でそのまま保存できます（→ 付録E）。
+
 ### 二重保存を防ぐ（第7章）
 
 「送信が二重に飛ぶ」「リトライ」で同じ行が2つできないよう、**クライアントが作ったメッセージID**で `upsert`（あれば更新・無ければ作成）すると安全＝**冪等（べきとう）**。

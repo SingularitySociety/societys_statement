@@ -1,3 +1,11 @@
+---
+title: "付録B　Supabase＋Google認証 セットアップ"
+parent: "ChatGPTクローンで学ぶ LLMアプリ開発入門"
+grand_parent: "開発の心得"
+nav_order: 16
+nav_exclude: true
+---
+
 # 付録B　Supabase＋Google認証 セットアップ
 
 > 📖 このページのゴール：Supabaseでデータベースとログインを用意する。

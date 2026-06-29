@@ -1,10 +1,10 @@
 ---
 title: "第1章　Webアプリの登場人物"
 parent: "Twitterクローンで学ぶWeb開発入門"
-grandparent: "開発の心得"
+grand_parent: "開発の心得"
 nav_order: 1
+nav_exclude: true
 ---
-
 
 # 第1章　Webアプリの登場人物
 

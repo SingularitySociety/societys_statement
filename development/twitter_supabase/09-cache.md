@@ -1,10 +1,10 @@
 ---
-title: "第9章 キャッシュ"
+title: "第9章 キャッシュ — 速さの工夫と、その落とし穴"
 parent: "Twitterクローンで学ぶWeb開発入門"
-grandparent: "開発の心得"
+grand_parent: "開発の心得"
 nav_order: 9
+nav_exclude: true
 ---
-
 
 # 第9章 キャッシュ — 速さの工夫と、その落とし穴
 

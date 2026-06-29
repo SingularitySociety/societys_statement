@@ -1,3 +1,11 @@
+---
+title: "第12章 ツールを持たせる — function calling / tool use"
+parent: "ChatGPTクローンで学ぶ LLMアプリ開発入門"
+grand_parent: "開発の心得"
+nav_order: 12
+nav_exclude: true
+---
+
 # 第12章 ツールを持たせる — function calling / tool use
 
 > 📖 この章のゴール：LLMに「使える道具（関数）」を渡して、呼ばせる→実行→結果を返す→続きを答える、という流れを作れるようになる。あわせて危険性（プロンプトインジェクション）と、よく混同される **Structured Output（構造化出力）との違い** も分かるようになる。

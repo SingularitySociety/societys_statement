@@ -1,10 +1,10 @@
 ---
-title: "第10章　ありがちな失敗と直し方"
+title: "第10章　ありがちな失敗と直し方 — セキュリティ落とし穴集"
 parent: "Twitterクローンで学ぶWeb開発入門"
-grandparent: "開発の心得"
+grand_parent: "開発の心得"
 nav_order: 10
+nav_exclude: true
 ---
-
 
 # 第10章　ありがちな失敗と直し方 — セキュリティ落とし穴集
 

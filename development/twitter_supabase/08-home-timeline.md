@@ -1,10 +1,10 @@
 ---
-title: "第8章 ホームタイムライン"
+title: "第8章 ホームタイムライン — フォロー中の人だけ表示（テーブルをまたぐ）"
 parent: "Twitterクローンで学ぶWeb開発入門"
-grandparent: "開発の心得"
+grand_parent: "開発の心得"
 nav_order: 8
+nav_exclude: true
 ---
-
 
 # 第8章 ホームタイムライン — フォロー中の人だけ表示（テーブルをまたぐ）
 

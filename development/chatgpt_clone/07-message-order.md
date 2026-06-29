@@ -1,3 +1,11 @@
+---
+title: "第7章　順番が崩れるとき — 中断・エラーと user→assistant の交互"
+parent: "ChatGPTクローンで学ぶ LLMアプリ開発入門"
+grand_parent: "開発の心得"
+nav_order: 7
+nav_exclude: true
+---
+
 # 第7章　順番が崩れるとき — 中断・エラーと user→assistant の交互
 
 > 📖 この章のゴール：会話を途中で止めた／失敗したときに **messages の交互（user→assistant→…）が崩れる** 問題を理解し、**履歴を整えてからAPIへ渡せる**ようになる。

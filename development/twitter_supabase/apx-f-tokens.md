@@ -1,10 +1,10 @@
 ---
-title: "付録F アクセストークン と リフレッシュトークン"
+title: "付録F アクセストークン と リフレッシュトークン — ログインの「証明書」のしくみ"
 parent: "Twitterクローンで学ぶWeb開発入門"
-grandparent: "開発の心得"
+grand_parent: "開発の心得"
 nav_order: 18
+nav_exclude: true
 ---
-
 
 # 付録F アクセストークン と リフレッシュトークン — ログインの「証明書」のしくみ
 

@@ -1,3 +1,11 @@
+---
+title: "付録H　会話データのスキーマ例（conversations / messages / usage / memories）"
+parent: "ChatGPTクローンで学ぶ LLMアプリ開発入門"
+grand_parent: "開発の心得"
+nav_order: 22
+nav_exclude: true
+---
+
 # 付録H　会話データのスキーマ例（conversations / messages / usage / memories）
 
 > 📖 このページのゴール：この教材で使うテーブルを一望し、そのままコピーして使える。

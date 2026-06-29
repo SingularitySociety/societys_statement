@@ -1,3 +1,11 @@
+---
+title: "付録D　トークンと料金の数え方"
+parent: "ChatGPTクローンで学ぶ LLMアプリ開発入門"
+grand_parent: "開発の心得"
+nav_order: 18
+nav_exclude: true
+---
+
 # 付録D　トークンと料金の数え方
 
 > 📖 このページのゴール：トークンの数え方と、1回いくらかかるかの感覚を持つ。

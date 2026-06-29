@@ -1,3 +1,11 @@
+---
+title: "付録J 会話の保存 — いつ・何を保存する？（ツール対応のデータ形式）"
+parent: "ChatGPTクローンで学ぶ LLMアプリ開発入門"
+grand_parent: "開発の心得"
+nav_order: 24
+nav_exclude: true
+---
+
 # 付録J 会話の保存 — いつ・何を保存する？（ツール対応のデータ形式）
 
 > 📖 このページのゴール：**user / assistant をいつ保存するか**を判断でき、**ツール（function calling）を含む会話**も壊さず保存・復元できるようになる。

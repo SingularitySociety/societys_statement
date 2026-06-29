@@ -1,3 +1,11 @@
+---
+title: "付録C　OpenAI と Anthropic の違い — messages/system の差と「切り替えできる設計」"
+parent: "ChatGPTクローンで学ぶ LLMアプリ開発入門"
+grand_parent: "開発の心得"
+nav_order: 17
+nav_exclude: true
+---
+
 # 付録C　OpenAI と Anthropic の違い — messages/system の差と「切り替えできる設計」
 
 > 📖 このページのゴール：2社のAPIの違いを知り、1か所差し替えで切り替えられる作りにする。

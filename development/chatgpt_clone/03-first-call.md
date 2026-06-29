@@ -1,3 +1,11 @@
+---
+title: "第3章　はじめての会話（REST編）— 送って待つ、最初の1往復"
+parent: "ChatGPTクローンで学ぶ LLMアプリ開発入門"
+grand_parent: "開発の心得"
+nav_order: 3
+nav_exclude: true
+---
+
 # 第3章　はじめての会話（REST編）— 送って待つ、最初の1往復
 
 > 📖 この章のゴール：**messages の形（system / user / assistant）** を理解し、Express の `/api/chat` と素のTS/JSの画面で「送って待つ」1往復のチャットを作れるようになる。

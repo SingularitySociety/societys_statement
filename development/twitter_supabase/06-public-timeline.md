@@ -3,7 +3,6 @@ title: "第6章　公開タイムライン — 「自分だけ」と「みんな
 parent: "Twitterクローンで学ぶWeb開発入門"
 grand_parent: "開発の心得"
 nav_order: 6
-nav_exclude: true
 ---
 
 # 第6章　公開タイムライン — 「自分だけ」と「みんな」をRLSで両立

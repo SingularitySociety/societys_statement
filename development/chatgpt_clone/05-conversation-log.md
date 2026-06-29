@@ -3,7 +3,6 @@ title: "第5章　会話ログと複数セッション — 会話を保存して
 parent: "ChatGPTクローンで学ぶ LLMアプリ開発入門"
 grand_parent: "開発の心得"
 nav_order: 5
-nav_exclude: true
 ---
 
 # 第5章　会話ログと複数セッション — 会話を保存して、いくつも持つ

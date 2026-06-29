@@ -3,7 +3,6 @@ title: "第4章　【記憶】LLMは毎回忘れる — 会話を続けるには
 parent: "ChatGPTクローンで学ぶ LLMアプリ開発入門"
 grand_parent: "開発の心得"
 nav_order: 4
-nav_exclude: true
 ---
 
 # 第4章　【記憶】LLMは毎回忘れる — 会話を続けるには「全部」を渡す

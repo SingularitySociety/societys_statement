@@ -3,7 +3,6 @@ title: "第5章　道具をつくる① ファイルを読む・一覧する"
 parent: "自作CLIエージェントで学ぶ AIエージェント開発入門"
 grand_parent: "開発の心得"
 nav_order: 5
-nav_exclude: true
 ---
 
 # 第5章　道具をつくる① ファイルを読む・一覧する

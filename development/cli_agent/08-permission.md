@@ -3,7 +3,6 @@ title: "第8章　「実行していい？」の正体 — 許可と人間の確
 parent: "自作CLIエージェントで学ぶ AIエージェント開発入門"
 grand_parent: "開発の心得"
 nav_order: 8
-nav_exclude: true
 ---
 
 # 第8章　「実行していい？」の正体 — 許可と人間の確認（human-in-the-loop）

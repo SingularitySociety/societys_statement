@@ -3,7 +3,6 @@ title: "第1章　登場人物 — ブラウザ・自分のサーバー・LLM・
 parent: "ChatGPTクローンで学ぶ LLMアプリ開発入門"
 grand_parent: "開発の心得"
 nav_order: 1
-nav_exclude: true
 ---
 
 # 第1章　登場人物 — ブラウザ・自分のサーバー・LLM・データベース

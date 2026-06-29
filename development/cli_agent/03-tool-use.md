@@ -3,7 +3,6 @@ title: "第3章　ツール使用 — AIに「道具メニュー」を渡す"
 parent: "自作CLIエージェントで学ぶ AIエージェント開発入門"
 grand_parent: "開発の心得"
 nav_order: 3
-nav_exclude: true
 ---
 
 # 第3章　ツール使用 — AIに「道具メニュー」を渡す

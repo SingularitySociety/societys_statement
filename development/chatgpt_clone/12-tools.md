@@ -3,7 +3,6 @@ title: "第12章 ツールを持たせる — function calling / tool use"
 parent: "ChatGPTクローンで学ぶ LLMアプリ開発入門"
 grand_parent: "開発の心得"
 nav_order: 12
-nav_exclude: true
 ---
 
 # 第12章 ツールを持たせる — function calling / tool use

@@ -3,7 +3,6 @@ title: "第4章　エージェントループ — 使ったら結果を返して
 parent: "自作CLIエージェントで学ぶ AIエージェント開発入門"
 grand_parent: "開発の心得"
 nav_order: 4
-nav_exclude: true
 ---
 
 # 第4章　エージェントループ — 使ったら結果を返して、また考えさせる

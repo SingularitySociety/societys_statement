@@ -1,6 +1,6 @@
 # 第12章 ツールを持たせる — function calling / tool use
 
-> 📖 この章のゴール：LLMに「使える道具（関数）」を渡して、呼ばせる→実行→結果を返す→続きを答える、という流れを作れるようになる。あわせて危険性（プロンプトインジェクション）も分かるようになる。
+> 📖 この章のゴール：LLMに「使える道具（関数）」を渡して、呼ばせる→実行→結果を返す→続きを答える、という流れを作れるようになる。あわせて危険性（プロンプトインジェクション）と、よく混同される **Structured Output（構造化出力）との違い** も分かるようになる。
 
 > [← 目次・はじめにへもどる](README.md)
 
@@ -66,6 +66,18 @@ const first = await openai.chat.completions.create({
 - `required: ["city"]` … `city` は必ず要る、という指定
 - `openai.chat.completions.create({ ..., tools })` … 会話と一緒に**道具の一覧も**渡して呼ぶ
 
+> 💡 **`tools` は“説明書”。`getWeather` の中身は自分で書く**
+> 上の `tools` は **「こういう道具があるよ」という説明（スキーマ）だけ**で、**実際に天気を調べる処理は入っていません**。LLMは「getWeather を `city=東京` で呼んで」と**指示するだけ**——本当に天気を取ってくる関数は **あなたが用意します**。
+> ```ts
+> // 実体は自分で実装する（例：外部の天気APIを叩く／DBを引く）
+> async function getWeather(city: string): Promise<string> {
+>   const res = await fetch(`https://api.example.com/weather?city=${encodeURIComponent(city)}`);
+>   const data = await res.json();
+>   return `${city}は${data.summary}、${data.tempC}℃`;
+> }
+> ```
+> つまり1つの道具につき **2つ** 用意します：**①説明書（`tools` 定義）** と **②実体（関数）**。説明書だけ渡しても、中身が無ければ動きません（外部APIに鍵が要るなら、それも**サーバー側で**＝背骨②）。
+
 返答に **tool_call**（道具を呼んで、という指示）が来たら、対応する関数を実行します。
 
 ```ts
@@ -101,6 +113,61 @@ if (call?.function.name === "getWeather") {
 - `content: result` … さっき取ってきた天気の文字列
 - `openai.chat.completions.create({ ..., messages })` … 結果込みで**もう一度**聞く → これを踏まえた返事が来る
 
+## 🧩 ツールと似て非なる「Structured Output（構造化出力）」（🔧 応用）
+
+ツールと**よく混同される**のが **Structured Output（構造化出力）** です。これは **LLMの返事そのものを、決まったJSONの形（スキーマ）にぴったり収める**しくみ。たとえば「予定を抜き出して」と頼んで、必ず `{ title, date, time }` の形で返させる、という使い方です。
+
+**ツールとの違いは「あなたのコードが動くかどうか」**：
+
+| | ツール（function calling） | Structured Output |
+|---|---|---|
+| 何をする | LLMが「この関数を呼んで」と**指示** → **あなたのコードが動く** → 結果を返して続行 | LLMの**最終的な答えの“形”を固定**する。**関数は呼ばれない** |
+| 目的 | 外の世界に作用する／データを取りに行く（計算・検索・保存） | LLMから**構造化データを取り出す**（抽出・分類・整形） |
+| 段数 | 多段（呼ぶ→実行→また呼ぶ） | 一発（決まった形で返るだけ） |
+
+ひとことで：**ツール＝LLMが“外”を呼ぶ／Structured Output＝LLMの“出力の形”を縛る**。
+
+```ts
+// OpenAI：返事を必ず { title, date, time } のJSONにする（関数は呼ばれない）
+const res = await openai.chat.completions.create({
+  model: "gpt-4o-mini",
+  messages: [{ role: "user", content: "「田中さんと4/20 14時に会議」から予定を抜き出して" }],
+  response_format: {
+    type: "json_schema",
+    json_schema: {
+      name: "event",
+      strict: true,                          // ← 形を厳密に強制
+      schema: {
+        type: "object",
+        properties: {
+          title: { type: "string" },
+          date:  { type: "string" },
+          time:  { type: "string" },
+        },
+        required: ["title", "date", "time"],
+        additionalProperties: false,
+      },
+    },
+  },
+});
+const event = JSON.parse(res.choices[0].message.content); // 必ずこの形のJSON
+```
+
+**1行ずつ読むと：**
+- `response_format: { type: "json_schema", ... }`：「返事は**このJSONスキーマに従え**」という指定（`tools` ではない）。
+- `strict: true`：形を**厳密に**守らせる（昔の「JSONモード」より確実。`additionalProperties: false` と全フィールドの `required` がセット）。
+- `JSON.parse(...message.content)`：返事は**必ずそのスキーマのJSON**なので、安心して `parse` できる。
+- ショートカット：`openai/helpers/zod` の `zodResponseFormat(Schema, "event")` ＋ `openai.chat.completions.parse(...)` で、**Zodスキーマから型付き**で受け取れます。
+
+> 🔁 **2社・各SDKの対応**
+> - **OpenAI**：上の `response_format: { type:"json_schema", strict:true }`（＋ `.parse()` ＋ `zodResponseFormat`）。
+> - **Anthropic**：2025年11月に**ネイティブ対応**（`output_format` ＝ JSON出力／`strict: true` の厳密ツール、betaヘッダ `anthropic-beta: structured-outputs-…`）。それ以前は **「1つのツールを強制的に呼ばせ、その引数としてJSONを受け取る」** のが定番回避策でした（だからツールと“いとこ”の関係）。
+> - **Vercel AI SDK**：`generateObject` / `streamObject`（Zodスキーマ）で型付きオブジェクトが返る（`generateText`＋tools と対になる関数）。
+
+> 💡 **使い分け**：「**外で何かする**」ならツール。「**LLMの答えをきれいなデータで受け取る**」なら Structured Output。両方を組み合わせることも（ツールで取ってきて、最後に構造化出力で整形）。
+
+---
+
 ## ⚠️ ハマりどころ
 
 - **引数を鵜呑みにする（プロンプトインジェクション）**：`tool_call` の引数は、**外から来た指示**です。悪意ある入力で危ない値が紛れることも。**必ず検証**してから使う（型・範囲・許可リスト）
@@ -128,6 +195,7 @@ if (call?.function.name === "getWeather") {
 - **tool_call（ツールコール）**：LLMからの「この道具を、この引数で呼んで」という指示
 - **role:"tool"（ロール・ツール）**：道具の実行結果を会話に足すときの役。`messages` に「これは道具の答え」と示す
 - **プロンプトインジェクション**：入力や道具の結果に悪い指示を紛れ込ませ、AIを乗っ取る攻撃。引数・結果を鵜呑みにせず検証する（🛡守り）
+- **Structured Output（構造化出力）**：LLMの**返事そのもの**を決まったJSONの形に固定する機能（関数は呼ばれない）。**ツール＝外を呼ぶ／構造化出力＝出力の形を縛る**、と役割が違う
 
 ## ➡️ 次の章へ
 

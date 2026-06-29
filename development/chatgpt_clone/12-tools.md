@@ -1,0 +1,206 @@
+# 第12章 ツールを持たせる — function calling / tool use
+
+> 📖 この章のゴール：LLMに「使える道具（関数）」を渡して、呼ばせる→実行→結果を返す→続きを答える、という流れを作れるようになる。あわせて危険性（プロンプトインジェクション）と、よく混同される **Structured Output（構造化出力）との違い** も分かるようになる。
+
+> [← 目次・はじめにへもどる](README.md)
+
+---
+
+## 📱 ChatGPTではこう見える
+
+ChatGPT（チャットジーピーティー）を使っていると、ただ文章を返すだけでなく、**“やってくれる”** ことがあります。
+
+- 「123×456は？」→ ちゃんと計算した数字を返す
+- 「東京の天気は？」→ いまの天気を調べて教えてくれる
+- 「明日10時に打ち合わせ追加して」→ 予定表に書き込んでくれる
+
+文章を作るだけのはずのAIが、なぜ計算や検索や予定追加までできるのでしょう。その裏側には「**道具（ツール）を使う**」仕組みがあります。
+
+## 🤔 LLMはどうやって“外”を触るの？（🟢 基礎）
+
+じつは、**LLM（エルエルエム＝大きな言語モデル）自身は、外を直接さわれません**。データベースをのぞいたり、天気API（エーピーアイ＝外のサービスを呼ぶ窓口）をたたいたりは、自分ではできないのです。LLMができるのは「次の言葉を考える」ことだけ。
+
+そこで使うのが **ツール（道具）** ＝ こちらが用意した**関数（かんすう＝決まった処理のかたまり）**です。流れはこうです。
+
+1. こちらが「こういう道具が使えるよ」と一覧（`tools`）を渡す
+2. LLMが「**この道具を、この引数で呼んで**」と指示してくる（これが **tool_call**）
+3. **こちら側で**その関数を実際に実行する
+4. 結果をLLMに返す → LLMはそれを踏まえて最終的な返事を作る
+
+> 🧰 たとえ話：通訳（つうやく＝LLM）と電卓
+> あなたの隣に、計算は苦手だけど言葉は得意な**通訳**がいます。「123×456を計算して」と頼まれると、通訳はあなたに「**電卓を使って、123と456をかけて**」と頼みます。あなたが電卓で計算して「56088」と渡すと、通訳がそれを文章にして相手に伝える。LLMとツールの関係も、まさにこれです。
+
+ここで大事な背骨②🛡守り：**通訳の言うことを、何でも鵜呑み（うのみ）にしてはいけません**。「全部のファイルを消して」と道具を呼べと言われても、そのまま実行したら大事故です。これは後半で詳しく説明します。
+
+## 🛠 こう作る（🟢 基礎）
+
+例として「**都市の天気を返す**」道具 `getWeather(city)` をLLMに持たせてみます。まず、道具の**説明書（tools定義）**を作って `create` に渡します。
+
+```ts
+const tools = [{
+  type: "function",
+  function: {
+    name: "getWeather",
+    description: "指定した都市の今の天気を返す",
+    parameters: {
+      type: "object",
+      properties: { city: { type: "string", description: "都市名" } },
+      required: ["city"],
+    },
+  },
+}];
+
+const first = await openai.chat.completions.create({
+  model: "gpt-4o-mini",
+  messages,
+  tools,
+});
+```
+
+**1行ずつ読むと：**
+- `const tools = [{ ... }]` … 使える道具の一覧（今回は1つだけ）
+- `type: "function"` … この道具は「関数」だよ、という宣言
+- `name: "getWeather"` … 道具の名前。あとでこの名前を見て実行する
+- `description: ...` … 何をする道具かの説明。LLMはこれを読んで使うか決める
+- `parameters` … 道具に渡す引数の形（ここでは `city` という文字列ひとつ）
+- `required: ["city"]` … `city` は必ず要る、という指定
+- `openai.chat.completions.create({ ..., tools })` … 会話と一緒に**道具の一覧も**渡して呼ぶ
+
+> 💡 **`tools` は“説明書”。`getWeather` の中身は自分で書く**
+> 上の `tools` は **「こういう道具があるよ」という説明（スキーマ）だけ**で、**実際に天気を調べる処理は入っていません**。LLMは「getWeather を `city=東京` で呼んで」と**指示するだけ**——本当に天気を取ってくる関数は **あなたが用意します**。
+> ```ts
+> // 実体は自分で実装する（例：外部の天気APIを叩く／DBを引く）
+> async function getWeather(city: string): Promise<string> {
+>   const res = await fetch(`https://api.example.com/weather?city=${encodeURIComponent(city)}`);
+>   const data = await res.json();
+>   return `${city}は${data.summary}、${data.tempC}℃`;
+> }
+> ```
+> つまり1つの道具につき **2つ** 用意します：**①説明書（`tools` 定義）** と **②実体（関数）**。説明書だけ渡しても、中身が無ければ動きません（外部APIに鍵が要るなら、それも**サーバー側で**＝背骨②）。
+
+返答に **tool_call**（道具を呼んで、という指示）が来たら、対応する関数を実行します。
+
+```ts
+const call = first.choices[0].message.tool_calls?.[0];
+if (call?.function.name === "getWeather") {
+  const args = JSON.parse(call.function.arguments);
+  if (typeof args.city !== "string") throw new Error("cityが不正です");
+  const result = await getWeather(args.city);
+```
+
+**1行ずつ読むと：**
+- `const call = ...tool_calls?.[0]` … 返事の中から「道具を呼んで」の指示を取り出す（無ければ普通の返事）
+- `if (call?.function.name === "getWeather")` … 呼ばれた道具の名前が想定どおりか確認
+- `const args = JSON.parse(...)` … LLMが決めた引数（文字の列）を、扱える形に変換
+- `if (typeof args.city !== "string") throw ...` … 🛡 **引数を鵜呑みにせず検証**。文字列でなければ止める
+- `const result = await getWeather(args.city)` … こちら側で実際に天気を取りにいく
+
+最後に、結果を `role: "tool"`（道具の結果だよ、という役）で会話に足して、**もう一度** `create` を呼べば最終回答が返ります。
+
+```ts
+  messages.push(first.choices[0].message);
+  messages.push({ role: "tool", tool_call_id: call.id, content: result });
+  const final = await openai.chat.completions.create({
+    model: "gpt-4o-mini",
+    messages,
+  });
+}
+```
+
+**1行ずつ読むと：**
+- `messages.push(first.choices[0].message)` … 「道具を呼んで」と言ったLLMの発言を会話に残す
+- `messages.push({ role: "tool", ... })` … 道具の**実行結果**を会話に足す。`tool_call_id` でどの呼び出しの答えかを対応づける
+- `content: result` … さっき取ってきた天気の文字列
+- `openai.chat.completions.create({ ..., messages })` … 結果込みで**もう一度**聞く → これを踏まえた返事が来る
+
+## 🧩 ツールと似て非なる「Structured Output（構造化出力）」（🔧 応用）
+
+ツールと**よく混同される**のが **Structured Output（構造化出力）** です。これは **LLMの返事そのものを、決まったJSONの形（スキーマ）にぴったり収める**しくみ。たとえば「予定を抜き出して」と頼んで、必ず `{ title, date, time }` の形で返させる、という使い方です。
+
+**ツールとの違いは「あなたのコードが動くかどうか」**：
+
+| | ツール（function calling） | Structured Output |
+|---|---|---|
+| 何をする | LLMが「この関数を呼んで」と**指示** → **あなたのコードが動く** → 結果を返して続行 | LLMの**最終的な答えの“形”を固定**する。**関数は呼ばれない** |
+| 目的 | 外の世界に作用する／データを取りに行く（計算・検索・保存） | LLMから**構造化データを取り出す**（抽出・分類・整形） |
+| 段数 | 多段（呼ぶ→実行→また呼ぶ） | 一発（決まった形で返るだけ） |
+
+ひとことで：**ツール＝LLMが“外”を呼ぶ／Structured Output＝LLMの“出力の形”を縛る**。
+
+```ts
+// OpenAI：返事を必ず { title, date, time } のJSONにする（関数は呼ばれない）
+const res = await openai.chat.completions.create({
+  model: "gpt-4o-mini",
+  messages: [{ role: "user", content: "「田中さんと4/20 14時に会議」から予定を抜き出して" }],
+  response_format: {
+    type: "json_schema",
+    json_schema: {
+      name: "event",
+      strict: true,                          // ← 形を厳密に強制
+      schema: {
+        type: "object",
+        properties: {
+          title: { type: "string" },
+          date:  { type: "string" },
+          time:  { type: "string" },
+        },
+        required: ["title", "date", "time"],
+        additionalProperties: false,
+      },
+    },
+  },
+});
+const event = JSON.parse(res.choices[0].message.content); // 必ずこの形のJSON
+```
+
+**1行ずつ読むと：**
+- `response_format: { type: "json_schema", ... }`：「返事は**このJSONスキーマに従え**」という指定（`tools` ではない）。
+- `strict: true`：形を**厳密に**守らせる（昔の「JSONモード」より確実。`additionalProperties: false` と全フィールドの `required` がセット）。
+- `JSON.parse(...message.content)`：返事は**必ずそのスキーマのJSON**なので、安心して `parse` できる。
+- ショートカット：`openai/helpers/zod` の `zodResponseFormat(Schema, "event")` ＋ `openai.chat.completions.parse(...)` で、**Zodスキーマから型付き**で受け取れます。
+
+> 🔁 **2社・各SDKの対応**
+> - **OpenAI**：上の `response_format: { type:"json_schema", strict:true }`（＋ `.parse()` ＋ `zodResponseFormat`）。
+> - **Anthropic**：2025年11月に**ネイティブ対応**（`output_format` ＝ JSON出力／`strict: true` の厳密ツール、betaヘッダ `anthropic-beta: structured-outputs-…`）。それ以前は **「1つのツールを強制的に呼ばせ、その引数としてJSONを受け取る」** のが定番回避策でした（だからツールと“いとこ”の関係）。
+> - **Vercel AI SDK**：`generateObject` / `streamObject`（Zodスキーマ）で型付きオブジェクトが返る（`generateText`＋tools と対になる関数）。
+
+> 💡 **使い分け**：「**外で何かする**」ならツール。「**LLMの答えをきれいなデータで受け取る**」なら Structured Output。両方を組み合わせることも（ツールで取ってきて、最後に構造化出力で整形）。
+
+---
+
+## ⚠️ ハマりどころ
+
+- **引数を鵜呑みにする（プロンプトインジェクション）**：`tool_call` の引数は、**外から来た指示**です。悪意ある入力で危ない値が紛れることも。**必ず検証**してから使う（型・範囲・許可リスト）
+- **ツールの結果も鵜呑みにしない**：道具が返した文（検索結果やDBの中身）に「これまでの指示を無視して…」と仕込まれていることがあります（**間接インジェクション**）。結果は“データ”として扱い、新たな命令として実行しない
+- **危険な操作は人間の確認を挟む**：削除・送金・メール送信などは、自動実行せず**「本当にやりますか？」**を一度はさむ
+- **最小権限（さいしょうけんげん）だけ渡す**：道具には必要な権限だけ。「天気を見る」道具に、DB全削除の力は要りません
+- **無限ループに上限**：LLMが道具を呼び続けることがあります。**呼び出し回数に上限**（例：5回まで）を設けて止める
+
+## 🤖 AIに頼むなら（Vibe codingのコツ）
+
+> 🗣 プロンプト例：「TypeScript + Express で、`getWeather(city)` ツールをGPT（gpt-4o-mini）に `tools` として持たせて。`tool_call` が来たら**引数を検証**してから関数を実行し、結果を `role:"tool"` で `messages` に足して再度 `create` を呼んで最終回答を返して。**危険な操作は人間の確認を挟み**、ツールには**最小権限**だけ渡し、呼び出し回数に**上限**を付けて。」
+
+チェックリスト：
+- [ ] `tool_call` の**引数を検証**している（型・必須・許可リスト）
+- [ ] ツールの**結果を新たな命令として実行していない**（間接インジェクション対策）
+- [ ] 削除・送金など**危険な操作は確認を挟む**
+- [ ] ツールに渡す権限は**最小限**（必要なことだけできる）
+- [ ] 道具の**呼び出し回数に上限**があり、無限ループしない
+- [ ] 結果を足して**再度create**し、最終回答までつながっている
+
+## 📝 ことばメモ
+
+- **ツール**：LLMに渡す「使える道具」＝こちらが用意した関数。計算・検索・保存などをLLMの代わりに実行する
+- **function calling（ファンクションコーリング）**：LLMが「この関数を呼んで」と指示できる仕組み。tool use（ツールユース）とも呼ぶ
+- **tool_call（ツールコール）**：LLMからの「この道具を、この引数で呼んで」という指示
+- **role:"tool"（ロール・ツール）**：道具の実行結果を会話に足すときの役。`messages` に「これは道具の答え」と示す
+- **プロンプトインジェクション**：入力や道具の結果に悪い指示を紛れ込ませ、AIを乗っ取る攻撃。引数・結果を鵜呑みにせず検証する（🛡守り）
+- **Structured Output（構造化出力）**：LLMの**返事そのもの**を決まったJSONの形に固定する機能（関数は呼ばれない）。**ツール＝外を呼ぶ／構造化出力＝出力の形を縛る**、と役割が違う
+
+## ➡️ 次の章へ
+
+道具を持たせて、LLMが“やってくれる”クローンに一歩近づきました。でも毎回、長い前文（system やルール）を送り直すのは**もったいない**ですよね。次章では、その**同じ前文の再送を安く・速くする「キャッシュ」**を学びます。
+
+[第13章 キャッシュ — 同じ前文を安く速く再送するへすすむ →](13-cache.md)
+
+[← 目次・はじめにへもどる](README.md)

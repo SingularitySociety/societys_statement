@@ -81,6 +81,8 @@ has_toc: false
 ### まとめ・付録
 - [まとめ — 選び方フローチャート＆比較早見表](11-cheatsheet.md)
 - [用語ミニ辞典（ふりがな付き）](12-glossary.md)
+- [付録A　ORマッパー（ORM）とアダプタ（ドライバ）— コードからDBを扱う道具](apx-a-orm.md)
+- [付録B　クライアントから直接DB？ — Supabase/Firestore の“バックエンドレス”と RLS／セキュリティルール](apx-b-direct-access.md)
 
 ---
 

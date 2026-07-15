@@ -18,6 +18,7 @@ has_children: true
 - [データの置き場所ガイド — RDB/NoSQL/キャッシュ/ストレージ](./data_stores/README.md) — 「データをどこに置くか」を RDB（SQLite/自前/RDS/Aurora）・NoSQL（DynamoDB/MongoDB/Firestore）・キャッシュ（Redis）・オブジェクトストレージ（S3系）で総合比較。データの形×運用の任せ方の2軸、ペルソナ別、選び方フローチャート・早見表・用語辞典つき（初心者向け、全12ページ＋ハブ。compute_options の姉妹編）
 - [フロントエンドの作り方 — 素のJS/React/Vue と SPA/SSR/SSG](./frontend/README.md) — 「UIをどう作り・どこで描画するか」を 素のTS/JS・React・Vue・SPA・SSR・SSG・Next.js/Astro（RSC=Reactの一部がバックエンド）まで総合比較。jQueryの歴史、ビルド（Vite）/ホスティング、ペルソナ/用途別、フローチャート・早見表・用語辞典つき（初心者向け、全12ページ＋ハブ。compute_options/data_stores の姉妹編）
 - [GitHub ActionsではじめるCI/CD](./github_actions/README.md) — 「安全に・自動で“届ける”」。CI/CDで何が嬉しいか、GitHub Actionsのしくみ（on→jobs→steps/YAML）、実例カタログ（テスト・CodeQL・レビューBot・Dependabot・デプロイ・リリース・cron・通知）、シークレットと安全、マトリクス/キャッシュ/コスト、選び方早見表・用語辞典つき（初心者向け、全8ページ＋ハブ。シリーズ姉妹編）
+- [AIハーネス入門 — AIに安全に良い仕事をさせる環境づくり](./harness/README.md) — 「口頭の注意」を「毎回自動で効く環境」に変える。CLAUDE.md の書き方（網羅的テンプレートつき）、AI向けにガチガチな ESLint 設定（Vue/React + Express、MulmoClaude の実設定ベース）、subagent と CI 上の別AIによる cross review（判定マーカー・レビューループ運用）、フック・権限まで（実例つき、全3章＋ハブ）
 - [Product Manageについて](./pm.md)
 - [Productについて](./Product.md)
 - [セキュリティ（攻撃の入口を知る教育ドキュメント）](./security/README.md)

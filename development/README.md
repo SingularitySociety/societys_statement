@@ -7,7 +7,7 @@ has_children: true
 # 　開発の心得
 
 - [Gitを使った開発について](./git.md)
-  - [Git/GitHub 入門（非エンジニア向け）](./git_basics.md) — git init〜commit/push/pull と「ブランチ→PR→マージ」の流れを、非エンジニア向けにイラスト付きで。チーム開発とコンフリクトの解消まで
+  - [Git/GitHub 入門（非エンジニア向け）](./git_basics.md) — git init〜commit/push/pull と「ブランチ→PR→マージ」の流れを、非エンジニア向けにイラストと実行結果の例つきで。チーム開発とコンフリクトの解消まで
 - [Vibe Coding について](./vibe_coding.md)
   - [Vibe Coding 入門（非エンジニア向け）](./vibe_coding_simple.md)
 - [リファクタリング & プロダクト化（Vibe Coding時代の心得）](./refactoring.md) — きれいなコードの原則（テスト可能性/DRY/小ささ/疎結合/条件整理）＋AI時代の追加＋いつやるか、そして「ブラウザだけの試作→プロダクト対応」の実践ロードマップ（テスト→整理→UI/ロジック分離→サーバー移設→TS化→per-userデータ→分離・課金）

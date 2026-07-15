@@ -2,9 +2,12 @@
 title: "Gitを使った開発について"
 parent: "開発の心得"
 nav_order: 1
+has_children: true
 ---
 
 # Gitを使った開発について
+
+> Git / GitHub をはじめて使う人は、先に [Git/GitHub 入門（非エンジニア向け）](./git_basics.md) を読んでください。
 
 以下のような使い方を推奨しています。
 - 2人以上での開発の場合は、Pull Request + Reviewを必ず行う
@@ -35,4 +38,5 @@ nav_order: 1
 
 ## 合わせて読む
 
+- [Git/GitHub 入門（非エンジニア向け）](./git_basics.md)
 - [Vibe Coding について](./vibe_coding.md)

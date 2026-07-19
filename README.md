@@ -2,6 +2,17 @@
 
 📖 **Web版（ドキュメントサイト）**: https://singularitysociety.github.io/societys_statement/
 
+## 公式メディア・SNS
+
+シンギュラリティ・ソサエティの情報発信は、ここからすべて辿れます。
+
+| メディア | リンク |
+| --- | --- |
+| 公式サイト | https://singularitysociety.org/ |
+| X（Twitter） | https://x.com/SingularitySoci |
+| YouTube | https://www.youtube.com/@SingularitySociety |
+| note | https://note.com/singsoc |
+
 ## 行動規範・カルチャー
 
 - [シンギュラリティ・ソサイエティ行動規範](./code-of-conduct.md)

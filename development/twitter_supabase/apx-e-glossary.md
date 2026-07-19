@@ -77,7 +77,7 @@ nav_exclude: true
 - **Cookie（くっきー）** … ブラウザがサーバーごとに保存する小さなメモ（ログイン状態などに使う）（[第2章](02-what-is-a-user.md)）
 - **localStorage（ろーかるすとれーじ）** … ブラウザに残しておける、自分用の保存箱（[第2章](02-what-is-a-user.md)）
 - **Supabaseクライアント（すぱべーすくらいあんと）** … アプリからSupabaseを呼び出すための部品（ライブラリ）（[第3章](03-first-data-save.md)）
-- **anon key（あのんきー）** … ブラウザに置いてよい公開用の鍵（RLSが守る前提）（[第4章](04-data-isolation.md)）
+- **Publishable key（ぱぶりっしゃぶるきー）** … ブラウザに置いてよい公開用の鍵（RLSが守る前提）。`sb_publishable_...` から始まる。以前は **anon key（あのんきー）** と呼ばれていた（[第4章](04-data-isolation.md)）
 - **service_role key（さーびすろーるきー）** … RLSを飛び越える強力な鍵（サーバーだけに置く、絶対に公開しない）（[第4章](04-data-isolation.md)）
 
 ---

@@ -27,7 +27,7 @@ nav_exclude: true
 
 3. **URLと鍵（キー）を控える。** 左メニューの「**Project Settings**（歯車アイコン）」→「**API**」を開きます。次の2つを、あとでコードに貼るためにコピーしておきます。
    - **Project URL**（`https://xxxx.supabase.co` の形）
-   - **anon public** key（`anon` `public` と書かれた長い文字列）
+   - **Publishable key**（`sb_publishable_...` から始まる文字列）。フロント（ブラウザのコード）に置いてよい公開鍵です。
 
 4. **作業する2つの場所を確認する。** 左メニューに、これからよく使う場所が2つあります。
    - **Table Editor** … 表（テーブル）を**画面（GUI）で作ったり中身を見たりする**場所。
@@ -38,14 +38,14 @@ nav_exclude: true
 
    ```js
    import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
-   const supabase = createClient('https://xxxx.supabase.co', 'ここに anon public key');
+   const supabase = createClient('https://xxxx.supabase.co', 'ここに publishable key');
    ```
 
    **1行ずつ読むと：**
    - `import { createClient } from '...'` … Supabaseを使うための道具 `createClient` を、CDN（ネット上の配布先）から読み込む。
    - `createClient( ... )` … その道具で、Supabaseとやり取りする**クライアント（窓口）を作る**。
    - 第1引数 `'https://xxxx.supabase.co'` … 手順3の **Project URL**（あなたの値に置きかえる）。
-   - 第2引数 `'ここに anon public key'` … 手順3の **anon public key**（あなたの値に置きかえる）。
+   - 第2引数 `'ここに publishable key'` … 手順3の **Publishable key**（あなたの値に置きかえる）。
    - 以後は、本編のコードで出てくる **この `supabase` を使って**保存・取得を行います。
 
 ---
@@ -54,7 +54,7 @@ nav_exclude: true
 
 鍵（キー）には2種類あり、**扱い方がまったく違います**。
 
-- **anon public key** … **フロント（ブラウザのコード）に置いてOK**です。名前のとおり「公開してよい鍵」。ただし「誰でも何でもできる」という意味ではなく、**RLS（行レベルセキュリティ）で守る前提**だから安全に置けます。RLSの設定は第4章で行います。
+- **Publishable key** … **フロント（ブラウザのコード）に置いてOK**です。名前のとおり「公開してよい鍵」。ただし「誰でも何でもできる」という意味ではなく、**RLS（行レベルセキュリティ）で守る前提**だから安全に置けます。RLSの設定は第4章で行います。
 - **service_role key** … **全権限を持つ「マスターキー」**です。RLSも素通りします。**ぜったいにフロントや、GitHubなどの公開リポジトリに出さないでください**。これは**サーバー専用**で、本編の範囲では使いません。
 
 > ⚠️ `service_role` key をブラウザのコードに書いて公開すると、**他人にデータを全部読まれる・消される**おそれがあります。第10章「ありがちな失敗」とも関わる、重要な落とし穴です。
@@ -64,7 +64,7 @@ nav_exclude: true
 ## ⚠️ よくあるつまずき
 
 - **プロジェクトが「Paused（一時停止）」になっている** … 無料枠では、しばらく使わないとプロジェクトが自動で休止します。ダッシュボードに「Restore」や「Resume」が出ていたら押して、**再開**してから使いましょう。
-- **URLや鍵の貼り間違い** … `createClient(...)` でエラーが出るときは、**Project URL** と **anon key** を**もう一度コピーし直して**貼り付けます。よくあるのは、前後の空白が混じる・別の値を貼る、です。
+- **URLや鍵の貼り間違い** … `createClient(...)` でエラーが出るときは、**Project URL** と **Publishable key** を**もう一度コピーし直して**貼り付けます。よくあるのは、前後の空白が混じる・別の値を貼る、です。
 - **リージョンを遠くにして遅い** … 日本から使うなら **Tokyo** など近い場所を選びます。遠いリージョンだと、保存や取得のたびに**待ち時間が長く**なります。
 
 ---
@@ -72,7 +72,7 @@ nav_exclude: true
 ## 📝 ことばメモ
 
 - **Project URL**：あなたのSupabaseプロジェクトの住所（`https://xxxx.supabase.co`）。コードの第1引数に使う
-- **anon key（anon public key）**：**ブラウザに置いてよい鍵**。RLSで守る前提
+- **Publishable key**：**ブラウザに置いてよい鍵**（`sb_publishable_...`）。RLSで守る前提。以前は **anon key（anon public key）** と呼ばれ、既存プロジェクトでは今もその名称で表示される
 - **service_role key**：**全権限のマスターキー**。サーバー専用で、フロントや公開リポジトリに出さない
 - **Table Editor**：表（テーブル）を画面で作る・見る場所
 - **SQL Editor**：SQLを実行する場所（本編のSQLはここで実行）

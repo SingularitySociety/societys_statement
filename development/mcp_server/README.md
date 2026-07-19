@@ -1,7 +1,7 @@
 ---
 title: "MCPサーバーを作って学ぶ AIに道具を持たせる入門"
 parent: "開発の心得"
-nav_order: 17
+nav_order: 18
 has_children: true
 has_toc: false
 ---

@@ -53,5 +53,5 @@ has_children: true
 
 ## 合わせて読む
 
-- [ライブ議事録で会議を回す](./live-meeting-minutes.md)
+- [ライブ議事録で会議を回す](./live-meeting-minutes.md)（[Zenn版](https://zenn.dev/singularity/articles/2026-06-11-live-meeting-minutes)もあります）
 - [議論上の注意点](./pointsOfDiscussion.md)

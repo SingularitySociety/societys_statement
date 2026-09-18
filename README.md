@@ -36,6 +36,7 @@
 - [Gitを使った開発について](./development/git.md)
 - [Product Manageについて](./development/pm.md)
 - [Productについて](./development/Product.md)
+- [エンジニアの法則・名言集（出典つき）](./development/laws.md)
 - [開発ドキュメント一覧（development/）](./development/README.md)
 
 ## 参考になる記事

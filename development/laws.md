@@ -369,6 +369,26 @@ Python を起動して `import this` と打つと出てきます。**19 行し�
 
 ルール 1・2 は Knuth の言い換え、ルール 5 は Brooks の言い換え。**同じことが繰り返し言われている**という事実自体が、これらの重要さの証拠です。
 
+### 驚き最小の原則は「私の驚き」最小の原則
+
+> The principle of least surprise is not for _you_ only. The principle of least surprise means principle of least _my_ surprise.
+
+> For me the purpose of life is partly to have joy. Programmers often feel joy when they can concentrate on the creative side of programming.
+
+◎ **まつもとゆきひろ（Matz）**／Bill Venners によるインタビュー "The Philosophy of Ruby"（Artima, 2003 年 9 月 29 日）— [原文](https://www.artima.com/articles/the-philosophy-of-ruby)
+
+Ruby が「驚き最小の原則（principle of least surprise）」で設計されている、と言われることへの本人の回答。**万人にとって驚きが少ないものは作れない。作者である自分にとっての驚きを最小にした結果、多くの人にとっても自然になった**という順序です。しかも「Ruby を十分に習得したあとで驚きが少ない」という条件つき。設計の指針を借りてくるときは、**それが誰にとっての最適化なのか**を確かめよ、という話でもあります。
+
+そしてもう一つ、Ruby の目的は**プログラマを楽しくすること**だと繰り返し語っています。
+
+### MINASWAN — Matz is nice and so we are nice
+
+> Matz is nice and so we are nice.
+
+△ Ruby コミュニティのモットー。**最初に言ったのが誰かは特定されていない**。ruby-talk（1999 年に始まった英語メーリングリスト）で議論が荒れたときに、雰囲気を戻すために使われるようになったとされる — [Wiktionary の項目](https://en.wiktionary.org/wiki/MINASWAN)
+
+**技術コミュニティの空気は、中心にいる人の振る舞いで決まる**という観察。コードの話ではないのに、いちばん再現性のある「法則」かもしれません。逆に言えば、中心にいる人が刺々しければコミュニティもそうなる。
+
 ### 文句を言われる言語と、誰も使わない言語
 
 > There are only two kinds of languages: the ones people complain about and the ones nobody uses.
@@ -536,6 +556,24 @@ MVP は「**手抜きの製品**」ではなく「**最小の労力で最大の�
 ◎ **Jeff Bezos**／2016 年の株主への手紙 — [原文](https://www.aboutamazon.com/news/company-news/2016-letter-to-shareholders)
 
 Day 1 を保つ方法として、**顧客への執着・プロセスの代理化を避ける・外部トレンドへの素早い適応・高速な意思決定**の 4 つを挙げています。
+
+### Musk の 5 ステップ — 要件を疑い、消し、単純にし、速くし、最後に自動化する
+
+> Make the requirements less dumb. The requirements are definitely dumb; it does not matter who gave them to you.
+
+> ... the most common error of a smart engineer is to optimize something that should not exist.
+
+◎ **Elon Musk**／Everyday Astronaut（Tim Dodd）による Starbase でのインタビュー、2021 年 7 月 30 日 — [記事全文](https://everydayastronaut.com/starbase-tour-and-interview-with-elon-musk/)。Walter Isaacson の伝記『Elon Musk』（2023）では "the algorithm" として紹介されている
+
+**順番を守ることが本体**の 5 ステップです。
+
+1. **要件を「より愚かでない」ものにする** — 要件は必ずどこか愚かで、**誰が出したかは関係ない**。むしろ賢い人が出した要件のほうが危ない（疑わずに受け入れてしまうから）。「誰の要件か」は**部署名ではなく個人名**で記録せよ — 部署には理由を聞けないが、人には聞ける
+2. **部品・工程を消す** — 消したもののうち **10% くらいは後で戻すことになる。戻していないなら消し足りない**
+3. **単純化・最適化する** — ここが 3 番目なのが肝。**賢いエンジニアが犯す最大の間違いは、そもそも存在すべきでないものを最適化すること**
+4. **サイクルタイムを速くする** — ただし上の 3 つを終えるまで速くするな
+5. **自動化する** — いちばん最後
+
+ソフトウェアに読み替えると、そのまま効きます。**存在すべきでない機能を高速化する／消せるコードをリファクタリングする／要らない手順を CI で自動化する**のは、どれも順番を間違えた形です。1 と 2 をやらずに 5 から入るのが、いちばんよくある失敗。
 
 ---
 

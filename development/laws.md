@@ -381,11 +381,13 @@ Ruby が「驚き最小の原則（principle of least surprise）」で設計さ
 
 そしてもう一つ、Ruby の目的は**プログラマを楽しくすること**だと繰り返し語っています。
 
-### MINASWAN — Matz is nice and so we are nice
+### MINSWAN / MINASWAN — Matz is nice so we are nice
 
-> Matz is nice and so we are nice.
+> MINSWAN: Matz is Nice, so we are nice.
 
-△ Ruby コミュニティのモットー。**最初に言ったのが誰かは特定されていない**。ruby-talk（1999 年に始まった英語メーリングリスト）で議論が荒れたときに、雰囲気を戻すために使われるようになったとされる — [Wiktionary の項目](https://en.wiktionary.org/wiki/MINASWAN)
+△ **Martin Fowler** が言い出したとされる。出典は Bart Eisenberg の連載 "Software Designers — The People Behind the Code" 第 34 回「Yukihiro "Matz" Matsumoto: Ruby Inventor」（Software Design 2012 年 2 月号 / gihyo.jp）— [記事](https://gihyo.jp/dev/serial/01/software_designers/0034)。**Fowler 本人が書いた一次資料は見つかっていない**
+
+**もとの形は "and" の入らない MINSWAN** でした。2008 年の時点でもこの綴りで使われています（[Pat Eyler のブログ](http://on-ruby.blogspot.com/2008/03/gracious-dave-and-minswan.html)：「MINSWAN (Matz is nice, so we are nice) was the order of the day」）。のちに **MINASWAN**（Matz is nice **and** so we are nice）の綴りが広まり、いまはこちらが主流です。
 
 **技術コミュニティの空気は、中心にいる人の振る舞いで決まる**という観察。コードの話ではないのに、いちばん再現性のある「法則」かもしれません。逆に言えば、中心にいる人が刺々しければコミュニティもそうなる。
 

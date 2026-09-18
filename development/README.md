@@ -20,7 +20,7 @@ has_children: true
 - [GitHub ActionsではじめるCI/CD](./github_actions/README.md) — 「安全に・自動で“届ける”」。CI/CDで何が嬉しいか、GitHub Actionsのしくみ（on→jobs→steps/YAML）、実例カタログ（テスト・CodeQL・レビューBot・Dependabot・デプロイ・リリース・cron・通知）、シークレットと安全、マトリクス/キャッシュ/コスト、選び方早見表・用語辞典つき（初心者向け、全8ページ＋ハブ。シリーズ姉妹編）
 - [AIハーネス入門 — AIに安全に良い仕事をさせる環境づくり](./harness/README.md) — 「口頭の注意」を「毎回自動で効く環境」に変える。CLAUDE.md の書き方（置き場所の使い分け・網羅的テンプレートつき）、lint とは何かから始める AI 向けガチガチ ESLint 設定（Vue/React + Express、MulmoClaude の実設定ベース、インストール手順つき）、subagent と CI 上の別AIによる cross review（判定マーカー・レビューループ運用）、フックと権限（破りようがない強制力）、Dependabot / CodeQL / CodeRabbit・CI codex レビュー実物解剖・レビュースキル2本の付録まで（実例つき、全4章＋付録3＋ハブ）
 - [MCPサーバーを作って学ぶ AIに道具を持たせる入門](./mcp_server/README.md) — 「AIに道具を後付けする共通規格」MCP のサーバーとクライアントを自作。stdio と Streamable HTTP、`console.log` でサーバーが壊れる理由、MCP Inspector とログでの切り分け、パスの封じ込めと DNS リバインディング対策まで。TypeScript で「自分のメモを読める Claude」を作り、第2弾の ChatGPTクローンにも繋ぐ（完全未経験〜初心者向け、全14章＋付録A〜D）
-- [エンジニアの法則・名言集（出典つき）](./laws.md) — ソフトウェアエンジニアなら一度は聞いたことがあるはずの法則と言葉を、**一次資料へのリンクつき**で。三大美徳・DRY・Brooks・Conway・Knuth・Postel・Dijkstra・Worse is Better・MINASWAN から、Alan Kay「未来を発明する」・Paul Graham「スケールしないことをやれ」・Musk の5ステップまで。出典の確かさを ◎○△ で明示し、足りないものは X で募集中
+- [エンジニアの法則・名言集（出典つき）](./laws.md) — ソフトウェアエンジニアなら一度は聞いたことがあるはずの法則と言葉を、**一次資料へのリンクつき**で。三大美徳・DRY・Brooks・Conway・Knuth・Postel・Dijkstra・Worse is Better・MINSWAN から、Alan Kay「未来を発明する」・Paul Graham「普通のやつらの上を行け」「スケールしないことをやれ」・Musk の5ステップ・Less is more・Demo or Die・ピクサーやコーチの言葉まで。出典の確かさを ◎○△ で明示し、足りないものは X で募集中
 - [Product Manageについて](./pm.md)
 - [Productについて](./Product.md)
 - [セキュリティ（攻撃の入口を知る教育ドキュメント）](./security/README.md)

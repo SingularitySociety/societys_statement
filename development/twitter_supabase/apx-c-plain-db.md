@@ -6,6 +6,8 @@ nav_order: 15
 nav_exclude: true
 ---
 
+<!-- stet-file: orthographic-variant — 「ミスっている」を「スる」と読んで「する」の書き方のゆれと見てしまう -->
+
 # 付録C　普通のDB（PostgreSQL / MySQL）入門 — RLSがない世界での守り方
 
 > 📖 このページのゴール：**Supabase（RLS）の外＝一般的なデータベースでは、「自分のデータだけ」をどうやって守るのか**を知る。

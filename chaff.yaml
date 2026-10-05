@@ -60,4 +60,7 @@ rules:
   emoji-density: relaxed # 2026-10-05 各章の読み方の型（📱🤔🛠⚠️🤖）を絵文字で示す / isamu
   # Too many dashes
   # In English a dash is a legitimate tool, and a heavy hand with it is also one of the better-known marks of generated text. On its own it says little; it counts toward the composite signal.
-  no-em-dash: relaxed # 2026-10-05 目次は「章名 — 要約」の区切りに使い、本文では語りの句に使う / isamu
+  no-em-dash: off # 2026-10-05 目次が「章名 — 要約」の形で、区切りにダッシュを使う / isamu
+  # One word spelled two ways
+  # Writing one word two ways in one document (e-mail and email, GitHub and Github) makes search treat them as different words and leaves the reader wondering whether two things are meant. chaff does not decide which way is right and keeps no list of words; it groups the document's own words, by reading in Japanese and by spelling without hyphens and case in English, and points at whichever way the document uses less. The case of the first letter is left out, since a sentence or a title gives it (Email, email), and so are words in capitals only. It says nothing when the minority is more than a third, since the document then uses both on purpose.
+  orthographic-variant: relaxed # 2026-10-05 読みで語を束ねるため、ふりがな（べありぇーとーくん→くん）・同音の別語（全員ぶん／文にすれば）・補助動詞（追ってみる）・慣用句（気をつける）・各章末の「へもどる」を同じ語と見てしまう / isamu

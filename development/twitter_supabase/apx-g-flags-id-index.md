@@ -41,7 +41,7 @@ alter table tweets add column is_pinned boolean not null default false;
 
 ### 🔧 フラグ設計の注意
 
-- **3つ以上の状態は、フラグを増やすより `status` 列1本に。**
+- **3つ以上の状態は、フラグを増やすより `status` 列1本に**
   「下書き / 公開 / アーカイブ」のように状態が3つ以上あるなら、`is_draft` `is_archived` …とbooleanを乱立させるより、**状態をまとめた1列**にした方がスッキリします。
 
   ```sql
@@ -51,10 +51,10 @@ alter table tweets add column is_pinned boolean not null default false;
   ```
   - `check (status in (...))` … **決めた値以外を入れさせない**安全装置。
 
-- **「消す」は本当に消さない手もある（ソフトデリート）。**
+- **「消す」は本当に消さない手もある（ソフトデリート）**
   `delete` で行ごと消すかわりに、`is_deleted = true`（または `deleted_at` に時刻）を立てて **「消したことにする」**。あとで復元できる・記録が残る、という利点があります。ただし **表示の `select` やRLSで「消した行を除く」条件を忘れない**こと（忘れると消したはずの投稿が見えます）。
 
-- **フラグの乱立に注意。** `is_a` `is_b` `is_c` …と増えると読みにくくなります。まとまる状態は `status` に集約を。
+- **フラグの乱立に注意** `is_a` `is_b` `is_c` …と増えると読みにくくなります。まとまる状態は `status` に集約を。
 
 ---
 
@@ -72,7 +72,7 @@ alter table tweets add column is_pinned boolean not null default false;
 
 ### 🔧 なぜ混同するの？ → 主キーには索引が自動で付くから
 
-`id` を `primary key`（主キー）にすると、DBは裏で **「idで探すための索引」を自動で作ります。** だから `where id = 123` はいつも速い。この「**ID と 索引がセットで付いてくる**」のが、両者が同じものに見える原因です。でも——**`id` は名札、索引は探す仕組み**。概念は別、と覚えてください。
+`id` を `primary key`（主キー）にすると、DBは裏で **「idで探すための索引」を自動で作ります。** だから `where id = 123` はいつも速いのです。この「**ID と 索引がセットで付いてくる**」のが、両者が同じものに見える原因です。でも——**`id` は名札、索引は探す仕組み**。概念は別、と覚えてください。
 
 ---
 
@@ -90,7 +90,7 @@ alter table tweets add column is_pinned boolean not null default false;
 
 - `tweets.user_id` … 「この人の投稿」を絞る（第4章・[第8章](08-home-timeline.md)）
 - `tweets.created_at` … 新しい順に並べる（第3章〜、ほぼ全章）
-- `follows.follower_id` / `follows.followee_id` … フォロー関係をたどる（[第7章](07-follow.md)・第8章）。第7章の複合主キー `(follower_id, followee_id)` は、`follower_id` で探す索引も兼ねます。
+- `follows.follower_id` / `follows.followee_id` … フォロー関係をたどる（[第7章](07-follow.md)・第8章）。第7章の複合主キー `(follower_id, followee_id)` は、`follower_id` で探す索引も兼ねる。
 
 ```sql
 -- 「この人の投稿を新しい順」をまとめて速くする索引
@@ -99,7 +99,7 @@ create index on tweets (user_id, created_at desc);
 
 **1行ずつ読むと：**
 
-- `create index on tweets (...)` … `tweets` 表に索引を作る。
+- `create index on tweets (...)` … `tweets` 表に索引を作ります。
 - `(user_id, created_at desc)` … **`user_id` で絞ってから `created_at` の新しい順**、という取り出し方に効く **複合インデックス**。第8章の「フォロー中の人の投稿を新しい順」がこの形です。
 
 > 💡 Supabase（PostgreSQL）では、主キーや一部の制約に索引が自動で付きます。でも **自分が検索・並べ替えに使う列**は、自動では付かないことが多いので、上のように**明示的に張る**と速くなります。

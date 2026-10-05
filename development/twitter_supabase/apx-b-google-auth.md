@@ -79,7 +79,7 @@ nav_exclude: true
    - `redirectTo: window.location.origin` … ログインが終わったら **いま開いているページのURLに戻ってきて**、という指定。
 
 8. **動かして確かめる**
-   ボタンを押す → Googleの画面が出る → 「許可」する → 自分のアプリに戻ってログイン状態になる。確認はこれ。
+   ボタンを押す → Googleの画面が出る → 「許可」する → 自分のアプリに戻ってログイン状態になる。これが確認できればOKです。
 
    ```js
    const { data: { user } } = await supabase.auth.getUser();

@@ -73,7 +73,7 @@ Twitterには「フォロー」というしくみがあります。気になる�
 
 それでは、フォロー関係をしまう中間テーブル `follows`（フォローズ）をつくっていきます。Supabaseの「SQL Editor」に貼り付けて実行してください。
 
-### ① follows テーブルをつくる
+### ① followsテーブルをつくる
 
 ```sql
 create table follows (
@@ -87,16 +87,16 @@ create table follows (
 **1行ずつ読むと：**
 - `create table follows (` … 「follows という名前の表をつくります」という宣言。中身をここから書きます。
 - `follower_id uuid not null references auth.users (id) default auth.uid(),` … フォローする人のID。`uuid` は長い識別番号の型。`references auth.users (id)` で「これはログインユーザー一覧（auth.users）の id とつながっている」と約束します（これを外部キーといいます）。`default auth.uid()` は「書かなければログイン中の自分のIDを自動で入れる」という意味。
-- `followee_id uuid not null references auth.users (id),` … フォローされる人のID。これも auth.users とつながった外部キー。`not null` なので空っぽは禁止です。
+- `followee_id uuid not null references auth.users (id),` … フォローされる人のID。これもauth.usersとつながった外部キー。`not null` なので空っぽは禁止です。
 - `created_at timestamptz not null default now(),` … フォローした日時。`now()` でその瞬間の時刻が自動で入ります。
-- `primary key (follower_id, followee_id)` … この表の「主キー（=その行を見分ける目印）」を、follower_id と followee_id の**2つの組み合わせ**にします。
+- `primary key (follower_id, followee_id)` … この表の「主キー（=その行を見分ける目印）」を、follower_idとfollowee_idの**2つの組み合わせ**にします。
 - `);` … 表の定義はここまで、という閉じカッコ。
 
 ここで一番大事なのが最後の **複合主キー（ふくごうしゅキー）** です。主キーは「同じものは2つ存在できない」というルールを表します。主キーを `(follower_id, followee_id)` の組にすると、**「AさんがBさんをフォロー」という同じ組み合わせは1回しか入れられない**ようになります。つまり、うっかり同じ人を二重にフォローしてしまう事故を、データベースが自動で防いでくれるのです。
 
 ### ② RLS（鍵）をかける
 
-第4章（[04-data-isolation](04-data-isolation.md)）で学んだ RLS（行ごとの鍵）を、この表にもかけます。
+第4章（[04-data-isolation](04-data-isolation.md)）で学んだRLS（行ごとの鍵）を、この表にもかけます。
 
 ```sql
 alter table follows enable row level security;
@@ -112,14 +112,14 @@ create policy "自分のフォローを消す"
 ```
 
 **1行ずつ読むと：**
-- `alter table follows enable row level security;` … follows 表の「行ごとの鍵」をオンにします。これを忘れると鍵がかからず素通しになるので注意。
+- `alter table follows enable row level security;` … follows表の「行ごとの鍵」をオンにします。これを忘れると鍵がかからず素通しになるので注意。
 - `create policy "フォロー関係は誰でも読める" on follows for select using ( true );` … 読む（select）ときのルール。`using ( true )` は「いつでもOK」。誰が誰をフォローしているかは公開情報なので、みんなが見られるようにします。
 - `create policy "自分のフォローを作る" on follows for insert with check ( auth.uid() = follower_id );` … 作る（insert）ときのルール。`auth.uid() = follower_id`、つまり「フォローする人＝ログイン中の自分」のときだけ追加を許可します。他人になりすまして勝手にフォローを作れないようにする鍵です。
-- `create policy "自分のフォローを消す" on follows for delete using ( auth.uid() = follower_id );` … 消す（delete）ときのルール。自分が follower の行、つまり「自分がしたフォロー」だけアンフォローできます。他人のフォローは消せません。
+- `create policy "自分のフォローを消す" on follows for delete using ( auth.uid() = follower_id );` … 消す（delete）ときのルール。自分がfollowerの行、つまり「自分がしたフォロー」だけアンフォローできます。他人のフォローは消せません。
 
 ### ③ アプリからフォロー・アンフォローする
 
-ボタンを押したときに動かす JavaScript はとても短く済みます。`相手のuserId` には、フォローしたい人のIDが入っているとします。
+ボタンを押したときに動かすJavaScriptはとても短く済みます。`相手のuserId` には、フォローしたい人のIDが入っているとします。
 
 ```js
 // フォローする
@@ -130,30 +130,30 @@ await supabase.from('follows').delete().eq('followee_id', 相手のuserId);
 ```
 
 **1行ずつ読むと：**
-- `await supabase.from('follows').insert({ followee_id: 相手のuserId });` … follows 表に1行追加します。渡すのは `followee_id`（される人）だけ。する人 `follower_id` は①で `default auth.uid()` にしたので、ログイン中の自分が自動で入ります。だから書かなくてよいのです。
-- `await supabase.from('follows').delete().eq('followee_id', 相手のuserId);` … follows 表から行を消します。`.eq('followee_id', 相手のuserId)` で「followee_id がこの人の行」を狙い撃ち。さらに RLS が「自分が follower の行だけ」に絞るので、ちゃんと自分のフォローだけが消えます。
+- `await supabase.from('follows').insert({ followee_id: 相手のuserId });` … follows表に1行追加します。渡すのは `followee_id`（される人）だけ。する人 `follower_id` は①で `default auth.uid()` にしたので、ログイン中の自分が自動で入ります。だから書かなくてよいのです。
+- `await supabase.from('follows').delete().eq('followee_id', 相手のuserId);` … follows表から行を消します。`.eq('followee_id', 相手のuserId)` で「followee_id がこの人の行」を狙い撃ち。さらにRLSが「自分が follower の行だけ」に絞るので、ちゃんと自分のフォローだけが消えます。
 
 ---
 
 ## ⚠️ ハマりどころ
 
 - **自分で自分をフォローできてしまう**
-  上の定義のままだと、follower も followee も自分、という行が作れてしまいます。防ぎたいときは、テーブルに `check (follower_id <> followee_id)` というルール（`<>` は「等しくない」の意味）を足すと、自分自身へのフォローをデータベースが拒否します。
+  上の定義のままだと、followerもfolloweeも自分、という行が作れてしまいます。防ぎたいときは、テーブルに `check (follower_id <> followee_id)` というルール（`<>` は「等しくない」の意味）を足すと、自分自身へのフォローをデータベースが拒否します。
 
 - **二重フォローしてしまう**
   これは①の **複合主キー `(follower_id, followee_id)`** がすでに防いでくれています。もし複合主キーを忘れると、同じフォローが何行も増えてしまうので、主キーの設定は必ず入れましょう。
 
-- **follower と followee の向きを混同する**
+- **followerとfolloweeの向きを混同する**
   「する人」と「される人」を逆に入れると、フォローの向きが反対になってしまいます。「follower（する人）→ followee（される人）」の矢印を、コードを書くたびに心の中で唱えてください。
 
-- **フォロワー数を毎回 count で数えると、大きくなったとき重い**
-  「この人のフォロワーは何人？」を知りたくて、毎回 follows 表を全部数える（count する）方法は、利用者が少ないうちは平気です。でも何百万行にもなると、毎回かぞえるのは時間がかかって重くなります。この対策は第12章（スケール＝大規模化）であらためて扱います。今は「数えすぎ注意」とだけ覚えておけば十分です。
+- **フォロワー数を毎回countで数えると、大きくなったとき重い**
+  「この人のフォロワーは何人？」を知りたくて、毎回follows表を全部数える（countする）方法は、利用者が少ないうちは平気です。でも何百万行にもなると、毎回かぞえるのは時間がかかって重くなります。この対策は第12章（スケール＝大規模化）であらためて扱います。今は「数えすぎ注意」とだけ覚えておけば十分です。
 
 ---
 
 ## 🤖 AIに頼むなら（Vibe codingのコツ）
 
-中間テーブルと RLS は、言葉でしっかり伝えれば AI がきれいに書いてくれます。「向き」と「複合主キー」を必ず指定するのがコツです。
+中間テーブルとRLSは、言葉でしっかり伝えればAIがきれいに書いてくれます。「向き」と「複合主キー」を必ず指定するのがコツです。
 
 > 🗣 プロンプト例
 > 「Supabase で、フォロー関係をしまう中間テーブル `follows` を作って。列は follower_id（フォローする人）, followee_id（フォローされる人）, created_at。follower_id は default auth.uid()。**複合主キーは (follower_id, followee_id)** にして二重フォローを防いで。RLS も付けて、読むのは誰でも可、作る・消すは自分が follower のときだけ。自分自身はフォローできないようにして。」
@@ -161,9 +161,9 @@ await supabase.from('follows').delete().eq('followee_id', 相手のuserId);
 チェックリスト（AIの答えを確認するポイント）:
 - [ ] 向きは合っている？ follower＝する人 / followee＝される人 になっているか
 - [ ] 複合主キー `(follower_id, followee_id)` で二重フォローを防げているか
-- [ ] RLS はオンになっていて、insert / delete が「自分が follower のときだけ」か
+- [ ] RLSはオンになっていて、insert / deleteが「自分が follower のときだけ」か
 - [ ] 自分自身フォロー禁止（`check (follower_id <> followee_id)`）を入れたか
-- [ ] フォローのとき followee_id だけ渡せば動くか（follower_id は自動）
+- [ ] フォローのときfollowee_idだけ渡せば動くか（follower_idは自動）
 
 ---
 
@@ -171,7 +171,7 @@ await supabase.from('follows').delete().eq('followee_id', 相手のuserId);
 
 - **多対多（たたいた）**…両側が「たくさん」でつながる関係。1人がたくさんフォローし、たくさんからフォローされる、のような形。
 - **中間テーブル**…多対多の関係を記録するためにあいだにはさむ専用の表。1行＝1つの関係。
-- **follower / followee**…follower はフォローする人、followee はフォローされる人。向きを表す名前。
+- **follower / followee**…followerはフォローする人、followeeはフォローされる人。向きを表す名前。
 - **複合主キー**…複数の列の組み合わせを「その行の目印」にした主キー。同じ組み合わせが二重に入るのを防ぐ。
 - **外部キー（references）**…「この列の値は、あちらの表の id とつながっている」と約束するしくみ。バラバラな表どうしを安全に結びつける。
 
@@ -179,7 +179,7 @@ await supabase.from('follows').delete().eq('followee_id', 相手のuserId);
 
 ## ➡️ 次の章へ
 
-これで「誰が誰をフォローしているか」をデータベースに残せるようになりました。次の第8章では、このフォロー情報を使って **「フォローした人だけのつぶやきが流れるタイムライン（ホームタイムライン）」** を作ります。第6章（[06-public-timeline](06-public-timeline.md)）の「全員のタイムライン」と、follows の関係を組み合わせるのがポイントです。
+これで「誰が誰をフォローしているか」をデータベースに残せるようになりました。次の第8章では、このフォロー情報を使って **「フォローした人だけのつぶやきが流れるタイムライン（ホームタイムライン）」** を作ります。第6章（[06-public-timeline](06-public-timeline.md)）の「全員のタイムライン」と、followsの関係を組み合わせるのがポイントです。
 
 ➡️ 第8章 ホームタイムライン（[08-home-timeline](08-home-timeline.md)）へ
 

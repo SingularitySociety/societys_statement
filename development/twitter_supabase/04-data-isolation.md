@@ -161,7 +161,7 @@ RLSは便利ですが、**すべてのデータベースにある機能ではあ
 select * from tweets where user_id = 'いまの人のID' order by created_at desc;
 ```
 
-| | Supabase の RLS | 普通のDB（素のPostgreSQL / MySQL） |
+| | SupabaseのRLS | 普通のDB（素のPostgreSQL / MySQL） |
 |---|---|---|
 | 誰が絞り込む？ | **データベースが自動で** | **アプリが毎回 手で** |
 | 書き忘れたら？ | それでも守られる | **そこから全部 漏れる** 😱 |

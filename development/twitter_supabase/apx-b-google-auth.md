@@ -60,7 +60,7 @@ nav_exclude: true
 6. **アプリのURLを登録する**
    「**Authentication**」→「**URL Configuration**」を開きます。
    - **Site URL**：あなたのアプリのURL。開発中は `http://localhost:5173`（使うツールのポート番号に合わせる）など
-   - **Redirect URLs**：ログイン後に戻ってよいURLを登録（Site URL と同じでOK）
+   - **Redirect URLs**：ログイン後に戻ってよいURLを登録（Site URLと同じでOK）
 
    ここを設定しないと、ログインしても**自分のアプリに戻ってこられません**。
 

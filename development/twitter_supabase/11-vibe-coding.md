@@ -1,11 +1,11 @@
 ---
-title: "第11章 AIに作らせて、読む（Vibe coding編）"
+title: "第11章AIに作らせて、読む（Vibe coding編）"
 parent: "Twitterクローンで学ぶWeb開発入門"
 grand_parent: "開発の心得"
 nav_order: 11
 ---
 
-# 第11章 AIに作らせて、読む（Vibe coding編）
+# 第11章AIに作らせて、読む（Vibe coding編）
 
 > 📖 この章のゴール：AI（Vibe coding）にアプリを作らせ、出てきたコードを**自分で読んで「安全かどうか」を判断できる**ようになる。
 > [← 目次・はじめにへもどる](README.md)
@@ -63,9 +63,9 @@ AIは万能ではありません。クセを知っておきましょう。
 各章の「🤖 AIに頼むなら」を、ここに集めました。AIのコードを受け取ったら、この目で点検します。
 
 - [ ] RLSが**有効**になっていて、`auth.uid() = user_id` という「持ち主だけ」ポリシーがある（→[第4章](04-data-isolation.md)）
-- [ ] `service_role` key などの**秘密鍵がフロント（画面側）に無い**（→[第10章](10-pitfalls.md)）
+- [ ] `service_role` keyなどの**秘密鍵がフロント（画面側）に無い**（→[第10章](10-pitfalls.md)）
 - [ ] ユーザーが入力した文字を画面に出すとき、**XSS対策**がされている（→[第3章](03-first-data-save.md)・[第10章](10-pitfalls.md)）
-- [ ] 認証は **Supabase / Google にまかせ**、自前でパスワードを持っていない（→[第2章](02-what-is-a-user.md)）
+- [ ] 認証は **Supabase / Googleにまかせ**、自前でパスワードを持っていない（→[第2章](02-what-is-a-user.md)）
 - [ ] 見せる/隠す・制限は**RLSで**やっていて、フロントの `if` 文だけに頼っていない（→[第5章](05-api-design.md)）
 - [ ] 個人のデータを、**みんなで共有するキャッシュ**に入れていない（→[第9章](09-cache.md)）
 

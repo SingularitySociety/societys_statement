@@ -37,3 +37,6 @@ rules:
   # A spoken conjunction opening a sentence
   # In Japanese, なので, でも and だけど at the head of a sentence are spoken conjunctions. In a report or a notice they make that sentence sound casual. Written Japanese has words that do the same job (そのため, しかし). なので inside a sentence is ordinary and not checked.
   colloquial-opener: relaxed # 2026-10-05 完全未経験者向けのチュートリアルで、文頭の「でも」は意図した語りかけ / isamu
+  # Too much bold
+  # Bold marks what matters. Used everywhere, it marks nothing.
+  bold-density: relaxed # 2026-10-05 用語リスト・手順・チェックリストで太字を見出しの札として使う型。マニュアルではボタン名・設定名も太字にする / isamu

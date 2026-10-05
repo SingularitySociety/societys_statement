@@ -44,8 +44,8 @@ nav_exclude: true
    **1行ずつ読むと：**
    - `import { createClient } from '...'` … Supabaseを使うための道具 `createClient` を、CDN（ネット上の配布先）から読み込む。
    - `createClient( ... )` … その道具で、Supabaseとやり取りする**クライアント（窓口）を作る**。
-   - 第1引数 `'https://xxxx.supabase.co'` … 手順3の **Project URL**（あなたの値に置きかえる）。
-   - 第2引数 `'ここに publishable key'` … 手順3の **Publishable key**（あなたの値に置きかえる）。
+   - 第1引数 `'https://xxxx.supabase.co'` … 手順3の **Project URL**（自分の値に置きかえる）。
+   - 第2引数 `'ここに publishable key'` … 手順3の **Publishable key**（自分の値に置きかえる）。
    - 以後は、本編のコードで出てくる **この `supabase` を使って**保存・取得を行います。
 
 ---
@@ -72,7 +72,7 @@ nav_exclude: true
 ## 📝 ことばメモ
 
 <!-- stet: unbalanced-bracket — 括弧は閉じている。chaff 0.25.0 の URL 判定が閉じ括弧「）」まで URL に含めてしまう誤検知 -->
-- **Project URL**：あなたのSupabaseプロジェクトの住所（`https://xxxx.supabase.co`）。コードの第1引数に使う
+- **Project URL**：自分のSupabaseプロジェクトの住所（`https://xxxx.supabase.co`）。コードの第1引数に使う
 - **Publishable key**：**ブラウザに置いてよい鍵**（`sb_publishable_...`）。RLSで守る前提。以前は **anon key（anon public key）** と呼ばれ、既存プロジェクトでは今もその名称で表示される
 - **service_role key**：**全権限のマスターキー**。サーバー専用で、フロントや公開リポジトリに出さない
 - **Table Editor**：表（テーブル）を画面で作る・見る場所

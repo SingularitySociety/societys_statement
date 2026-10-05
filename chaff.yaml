@@ -1,0 +1,39 @@
+# chaff.yaml — this team's writing rules
+#
+# Write only what differs from the defaults; anything left out uses the default.
+# chaff still runs if this file is deleted.
+#
+# A level is one of four words. No numbers needed.
+#
+#   strict    check closely
+#   normal    the default
+#   relaxed   check loosely
+#   off       do not check
+#
+# Commands change it too, and leave the reason as a comment.
+#
+#   npx chaffjs relax bold-density --why "figure captions use a lot of bold"
+#   npx chaffjs explain bold-density        read what the rule is for
+#   npx chaffjs rules --json                give this to an AI that writes the settings
+
+# このリポジトリの中心は「やり方を説明するドキュメント」なので docs/manual。一覧: npx chaffjs genres
+# 別の種類のファイルを見るときは、その実行だけ --genre を渡す（例: 行動規範は --genre legal/statute）。
+# 1 ファイルだけ変えたいときは、そのファイルの front matter に genre: を書くと最優先で効く。
+genre: docs/manual
+
+# The names your team writes (organisations, products). Each is read as one name, not as words to count.
+# names:
+#   - Bank of England
+
+# This genre's guide: what a good document of this kind does. It comes before the findings, and an AI
+# rewriting the text works to it. chaff ships one; replace it, add lines, or turn it off.
+# guide:
+#   docs/manual:
+#     add:
+#       - Does each amount say whether tax is included?
+
+# Only what differs from the defaults.
+rules:
+  # A spoken conjunction opening a sentence
+  # In Japanese, なので, でも and だけど at the head of a sentence are spoken conjunctions. In a report or a notice they make that sentence sound casual. Written Japanese has words that do the same job (そのため, しかし). なので inside a sentence is ordinary and not checked.
+  colloquial-opener: relaxed # 2026-10-05 完全未経験者向けのチュートリアルで、文頭の「でも」は意図した語りかけ / isamu

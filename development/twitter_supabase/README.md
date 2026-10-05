@@ -72,10 +72,10 @@ Twitterのクローンには、Web開発の大事なポイントがぎゅっと�
 - [第1章　Webアプリの登場人物](01-web-actors.md) — ブラウザ・サーバー・データベース・API。あなたのツイートが画面に出るまで
 
 ### 第2部　ログインする：認証と「ユーザー」
-- [第2章　「ユーザー」って何？ — Google認証と、いろいろなID](02-what-is-a-user.md) ✅ — ユーザーの正体／OAuth(Google)のIDと `auth.users` のID／@ハンドル／連番を避けてUUID／クッキー・localStorage と DB の違い
+- [第2章　「ユーザー」って何？ — Google認証と、いろいろなID](02-what-is-a-user.md) ✅ — ユーザーの正体／OAuth（Google）のIDと `auth.users` のID／@ハンドル／連番を避けてUUID／クッキー・localStorage と DB の違い
 
-### 第3部　投稿する：データベース(DB)とデータ分離
-- [第3章　ツイートしてみる — はじめてのデータ保存](03-first-data-save.md) ✅ — データを保存(insert)して新しい順に取り出す(select)。まだ持ち主なし＝第4章への布石
+### 第3部　投稿する：データベース（DB）とデータ分離
+- [第3章　ツイートしてみる — はじめてのデータ保存](03-first-data-save.md) ✅ — データを保存（insert）して新しい順に取り出す（select）。まだ持ち主なし＝第4章への布石
 - [第4章　【最重要】自分のデータを他人に見せない — データ分離とRLS](04-data-isolation.md) ✅ — 「このデータは誰のもの？」を user_id と RLS で守る、教材の背骨
   - 補足：RLSのない普通のDB（PostgreSQL / MySQL）ではどう守る？
 

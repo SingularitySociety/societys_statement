@@ -8,3 +8,5 @@ Gemfile.lock
 node_modules/
 .DS_Store
 *.md~
+.chaff-cache/
+.env*

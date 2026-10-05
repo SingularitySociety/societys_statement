@@ -71,6 +71,7 @@ nav_exclude: true
 
 ## 📝 ことばメモ
 
+<!-- stet: unbalanced-bracket — 括弧は閉じている。chaff 0.25.0 の URL 判定が閉じ括弧「）」まで URL に含めてしまう誤検知 -->
 - **Project URL**：あなたのSupabaseプロジェクトの住所（`https://xxxx.supabase.co`）。コードの第1引数に使う
 - **Publishable key**：**ブラウザに置いてよい鍵**（`sb_publishable_...`）。RLSで守る前提。以前は **anon key（anon public key）** と呼ばれ、既存プロジェクトでは今もその名称で表示される
 - **service_role key**：**全権限のマスターキー**。サーバー専用で、フロントや公開リポジトリに出さない

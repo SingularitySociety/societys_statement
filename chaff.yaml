@@ -1,0 +1,66 @@
+# chaff.yaml — this team's writing rules
+#
+# Write only what differs from the defaults; anything left out uses the default.
+# chaff still runs if this file is deleted.
+#
+# A level is one of four words. No numbers needed.
+#
+#   strict    check closely
+#   normal    the default
+#   relaxed   check loosely
+#   off       do not check
+#
+# Commands change it too, and leave the reason as a comment.
+#
+#   npx chaffjs relax bold-density --why "figure captions use a lot of bold"
+#   npx chaffjs explain bold-density        read what the rule is for
+#   npx chaffjs rules --json                give this to an AI that writes the settings
+
+# このリポジトリの中心は「やり方を説明するドキュメント」なので docs/manual。一覧: npx chaffjs genres
+# 別の種類のファイルを見るときは、その実行だけ --genre を渡す（例: 行動規範は --genre legal/statute）。
+# 1 ファイルだけ変えたいときは、そのファイルの front matter に genre: を書くと最優先で効く。
+genre: docs/manual
+
+# The names your team writes (organisations, products). Each is read as one name, not as words to count.
+# names:
+#   - Bank of England
+
+# This genre's guide: what a good document of this kind does. It comes before the findings, and an AI
+# rewriting the text works to it. chaff ships one; replace it, add lines, or turn it off.
+# guide:
+#   docs/manual:
+#     add:
+#       - Does each amount say whether tax is included?
+
+# Only what differs from the defaults.
+rules:
+  # A spoken conjunction opening a sentence
+  # In Japanese, なので, でも and だけど at the head of a sentence are spoken conjunctions. In a report or a notice they make that sentence sound casual. Written Japanese has words that do the same job (そのため, しかし). なので inside a sentence is ordinary and not checked.
+  colloquial-opener: relaxed # 2026-10-05 完全未経験者向けのチュートリアルで、文頭の「でも」は意図した語りかけ / isamu
+  # Too much bold
+  # Bold marks what matters. Used everywhere, it marks nothing.
+  bold-density: relaxed # 2026-10-05 用語リスト・手順・チェックリストで太字を見出しの札として使う型。マニュアルではボタン名・設定名も太字にする / isamu
+  # Term defined but never used
+  # A term defined and then never used makes the reader learn it for nothing. Usually the body was reworded to another word and the definition stayed behind, so check whether the body now uses a different word for the same thing.
+  unused-definition: off # 2026-10-05 各章の末尾に用語メモを置く型。そこから後ろに本文が無いので、定義が使われないのは設計どおり / isamu
+  # Abbreviation expanded two ways
+  # An abbreviation spelled out as two different names leaves the reader unsure whether they are the same thing. One of them is usually a slip, or a sentence pasted from another document.
+  acronym-expansion-conflict: off # 2026-10-05 略語のあとの丸括弧を展開と読むが、この教材では注記や場所の補足に使う（TTL（有効期限）など） / isamu
+  # Reference to a missing provision
+  # A reference such as "as set out in Section 12" leaves the reader at a dead end when that section is not in the document. It usually happens when a provision is deleted or renumbered and the reference keeps the old number. chaff builds the document's tree of addresses (chaff tree) and checks that each reference's address is in it. A Japanese reference counted in 条 (法第2条) is not looked up in a document that numbers none of its provisions with 条, such as a guideline whose headings read "1 目的", because it points into another document.
+  dangling-reference: off # 2026-10-05 「第N章」は同じ連載の別ファイル。番号つきの節がある文書だと、別ファイルへのリンクでも「この文書にない」と出る / isamu
+  # A reference whose name does not match its target's heading
+  # When "Section 5 (Confidentiality)" points at a Section 5 headed "Liability", the reader cannot tell whether the number or the name is right. It happens when sections are added or removed and the numbers shift, but the references are not updated. The name in brackets or quotes right after a reference is compared with the target's heading; they agree when either contains the other.
+  reference-title-mismatch: off # 2026-10-05 dangling-reference と同じ理由。「第N章」を自分の文書の節番号に当ててしまう / isamu
+  # Heading numbering mixed
+  # A numbered "1. Overview" and "2. Steps" next to an unnumbered "Summary", or "1." and "2." next to "3)" or "Chapter 4", leave the reader unsure whether the odd one is meant to be different or lost its number, and the numbers stop matching the table of contents and cross-references. chaff does not pick a style; among headings with the same parent and depth (siblings) it points at the minority. Words that carry a number (Chapter 1, 第1章) and front and back matter that is never numbered (Contents, References) are in each language's lexicon.
+  heading-numbering-mix: off # 2026-10-05 番号つきの手順や失敗例のあとに、番号のない補足の見出しを置く型 / isamu
+  # Too many emoji
+  # One emoji marks a spot. Many turn the text into decoration, and a screen reader has to say all of them.
+  emoji-density: relaxed # 2026-10-05 各章の読み方の型（📱🤔🛠⚠️🤖）を絵文字で示す / isamu
+  # Too many dashes
+  # In English a dash is a legitimate tool, and a heavy hand with it is also one of the better-known marks of generated text. On its own it says little; it counts toward the composite signal.
+  no-em-dash: off # 2026-10-05 目次が「章名 — 要約」の形で、区切りにダッシュを使う / isamu
+  # One word spelled two ways
+  # Writing one word two ways in one document (e-mail and email, GitHub and Github) makes search treat them as different words and leaves the reader wondering whether two things are meant. chaff does not decide which way is right and keeps no list of words; it groups the document's own words, by reading in Japanese and by spelling without hyphens and case in English, and points at whichever way the document uses less. The case of the first letter is left out, since a sentence or a title gives it (Email, email), and so are words in capitals only. It says nothing when the minority is more than a third, since the document then uses both on purpose.
+  orthographic-variant: relaxed # 2026-10-05 読みで語を束ねるため、ふりがな（べありぇーとーくん→くん）・同音の別語（全員ぶん／文にすれば）・補助動詞（追ってみる）・慣用句（気をつける）・各章末の「へもどる」を同じ語と見てしまう / isamu

@@ -64,7 +64,7 @@ alter table tweets add column is_public boolean not null default true;
 
 - `alter table tweets` … 「`tweets`（ツイート）表を **作り変える**」という宣言（`alter` ＝ 変更する）。
 - `add column is_public` … 「`is_public`（公開かどうか）という **新しい列を足す**」。
-- `boolean` … 中身は **true / false の2択**（boolean ＝ はい/いいえの値）。`true` ＝ 公開、`false` ＝ 下書き。
+- `boolean` … 中身は **true / falseの2択**（boolean ＝ はい/いいえの値）。`true` ＝ 公開、`false` ＝ 下書き。
 - `not null` … **空はダメ**。必ず公開か下書きか、どちらかに決める。
 - `default true` … 何も指定せず投稿したら、**自動で `true`（公開）になる**。
 
@@ -183,7 +183,7 @@ Supabaseでは、ログイン中の人は `authenticated`（認証済み）、�
 ## 📝 ことばメモ
 
 - **公開／非公開**：その投稿を「みんなに見せる」か「自分だけにする」か
-- **`is_public`**：公開かどうかを表す true/false の列（`true` ＝ 公開、`false` ＝ 下書き）
+- **`is_public`**：公開かどうかを表すtrue/falseの列（`true` ＝ 公開、`false` ＝ 下書き）
 - **ポリシーのOR条件**：「公開 **または** 自分」のように、**どちらか一方**でも当てはまれば通す書き方
 - **匿名（anon）**：ログインしていない人を指す役割。公開データだけが読める
 

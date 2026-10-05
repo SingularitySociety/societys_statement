@@ -36,13 +36,13 @@ alter table tweets add column is_pinned boolean not null default false;
 **1行ずつ読むと：**
 
 - `add column is_pinned` … `is_pinned`（固定か）という列を足す。
-- `boolean` … 中身は **true / false の2択**。
+- `boolean` … 中身は **true / falseの2択**。
 - `not null default false` … **空を作らない**。初期値は `false`（固定していない）。第6章の `is_public` と同じ作法です。
 
 ### 🔧 フラグ設計の注意
 
-- **3つ以上の状態は、フラグを増やすより `status` 列1本に。**
-  「下書き / 公開 / アーカイブ」のように状態が3つ以上あるなら、`is_draft` `is_archived` …と boolean を乱立させるより、**状態をまとめた1列**にした方がスッキリします。
+- **3つ以上の状態は、フラグを増やすより `status` 列1本に**
+  「下書き / 公開 / アーカイブ」のように状態が3つ以上あるなら、`is_draft` `is_archived` …とbooleanを乱立させるより、**状態をまとめた1列**にした方がスッキリします。
 
   ```sql
   -- 状態を1列で表す（3つの中からどれか）
@@ -51,14 +51,14 @@ alter table tweets add column is_pinned boolean not null default false;
   ```
   - `check (status in (...))` … **決めた値以外を入れさせない**安全装置。
 
-- **「消す」は本当に消さない手もある（ソフトデリート）。**
-  `delete` で行ごと消すかわりに、`is_deleted = true`（または `deleted_at` に時刻）を立てて **「消したことにする」**。あとで復元できる・記録が残る、という利点があります。ただし **表示の `select` や RLS で「消した行を除く」条件を忘れない**こと（忘れると消したはずの投稿が見えます）。
+- **「消す」は本当に消さない手もある（ソフトデリート）**
+  `delete` で行ごと消すかわりに、`is_deleted = true`（または `deleted_at` に時刻）を立てて **「消したことにする」**。あとで復元できる・記録が残る、という利点があります。ただし **表示の `select` やRLSで「消した行を除く」条件を忘れない**こと（忘れると消したはずの投稿が見えます）。
 
-- **フラグの乱立に注意。** `is_a` `is_b` `is_c` …と増えると読みにくくなります。まとまる状態は `status` に集約を。
+- **フラグの乱立に注意** `is_a` `is_b` `is_c` …と増えると読みにくくなります。まとまる状態は `status` に集約を。
 
 ---
 
-## 🆔 ID と インデックス — 似て非なる2つ（🟢 基礎）
+## 🆔 IDと インデックス — 似て非なる2つ（🟢 基礎）
 
 名前が似ていて、初心者が**いちばん混同しやすい**2つです。まず一言で区別します。
 
@@ -72,7 +72,7 @@ alter table tweets add column is_pinned boolean not null default false;
 
 ### 🔧 なぜ混同するの？ → 主キーには索引が自動で付くから
 
-`id` を `primary key`（主キー）にすると、DBは裏で **「idで探すための索引」を自動で作ります。** だから `where id = 123` はいつも速い。この「**ID と 索引がセットで付いてくる**」のが、両者が同じものに見える原因です。でも——**`id` は名札、索引は探す仕組み**。概念は別、と覚えてください。
+`id` を `primary key`（主キー）にすると、DBは裏で **「idで探すための索引」を自動で作ります。** だから `where id = 123` はいつも速いのです。この「**ID と 索引がセットで付いてくる**」のが、両者が同じものに見える原因です。でも——**`id` は名札、索引は探す仕組み**。概念は別、と覚えてください。
 
 ---
 
@@ -90,7 +90,7 @@ alter table tweets add column is_pinned boolean not null default false;
 
 - `tweets.user_id` … 「この人の投稿」を絞る（第4章・[第8章](08-home-timeline.md)）
 - `tweets.created_at` … 新しい順に並べる（第3章〜、ほぼ全章）
-- `follows.follower_id` / `follows.followee_id` … フォロー関係をたどる（[第7章](07-follow.md)・第8章）。第7章の複合主キー `(follower_id, followee_id)` は、`follower_id` で探す索引も兼ねます。
+- `follows.follower_id` / `follows.followee_id` … フォロー関係をたどる（[第7章](07-follow.md)・第8章）。第7章の複合主キー `(follower_id, followee_id)` は、`follower_id` で探す索引も兼ねる。
 
 ```sql
 -- 「この人の投稿を新しい順」をまとめて速くする索引
@@ -99,7 +99,7 @@ create index on tweets (user_id, created_at desc);
 
 **1行ずつ読むと：**
 
-- `create index on tweets (...)` … `tweets` 表に索引を作る。
+- `create index on tweets (...)` … `tweets` 表に索引を作ります。
 - `(user_id, created_at desc)` … **`user_id` で絞ってから `created_at` の新しい順**、という取り出し方に効く **複合インデックス**。第8章の「フォロー中の人の投稿を新しい順」がこの形です。
 
 > 💡 Supabase（PostgreSQL）では、主キーや一部の制約に索引が自動で付きます。でも **自分が検索・並べ替えに使う列**は、自動では付かないことが多いので、上のように**明示的に張る**と速くなります。
@@ -114,11 +114,11 @@ create index on tweets (user_id, created_at desc);
 
 ## ⚠️ ハマりどころ
 
-- **ID と インデックスを同じものだと思う** … **ID＝名札／インデックス＝探す仕組み**。別物です。
+- **IDとインデックスを同じものだと思う** … **ID＝名札／インデックス＝探す仕組み**。別物です。
 - **全部の列に索引を張る** … 書き込みが遅くなり、容量も無駄。必要な列だけに。
 - **検索・並べ替えに使う列に索引が無い** … 全表スキャンで遅い。「遅いな」と思ったら、その `where` / `order by` の列に索引があるか確認。
-- **ソフトデリートの消し忘れ表示** … `is_deleted` の行を除く条件や RLS を入れないと、消したはずが見える。
-- **boolean の乱立** … 3つ以上の状態は `status` 列に集約を検討。
+- **ソフトデリートの消し忘れ表示** … `is_deleted` の行を除く条件やRLSを入れないと、消したはずが見える。
+- **booleanの乱立** … 3つ以上の状態は `status` 列に集約を検討。
 
 ---
 
@@ -133,7 +133,7 @@ create index on tweets (user_id, created_at desc);
 
 1. `where` / `order by` / `join` に使う列に **索引**があるか？
 2. **不要な索引を量産**していないか？
-3. 状態管理が **boolean 乱立**になっていないか（`status` でまとまらないか）？
+3. 状態管理が **boolean乱立**になっていないか（`status` でまとまらないか）？
 
 ---
 
@@ -144,7 +144,7 @@ create index on tweets (user_id, created_at desc);
 - **`status` 列**：3つ以上の状態を1列で持つ（`draft`/`published`/… のように）
 - **ID（識別子）**：行を一意に指す名札（主キー）
 - **インデックス（索引）**：目的の行を速く見つける仕組み
-- **全表スキャン**：索引がなく、全行を順に見ること（遅い）
+- **全表スキャン**：索引が無く、全行を順に見ること（遅い）
 - **複合インデックス**：複数の列をまとめた索引（`(user_id, created_at)` など）
 
 ---

@@ -40,3 +40,24 @@ rules:
   # Too much bold
   # Bold marks what matters. Used everywhere, it marks nothing.
   bold-density: relaxed # 2026-10-05 用語リスト・手順・チェックリストで太字を見出しの札として使う型。マニュアルではボタン名・設定名も太字にする / isamu
+  # Term defined but never used
+  # A term defined and then never used makes the reader learn it for nothing. Usually the body was reworded to another word and the definition stayed behind, so check whether the body now uses a different word for the same thing.
+  unused-definition: off # 2026-10-05 各章の末尾に用語メモを置く型。そこから後ろに本文が無いので、定義が使われないのは設計どおり / isamu
+  # Abbreviation expanded two ways
+  # An abbreviation spelled out as two different names leaves the reader unsure whether they are the same thing. One of them is usually a slip, or a sentence pasted from another document.
+  acronym-expansion-conflict: off # 2026-10-05 略語のあとの丸括弧を展開と読むが、この教材では注記や場所の補足に使う（TTL（有効期限）など） / isamu
+  # Reference to a missing provision
+  # A reference such as "as set out in Section 12" leaves the reader at a dead end when that section is not in the document. It usually happens when a provision is deleted or renumbered and the reference keeps the old number. chaff builds the document's tree of addresses (chaff tree) and checks that each reference's address is in it. A Japanese reference counted in 条 (法第2条) is not looked up in a document that numbers none of its provisions with 条, such as a guideline whose headings read "1 目的", because it points into another document.
+  dangling-reference: off # 2026-10-05 「第N章」は同じ連載の別ファイル。番号つきの節がある文書だと、別ファイルへのリンクでも「この文書にない」と出る / isamu
+  # A reference whose name does not match its target's heading
+  # When "Section 5 (Confidentiality)" points at a Section 5 headed "Liability", the reader cannot tell whether the number or the name is right. It happens when sections are added or removed and the numbers shift, but the references are not updated. The name in brackets or quotes right after a reference is compared with the target's heading; they agree when either contains the other.
+  reference-title-mismatch: off # 2026-10-05 dangling-reference と同じ理由。「第N章」を自分の文書の節番号に当ててしまう / isamu
+  # Heading numbering mixed
+  # A numbered "1. Overview" and "2. Steps" next to an unnumbered "Summary", or "1." and "2." next to "3)" or "Chapter 4", leave the reader unsure whether the odd one is meant to be different or lost its number, and the numbers stop matching the table of contents and cross-references. chaff does not pick a style; among headings with the same parent and depth (siblings) it points at the minority. Words that carry a number (Chapter 1, 第1章) and front and back matter that is never numbered (Contents, References) are in each language's lexicon.
+  heading-numbering-mix: off # 2026-10-05 番号つきの手順や失敗例のあとに、番号のない補足の見出しを置く型 / isamu
+  # Too many emoji
+  # One emoji marks a spot. Many turn the text into decoration, and a screen reader has to say all of them.
+  emoji-density: relaxed # 2026-10-05 各章の読み方の型（📱🤔🛠⚠️🤖）を絵文字で示す / isamu
+  # Too many dashes
+  # In English a dash is a legitimate tool, and a heavy hand with it is also one of the better-known marks of generated text. On its own it says little; it counts toward the composite signal.
+  no-em-dash: relaxed # 2026-10-05 目次は「章名 — 要約」の区切りに使い、本文では語りの句に使う / isamu

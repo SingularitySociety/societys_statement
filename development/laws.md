@@ -461,6 +461,16 @@ Xerox の経営陣に「コンピューティングの未来はどうなるの�
 
 熱狂している少数を作れれば、そこから広げられる。**なんとなく好かれている多数からは、何も分からない**。
 
+### 普通のやつらの上を行け — 「ほげ言語」のパラドックス
+
+> As long as our hypothetical Blub programmer is looking down the power continuum, he knows he's looking down. Languages less powerful than Blub are obviously less powerful, because they're missing some feature he's used to. But when our hypothetical Blub programmer looks in the other direction, up the power continuum, he doesn't realize he's looking up. What he sees are merely weird languages.
+
+◎ **Paul Graham**／"Beating the Averages"（2001 年 4 月、2003 年改訂）— [原文](https://paulgraham.com/avg.html)、[川合史朗訳「普通のやつらの上を行け」](http://practical-scheme.net/trans/beating-the-averages-j.html)
+
+Viaweb で Lisp を「秘密兵器」として使い、競合を出し抜いた話。中核にあるのは **Blub（邦訳では「ほげ言語」）のパラドックス**です。自分の使っている言語より**弱い**言語は「弱い」と分かる。ところが**強い**言語を見ても、見上げているとは気づかず、ただの「変な言語」に見える。
+
+**自分がどの高さにいるかは、上を見ても分からない。**下を見てしか分からない。言語だけでなく、道具・設計・組織のどれにも効く不等式です。
+
 ### 本物のアーティストは出荷する
 
 > Real artists ship.
@@ -579,6 +589,66 @@ Day 1 を保つ方法として、**顧客への執着・プロセスの代理化
 
 ---
 
+## 3. つくる現場とキャリア
+
+### Less is more — 少ないほうが豊かである
+
+> Well, less is more, Lucrezia: I am judged.
+
+◎ **Robert Browning**／詩「Andrea del Sarto」（詩集『Men and Women』1855 所収）— [Project Gutenberg（Browning 全集）](https://www.gutenberg.org/ebooks/50954)
+
+○ 建築の標語にしたのは **Ludwig Mies van der Rohe**（さらに遡ると、若き Mies が働いた Peter Behrens のもとで使われていたとされる）— [Wikiquote](https://en.wikiquote.org/wiki/Ludwig_Mies_van_der_Rohe)
+
+**もとは建築の言葉でも設計の言葉でもなく、19 世紀の詩の一行**です。技術的には完璧な自分の絵より、欠点だらけでも魂のあるラファエロの絵のほうが上だ、と画家アンドレア・デル・サルトが認める場面で出てきます。**「少ないほうがいい」ではなく「足りているのに届かない」という苦い文脈**なのが、標語になったあとで落ちた部分です。
+
+そして反論もセットで残っています。**Robert Venturi** が『Complexity and Contradiction in Architecture』（1966）で返した **"Less is a bore"（少ないのは退屈だ）** — [Wikiquote](https://en.wikiquote.org/wiki/Robert_Venturi)。ミニマルな API と全部入りのフレームワークの論争は、半世紀前に建築で一周しています。
+
+### Demo or Die → Deploy or Die
+
+> Demo or die.
+
+△ **Nicholas Negroponte**（MIT メディアラボ初代所長）／アカデミアの "publish or perish"（論文を出すか、滅びるか）に対抗する標語として使った。**本人が書いた一次資料は特定できていない**
+
+> Deploy or die.
+
+◎ **伊藤穰一（Joi Ito）**／メディアラボ所長として 2014 年に標語を改めた — [TED2014 の講演レポート](https://blog.ted.com/instead-of-futurists-lets-be-now-ists-joi-ito-at-ted2014/)、[メディアラボの 9 principles](https://civic.mit.edu/2014/06/24/joi-itos-9-principles-of-the-media-lab/)
+
+論文ではなく**動くデモ**を出せ、がネグロポンテ。デモは一度動けばよく、世に出すのは大企業の仕事でした。作って配るコストが下がった結果、**デモでは足りない、実際に配れ**に変わった、というのが伊藤の改訂です。ブートキャンプの「まず動くものを見せる」は、この系譜の上にあります。→ [デモを作る難しさ](../bootcamp/demo.md)
+
+### レンガの壁は、どれだけ本気かを確かめるためにある
+
+> The brick walls are there for a reason. The brick walls are not there to keep us out. The brick walls are there to give us a chance to show how badly we want something.
+
+◎ **Randy Pausch**（カーネギーメロン大学）／最終講義 "Really Achieving Your Childhood Dreams"（2007 年 9 月 18 日）— [CMU の公式ページ](https://www.cmu.edu/randyslecture/)、[講義の動画](https://www.youtube.com/watch?v=ji5_MqicxSo)
+
+膵臓がんで余命数か月と告げられた状態で行われた講義。**壁は「入るな」の意味ではなく「どれだけ欲しいか見せろ」の意味だ**。壁は、本気でない人を止めるためにある。
+
+### 肩書きはマネージャーにする。人がリーダーにする
+
+> Your title makes you a manager. Your people make you a leader.
+
+○ **Bill Campbell**（Apple・Google・Intuit を支えたコーチ）／Eric Schmidt / Jonathan Rosenberg / Alan Eagle『Trillion Dollar Coach』（2019）に記録された口癖 — [書籍サイト](https://www.trilliondollarcoach.com/)
+
+肩書きは会社が与えるが、リーダーかどうかを決めるのは**ついてくる人がいるかどうか**。Campbell は自分では何も作らず、ジョブズにもラリー・ペイジにも付き合い続けた人です。
+
+### ロケットの席を勧められたら、どの席かを聞くな
+
+> If you're offered a seat on a rocket ship, don't ask what seat. Just get on.
+
+◎ **Eric Schmidt**（当時 Google CEO）が Sheryl Sandberg に言った言葉。Sandberg がハーバード・ビジネス・スクールの卒業式スピーチ（2012 年 5 月）で紹介して広まった — [スピーチ全文](https://speakola.com/grad/sheryl-shandberg-harvard-business-school-2012)
+
+Sandberg が Google のオファーに迷い、職務要件を表にして比べていたときの返答。**伸びている場所を選べば、役割は後からついてくる**。
+
+### 良いアイデアを凡庸なチームに渡すな
+
+> If you give a good idea to a mediocre team, they will screw it up; if you give a mediocre idea to a great team, they will either fix it or throw it away and come up with something that works.
+
+◎ **Ed Catmull**（ピクサー共同創業者）／"How Pixar Fosters Collective Creativity"（Harvard Business Review, 2008 年 9 月）、のちに『Creativity, Inc.』（2014）— [記事ページ](https://hbr.org/2008/09/how-pixar-fosters-collective-creativity)
+
+『トイ・ストーリー2』の作り直しから得た教訓として書かれています。**アイデアではなく人に賭けろ**。ピクサーは「初期版はどれも駄作だ」を前提に置き、Braintrust と呼ばれる率直な相互批評で直していく。なお Catmull は、Alan Kay や Ivan Sutherland と同じ**ユタ大学**のコンピュータグラフィックス研究室の出身です。
+
+---
+
 ## 足りないものを募集しています
 
 このページは**未完成であることを前提**にしています。「これが無いのはおかしい」というものが必ずあるはずです。
@@ -597,7 +667,7 @@ Day 1 を保つ方法として、**顧客への執着・プロセスの代理化
 
 次のジャンルは、今回は意図的に入れていません。ここを埋める提案も歓迎します。
 
-- **人・組織・チームの法則** — Parkinson の法則、Hofstadter の法則、90-90 ルール、Chesterton の柵、Goodhart の法則、bus factor など
+- **見積もりと組織の法則** — Parkinson の法則、Hofstadter の法則、90-90 ルール、Chesterton の柵、Goodhart の法則、bus factor など
 - **AI 時代の言葉** — The Bitter Lesson（Rich Sutton）、Amara の法則、Hyrum の法則など
 - **セキュリティ** — Kerckhoffs の原理、Schneier の法則など
 - **日本語圏で生まれた言葉**

@@ -24,4 +24,5 @@ has_children: true
 - [Product Manageについて](./pm.md)
 - [Productについて](./Product.md)
 - [セキュリティ（攻撃の入口を知る教育ドキュメント）](./security/README.md)
+  - [セキュリティはゼロベースで考える](./security/security-zero-base.md) — 持たない・自前で作らない・認証や業者を過信しない・一度きりで終わらせない・システムだけでは守れない。守るものを減らすことから始める考え方
 

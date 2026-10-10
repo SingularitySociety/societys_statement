@@ -24,6 +24,13 @@ genre: docs/manual
 # The names your team writes (organisations, products). Each is read as one name, not as words to count.
 # names:
 #   - Bank of England
+names: # 2026-10-10 組織名と規格名。漢字の連続や略語として数えない / isamu
+  - 個人情報保護委員会
+  - 日本情報経済社会推進協会
+  - PCI DSS
+  - PCI Security Standards Council
+  - JIS Q 15001
+  - ISO/IEC 27001
 
 # This genre's guide: what a good document of this kind does. It comes before the findings, and an AI
 # rewriting the text works to it. chaff ships one; replace it, add lines, or turn it off.

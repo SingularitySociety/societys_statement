@@ -13,6 +13,17 @@
 | YouTube | https://www.youtube.com/@SingularitySociety |
 | note | https://note.com/singsoc |
 
+## Mulmo 系プロダクト
+
+シンギュラリティ・ソサエティのメンバーが開発している、オープンソースのプロダクトです。
+
+| プロダクト | 何をするものか | サイト・ドキュメント |
+| --- | --- | --- |
+| MulmoCast | スクリプトから、ナレーションつきの動画・Podcast・スライドを AI で作る | [公式サイト](https://mulmocast.com) · [CLI（GitHub）](https://github.com/receptron/mulmocast-cli) · [ドキュメント](https://github.com/receptron/mulmocast-cli/tree/main/docs) · [FAQ（日本語）](https://github.com/receptron/mulmocast-cli/blob/main/docs/faq_ja.md) · [デスクトップアプリ（GitHub）](https://github.com/receptron/mulmocast-app) |
+| MulmoClaude | 自分の PC で育てる AI アシスタント。記憶やデータはワークスペースのファイルとして手元に残る | [ドキュメント](https://receptron.github.io/mulmoclaude/) · [セットアップ](https://receptron.github.io/mulmoclaude/setup/) · [GitHub](https://github.com/receptron/mulmoclaude) |
+| MulmoTerminal | Claude Code や Codex を並列で動かすブラウザのターミナル。どのエージェントが入力を待っているかが一目でわかる | [公式サイト](https://www.mulmoterminal.com) · [ドキュメント](https://receptron.github.io/mulmoterminal/) · [日本語ガイド](https://receptron.github.io/mulmoterminal/guide/ja/) · [GitHub](https://github.com/receptron/mulmoterminal) |
+| MulmoChat | テキストだけでないチャットの研究用プロトタイプ。会話を続けながら、画像や地図やゲームが画面に現れる | [GitHub](https://github.com/receptron/MulmoChat) |
+
 ## 行動規範・カルチャー
 
 - [シンギュラリティ・ソサイエティ行動規範](./code-of-conduct.md)

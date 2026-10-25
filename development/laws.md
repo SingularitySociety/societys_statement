@@ -385,7 +385,7 @@ Ruby が「驚き最小の原則（principle of least surprise）」で設計さ
 
 > MINSWAN: Matz is Nice, so we are nice.
 
-△ **Martin Fowler** が言い出したとされる。出典は Bart Eisenberg の連載 "Software Designers — The People Behind the Code" 第 34 回「Yukihiro "Matz" Matsumoto: Ruby Inventor」（Software Design 2012 年 2 月号 / gihyo.jp）— [記事](https://gihyo.jp/dev/serial/01/software_designers/0034)。**Fowler 本人が書いた一次資料は見つかっていない**
+○ **Martin Fowler** が言い出したとされる。**まつもとゆきひろ本人が** [Quora の回答](https://jp.quora.com/Ruby%E3%82%B3%E3%83%9F%E3%83%A5%E3%83%8B%E3%83%86%E3%82%A3%E3%81%AFMINASWAN%E3%81%A8%E3%81%84%E3%81%86%E6%85%88%E6%84%9B%E3%81%AE%E7%B2%BE%E7%A5%9E%E3%82%92%E5%B0%8A%E3%81%B6%E3%83%A2%E3%83%83%E3%83%88%E3%83%BC)で「記憶が正しければ Martin Fowler」と書いており、最初に言われたときは "And" のない MINSWAN だった気がする、とも答えている。記事では Bart Eisenberg の連載 "Software Designers — The People Behind the Code" 第 34 回「Yukihiro "Matz" Matsumoto: Ruby Inventor」（Software Design 2012 年 2 月号 / gihyo.jp）にも出てくる — [記事](https://gihyo.jp/dev/serial/01/software_designers/0034)。**Fowler 本人が書いた一次資料は見つかっていない**
 
 **もとの形は "and" の入らない MINSWAN** でした。2008 年の時点でもこの綴りで使われています（[Pat Eyler のブログ](http://on-ruby.blogspot.com/2008/03/gracious-dave-and-minswan.html)：「MINSWAN (Matz is nice, so we are nice) was the order of the day」）。のちに **MINASWAN**（Matz is nice **and** so we are nice）の綴りが広まり、いまはこちらが主流です。
 

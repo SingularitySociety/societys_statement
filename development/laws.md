@@ -491,7 +491,7 @@ Viaweb で Lisp を「秘密兵器」として使い、競合を出し抜いた�
 
 > If you are not embarrassed by the first version of your product, you've launched too late.
 
-△ **Reid Hoffman**（LinkedIn 共同創業者）／講演などで繰り返し語られているが、**一次資料は特定できていない**
+○ **Reid Hoffman**（LinkedIn 共同創業者）／講演などで繰り返し語られている。**本人が** 2017 年 3 月 29 日に LinkedIn に書いたエッセイ「If There Aren't Any Typos In This Essay, We Launched Too Late!」で、10 年以上前に自分が作った言葉だと書いている — [エッセイ](https://www.linkedin.com/pulse/arent-any-typos-essay-we-launched-too-late-reid-hoffman/)。**最初に言った場・時期の一次資料は特定できていない**
 
 ### 顧客との最初の接触で、計画は生き残らない
 

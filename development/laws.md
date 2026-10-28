@@ -513,7 +513,7 @@ MVP は「**手抜きの製品**」ではなく「**最小の労力で最大の�
 
 > Software is eating the world.
 
-◎ **Marc Andreessen**／Wall Street Journal, 2011 年 8 月 20 日 — [a16z による全文](https://a16z.com/why-software-is-eating-the-world/)
+◎ **Marc Andreessen**／Wall Street Journal, 2011 年 8 月 20 日 — [a16z による転載](https://a16z.com/why-software-is-eating-the-world/)
 
 あらゆる産業がソフトウェア企業に置き換わる、という予言。2011 年には大げさだと言われました。
 

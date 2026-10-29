@@ -1,6 +1,7 @@
 ---
 title: "宴会の進め方"
-nav_order: 9
+parent: "イベント"
+nav_order: 2
 ---
 
 # 宴会（懇親会）の進め方

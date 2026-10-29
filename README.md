@@ -36,7 +36,11 @@
 - [ミーティング（会議）の進め方](./meeting.md)
 - [ライブ議事録で会議を回す](./live-meeting-minutes.md)
 - [議論上の注意点](./pointsOfDiscussion.md)
-- [宴会（懇親会）の進め方](./party.md)
+
+## イベント
+
+- [イベント開催の進め方](./events/event-hosting.md)
+- [宴会（懇親会）の進め方](./events/party.md)
 
 ## ブートキャンプ・技術
 

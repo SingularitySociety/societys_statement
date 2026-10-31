@@ -607,7 +607,7 @@ Day 1 を保つ方法として、**顧客への執着・プロセスの代理化
 
 > Demo or die.
 
-△ **Nicholas Negroponte**（MIT メディアラボ初代所長）／アカデミアの "publish or perish"（論文を出すか、滅びるか）に対抗する標語として使った。**本人が書いた一次資料は特定できていない**
+○ **Nicholas Negroponte**（MIT メディアラボ初代所長）／アカデミアの "publish or perish"（論文を出すか、滅びるか）に対抗する標語として使った。**本人が** MIT の公式インタビュー（Infinite History）で、メディアラボには "demo or die" という言い回しがあり、それが自分たちの "publish or perish" だったと語っている — [インタビューと文字起こし](https://infinite.mit.edu/video/nicholas-negroponte-%E2%80%9966-mar-%E2%80%9966/)。**誰が最初に言い出したかの一次資料は特定できていない**
 
 > Deploy or die.
 

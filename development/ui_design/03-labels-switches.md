@@ -72,7 +72,7 @@ NN/g のトグルスイッチの指針も、ラベルは「短く、直接的に
 
 ## 入力欄のラベルと入力例
 
-入力欄の名前（ラベル）は、欄の上に置き、入力例（プレースホルダー。欄の中に薄く出る文字）で代用しません。入力例は書き始めた瞬間に消えるので、何の欄だったか分からなくなります。デジタル庁デザインシステムは「サポートテキストを企図して、プレースホルダーテキストを使用してはなりません」としています（[テキスト入力: 使い方](https://design.digital.go.jp/components/input-text/usage/)）。必須か任意かは、欄の名前の横に「※必須」「※任意」のように明示します。
+入力欄の名前（ラベル）は、欄の上に置き、入力例（プレースホルダー。欄の中に薄く出る文字）で代用しません。入力例は書き始めた瞬間に消えるので、何の欄だったか分からなくなります。デジタル庁デザインシステムは「サポートテキストを企図して、プレースホルダーテキストを使用してはなりません」としています（[インプットテキスト: 使い方](https://design.digital.go.jp/components/input-text/usage/)）。必須か任意かは、欄の名前の横に「※必須」「※任意」のように明示します。
 
 ## やってみる
 
@@ -82,7 +82,7 @@ NN/g のトグルスイッチの指針も、ラベルは「短く、直接的に
 
 - ソシオメディア「[ユーザーの言葉を使う](https://www.sociomedia.co.jp/9108)」
 - NN/g「[Toggle-Switch Guidelines](https://www.nngroup.com/articles/toggle-switch-guidelines/)」「[Confirmation Dialogs Can Prevent User Errors — If Not Overused](https://www.nngroup.com/articles/confirmation-dialog/)」「[10 Usability Heuristics](https://www.nngroup.com/articles/ten-usability-heuristics/)」（2. Match Between the System and the Real World）
-- デジタル庁デザインシステム「[スイッチ](https://design.digital.go.jp/components/switch/)」「[チェックボックス: 使い方](https://design.digital.go.jp/components/checkbox/usage/)」「[テキスト入力: 使い方](https://design.digital.go.jp/components/input-text/usage/)」
+- デジタル庁デザインシステム「[スイッチ](https://design.digital.go.jp/components/switch/)」「[チェックボックス: 使い方](https://design.digital.go.jp/components/checkbox/usage/)」「[インプットテキスト: 使い方](https://design.digital.go.jp/components/input-text/usage/)」
 
 ---
 

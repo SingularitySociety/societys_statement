@@ -2,10 +2,10 @@
 title: "迷わせない — 現在地を見せる、頭の中の絵に合わせる、最初は少なく、慣れたら近道"
 parent: "UI設計の基礎 — 読まなくても分かる画面の作り方"
 grand_parent: "開発の心得"
-nav_order: 8
+nav_order: 7
 ---
 
-# 第8章　迷わせない — 現在地を見せる、頭の中の絵に合わせる、最初は少なく、慣れたら近道
+# 第7章　迷わせない — 現在地を見せる、頭の中の絵に合わせる、最初は少なく、慣れたら近道
 
 > 連載の入口 → [UI設計の基礎](README.md)
 
@@ -27,7 +27,15 @@ nav_order: 8
 
 サイトの階層が深いなら、「ホーム › 注文 › お届け先」のような現在地の表示（パンくず）を付けます。NN/g の「[Breadcrumbs: 11 Design Guidelines for Desktop and Mobile](https://www.nngroup.com/articles/breadcrumbs/)」は、検索結果から途中の階層に直接来た人の道しるべになると書いています。デジタル庁の「[パンくずナビゲーション](https://design.digital.go.jp/components/breadcrumb/usage/)」は、ページの上の方、見出しのすぐ上に置くとしています。
 
-![左は手順の表示がなく、いま何番目か分からない画面。右は「1 お客様情報、2 お届け先、3 お支払い、4 確認」の手順表示と現在地の表示がある画面](../../images/ui_design/08-steps.svg)
+![左は手順の表示がなく、いま何番目か分からない画面。右は「1 お客様情報、2 お届け先、3 お支払い、4 確認」の手順表示と現在地の表示がある画面](../../images/ui_design/07-steps.svg)
+
+### 「戻る」ではなく行き先を書く
+
+この連載では、画面の中に「戻る」ボタンを作らないことを勧めます。一つの画面に来る道は一つとは限りません。一覧から来た人、検索結果から来た人、メールのリンクから来た人がいて、「戻る」がどこへ行くのかは人によって違います。来た道を戻るのは、ブラウザや OS の「戻る」の仕事です（[第1章](01-consistency.md)の外側の一貫性）。
+
+それでもリンクが要るなら、行き先を書きます。「注文一覧へ」「設定へ」「ホームへ」です。英国政府のデザインシステムの「[Back link](https://design-system.service.gov.uk/components/back-link/)」は、単純な手続きなら「Back」でよいが、入口が多い複雑なサービスでは「Go back to [page]」のように行き先を書くよう勧めています。「Back」では、どこへ戻るのか分からないからです。この連載が「作らない」まで言い切るのは、入口が一つに決まっている画面は少なく、あとから増えることも多いからです。最初から行き先を書いておけば、入口が増えても壊れません。戻るリンクを置くなら、利用者が最後に見た状態のその画面へ戻すこと、パンくずと併用しないことも、同じページの指針です。
+
+![左は注文の詳細画面に「戻る」ボタンがあるが、その画面には一覧・検索・メールの三つの入口があり、どこに戻るのか分からない。右は「注文一覧へ」と行き先を書いたリンクと現在地の表示があり、前の画面に戻るのはブラウザに任せている](../../images/ui_design/07-back.svg)
 
 ### 処理中は「待っている」と見せる
 
@@ -37,19 +45,20 @@ nav_order: 8
 
 一覧に何もないとき、ただ白い画面を出すと、利用者は「壊れた？」「読み込み中？」「絞り込みを間違えた？」と迷います。NN/g の「[Designing Empty States in Complex Applications: 3 Guidelines](https://www.nngroup.com/articles/empty-state-interface-design/)」は、空の画面でいまの状態と次にできることを伝えるよう勧めています。
 
-![左は「案件一覧」の見出しの下が真っ白な画面。右は「まだ案件がありません」の説明と「案件を登録」ボタンがある画面](../../images/ui_design/08-empty.svg)
+![左は「案件一覧」の見出しの下が真っ白な画面。右は「まだ案件がありません」の説明と「案件を登録」ボタンがある画面](../../images/ui_design/07-empty.svg)
 
 | 避けたい例 | 改善例 |
 | --- | --- |
 | 4画面に分かれた申し込みで、各画面に「次へ」しかない | 上部に「1 お客様情報、2 お届け先、3 お支払い、4 確認」を出し、現在地を塗る |
 | 「送信」を押しても画面が変わらず、もう一度押される | 押した直後にボタンを「送信中…」にし、回転する印を出す |
 | 検索結果がないとき、何も表示されない | 「一致するものはありません。条件を減らしてみてください」と出す |
+| どこから来ても同じ「戻る」ボタン | 行き先を書く。「注文一覧へ」「設定へ」。来た道を戻るのはブラウザに任せる |
 
 ## 2. 利用者の頭の中の絵に合わせる
 
 ### 概念モデル
 
-利用者は、初めての画面でも「たぶんこう動くはず」という絵を頭の中に持っています。ノーマンはこれを概念モデルと呼びます。NN/g の「[Mental Models and User Experience Design](https://www.nngroup.com/articles/mental-models/)」は、メンタルモデルとは利用者がそのシステムについて信じていることだ、と説明しています。その絵と画面の動きが合っていれば迷いません。ずれていれば、説明を読んでも迷います。
+利用者は、初めての画面でも「たぶんこう動くはず」という絵を頭の中に持っています。この絵がメンタルモデルで、作り手の側の絵が概念モデルです。定義と、一貫性がこの絵をどう作るかは、[第1章](01-consistency.md)の「一貫性はメンタルモデルを作る」にあります。ここでは、絵と画面がずれたときの話です。その絵と画面の動きが合っていれば迷いません。ずれていれば、説明を読んでも迷います。
 
 身近な例は、スマホの写真アプリです。利用者は「アルバムは写真を入れる箱」と思っています。アルバムから写真を外したら元の写真まで消える仕組みだと、その絵とずれて事故になります。ソシオメディアの「[メンタルモデル](https://www.sociomedia.co.jp/9012)」は、利用者が想像する利用モデルに合った構成と動きにせよ、と言っています。
 
@@ -57,7 +66,7 @@ nav_order: 8
 
 操作する場所と、結果が出る場所の対応が見て分かることを、対応づけと言います。ノーマンの有名な例がコンロです。四つのコンロが四角に並んでいるのに、つまみが一列に並んでいると、どのつまみがどのコンロか毎回迷います。つまみをコンロと同じ並びにすれば、見ただけで分かります。ソシオメディアの「[マッピング](https://www.sociomedia.co.jp/9049)」も、位置関係・形・色・記号で手がかりを与えよ、としています。
 
-![左は四角に並んだ四つのコンロと、一列に並んだ四つのつまみ。右はつまみもコンロと同じ四角の並び](../../images/ui_design/08-mapping.svg)
+![左は四角に並んだ四つのコンロと、一列に並んだ四つのつまみ。右はつまみもコンロと同じ四角の並び](../../images/ui_design/07-mapping.svg)
 
 画面でも同じです。右側の一覧を並べ替えるボタンが左端の離れた場所にある、音量の調節と音量の表示が別の画面にある、といった配置は対応づけが切れています。
 
@@ -65,7 +74,7 @@ nav_order: 8
 
 同じ操作の意味が、場面によって変わる状態をモードと言います。ソシオメディアの「[モードレス](https://www.sociomedia.co.jp/9094)」は、できるだけモードをなくせ、と言います。モードがあると、その場でできる操作が限られ、操作の順番も固定されます。途中で考えを変えたときには、まずモードから抜ける操作が要ります。
 
-![左は上に「削除モード：オン」の切り替えがあり、行をタップすると削除される一覧。右は各行に「開く」と「削除」が別々にある一覧](../../images/ui_design/08-modes.svg)
+![左は上に「削除モード：オン」の切り替えがあり、行をタップすると削除される一覧。右は各行に「開く」と「削除」が別々にある一覧](../../images/ui_design/07-modes.svg)
 
 ボタン一つでオンとオフを切り替えるとき、ラベルがいまの状態なのか押した後の状態なのか分からなくなる問題も、モードの仲間です。ソシオメディアはこれを「[フリップフロップ問題](https://www.sociomedia.co.jp/9502)」と呼び、状態の表示とボタンの言葉を分けよ、としています。[第3章](03-labels-switches.md)のスイッチの話とつながります。
 
@@ -87,7 +96,7 @@ nav_order: 8
 
 人は初期値をそのまま使います。NN/g の「[The Power of Defaults](https://www.nngroup.com/articles/the-power-of-defaults/)」は、検索結果の1位と2位をこっそり入れ替えても、やはり1位のほうがずっと多く押されたという実験を紹介しています。だから初期値は空ではなく、いちばん多くの人に合う値にします。ソシオメディアの「[プリコンピュテーション](https://www.sociomedia.co.jp/9123)」は、先人が見つけた最適値を最初から入れておけ、と言います。「[タスクコヒーレンス](https://www.sociomedia.co.jp/9194)」は、利用者が最後に選んだものを覚えておくだけで、次の行動をほぼ当てられる、と言います。
 
-![左は設定が8項目すべて空欄で一度に並ぶ画面。右はよく使う三つに初期値が入り、「詳細設定を表示」が折りたたまれている画面](../../images/ui_design/08-disclosure.svg)
+![左は設定が8項目すべて空欄で一度に並ぶ画面。右はよく使う三つに初期値が入り、「詳細設定を表示」が折りたたまれている画面](../../images/ui_design/07-disclosure.svg)
 
 | 避けたい例 | 改善例 |
 | --- | --- |
@@ -105,7 +114,7 @@ nav_order: 8
 
 NN/g の10原則の10番目「ヘルプと文書（Help and Documentation）」は、説明なしで使えるのが一番だとしています。そのうえで、説明が要るときの条件を四つ挙げています。探しやすいこと、利用者のやりたいことに絞ること、具体的な手順を書くこと、長くしすぎないことです。解説は「[Help and Documentation](https://www.nngroup.com/articles/help-and-documentation/)」にあります。画面の上に長い説明文を置くより、迷う欄のそばに一行のヒントを置くほうが読まれます。
 
-![左は長い説明文が上にあり、毎回5画面の手順を通る画面。右は「前回と同じ内容で注文」の近道と、欄のそばの短いヒントがある画面](../../images/ui_design/08-shortcuts-help.svg)
+![左は長い説明文が上にあり、毎回5画面の手順を通る画面。右は「前回と同じ内容で注文」の近道と、欄のそばの短いヒントがある画面](../../images/ui_design/07-shortcuts-help.svg)
 
 | 避けたい例 | 改善例 |
 | --- | --- |
@@ -122,13 +131,17 @@ NN/g の10原則の10番目「ヘルプと文書（Help and Documentation）」�
 - NN/g「[Progress Indicators Make a Slow System Less Insufferable](https://www.nngroup.com/articles/progress-indicators/)」 — 処理中の表示、待ち時間の目安
 - NN/g「[Breadcrumbs: 11 Design Guidelines for Desktop and Mobile](https://www.nngroup.com/articles/breadcrumbs/)」 — パンくずの使い方
 - NN/g「[Designing Empty States in Complex Applications: 3 Guidelines](https://www.nngroup.com/articles/empty-state-interface-design/)」 — 空の画面
-- NN/g「[Mental Models and User Experience Design](https://www.nngroup.com/articles/mental-models/)」 — メンタルモデル
 - NN/g「[Progressive Disclosure](https://www.nngroup.com/articles/progressive-disclosure/)」 — 段階的開示
 - NN/g「[The Power of Defaults](https://www.nngroup.com/articles/the-power-of-defaults/)」 — 初期値の力
 - NN/g「[Wizards: Definition and Design Recommendations](https://www.nngroup.com/articles/wizards/)」 — ウィザードの向き不向き
 - NN/g「[Flexibility and Efficiency of Use](https://www.nngroup.com/articles/flexibility-efficiency-heuristic/)」 — 10原則の7番目
 - NN/g「[Help and Documentation](https://www.nngroup.com/articles/help-and-documentation/)」 — 10原則の10番目
+- GOV.UK Design System「[Back link](https://design-system.service.gov.uk/components/back-link/)」 — 入口が多いなら「戻る」ではなく行き先を書く
 - デジタル庁デザインシステム「[ステップナビゲーション](https://design.digital.go.jp/components/step-navigation/)」「[パンくずナビゲーション: 使い方](https://design.digital.go.jp/components/breadcrumb/usage/)」「[プログレスインジケーター](https://design.digital.go.jp/components/progress-indicator/)」「[ディスクロージャー](https://design.digital.go.jp/components/disclosure/)」
 - ソシオメディア「ヒューマンインターフェース ガイドライン」 — [メンタルモデル](https://www.sociomedia.co.jp/9012)、[マッピング](https://www.sociomedia.co.jp/9049)、[モードレス](https://www.sociomedia.co.jp/9094)、[プリコンピュテーション](https://www.sociomedia.co.jp/9123)、[タスクコヒーレンス](https://www.sociomedia.co.jp/9194)、[ショートカットを用意する](https://www.sociomedia.co.jp/9228)、[フリップフロップ問題を避ける](https://www.sociomedia.co.jp/9502)、[モバイルでは包括的より階層的に](https://www.sociomedia.co.jp/9801)
 - D. A. ノーマン『[誰のためのデザイン？ 増補・改訂版](https://www.shin-yo-sha.co.jp/book/b455574.html)』新曜社、2015年 — 概念モデル、対応づけ、モードによる操作ミス
 - Jenifer Tidwell『[デザイニング・インターフェース 第2版](https://www.oreilly.co.jp/books/9784873115313/)』オライリー・ジャパン、2011年 — 手順の地図、パンくず、折りたたみ、良い初期値、ウィザードのパターン
+
+---
+
+次の章 → [操作させない・失わせない](08-no-extra-work.md)

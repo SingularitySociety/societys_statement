@@ -29,20 +29,30 @@ nav_order: 91
 - [ヒックの法則](https://www.sociomedia.co.jp/9177)
 - [メンタルモデル](https://www.sociomedia.co.jp/9012)、[マッピング](https://www.sociomedia.co.jp/9049)、[モードレス](https://www.sociomedia.co.jp/9094)、[フリップフロップ問題を避ける](https://www.sociomedia.co.jp/9502)
 - [プリコンピュテーション](https://www.sociomedia.co.jp/9123)、[タスクコヒーレンス](https://www.sociomedia.co.jp/9194)、[ショートカットを用意する](https://www.sociomedia.co.jp/9228)、[モバイルでは包括的より階層的に](https://www.sociomedia.co.jp/9801)
+- [複雑性保存の法則](https://www.sociomedia.co.jp/9187)、[ユーザーがとれる操作がひとつしかないなら自動化する](https://www.sociomedia.co.jp/9299)、[整合性を損なうような操作をユーザーに求めない](https://www.sociomedia.co.jp/9408)、[値を入力させるのではなく結果を選ばせる](https://www.sociomedia.co.jp/9464)、[ユーザーが入力したものはユーザーのもの](https://www.sociomedia.co.jp/9398)
 
 **デジタル庁デザインシステム** — <https://design.digital.go.jp/>
 
 部品ごとの使い方とアクセシビリティ。この連載で引いたページ:
 
 - [ボタン: 使い方](https://design.digital.go.jp/components/button/usage/)、[ボタン: アクセシビリティ](https://design.digital.go.jp/components/button/accessibility/)
-- [スイッチ](https://design.digital.go.jp/components/switch/)、[チェックボックス: 使い方](https://design.digital.go.jp/components/checkbox/usage/)、[テキスト入力: 使い方](https://design.digital.go.jp/components/input-text/usage/)
+- [スイッチ](https://design.digital.go.jp/components/switch/)、[チェックボックス: 使い方](https://design.digital.go.jp/components/checkbox/usage/)、[インプットテキスト: 使い方](https://design.digital.go.jp/components/input-text/usage/)
 - [カラー](https://design.digital.go.jp/foundations/color/)、[タイポグラフィ](https://design.digital.go.jp/foundations/typography/)、[余白](https://design.digital.go.jp/foundations/spacing/)
 - [ウェブアクセシビリティ](https://design.digital.go.jp/webaccessibility/)
 - [ステップナビゲーション](https://design.digital.go.jp/components/step-navigation/)、[パンくずナビゲーション: 使い方](https://design.digital.go.jp/components/breadcrumb/usage/)、[プログレスインジケーター](https://design.digital.go.jp/components/progress-indicator/)、[ディスクロージャー](https://design.digital.go.jp/components/disclosure/)
+- [インプットテキスト: 使い方](https://design.digital.go.jp/components/input-text/usage/) — 入力値の文字種を限定しない
 
-**WAIC「WCAG 2.1（日本語訳）」** — <https://waic.jp/translations/WCAG21/>
+**ウェブアクセシビリティ基盤委員会（WAIC）「WCAG 2.1（日本語訳）」** — <https://waic.jp/translations/WCAG21/>。**「WCAG 2.2（日本語訳）」** — <https://waic.jp/translations/WCAG22/>（第8章で引く達成基準3.3.7 冗長な入力項目、3.3.8 アクセシブルな認証）。WCAG はウェブコンテンツ・アクセシビリティ・ガイドラインの略
 
-**Apple「Human Interface Guidelines」（日本語）** — <https://developer.apple.com/jp/design/human-interface-guidelines/>
+**Apple「Human Interface Guidelines」（日本語）** — <https://developer.apple.com/jp/design/human-interface-guidelines/>。第8章で引くページ: [データの入力](https://developer.apple.com/jp/design/human-interface-guidelines/entering-data)、[取り消し/やり直し](https://developer.apple.com/jp/design/human-interface-guidelines/undo-and-redo)
+
+**導線・ログイン・入力の基準（第7・8章）**
+
+- GOV.UK Design System「[Back link](https://design-system.service.gov.uk/components/back-link/)」 — 入口が多いなら「戻る」ではなく行き先を書く
+
+- 米国国立標準技術研究所（NIST）「[SP 800-63B 第4版 Digital Identity Guidelines: Authentication and Authenticator Management](https://pages.nist.gov/800-63-4/sp800-63b.html)」 — パスワードの表示、貼り付けとパスワードマネージャー、構成ルールと定期変更を求めない
+- web.dev「[ログイン フォームのベスト プラクティス](https://web.dev/articles/sign-in-form-best-practices?hl=ja)」 — 入力を重複させない、表示の切り替え
+- GOV.UK Design System「[Passwords](https://design-system.service.gov.uk/patterns/passwords/)」 — 貼り付け、長さの下限、定期変更を求めない
 
 ## NN/g（ニールセン・ノーマン・グループ）の記事
 
@@ -67,6 +77,10 @@ nav_order: 91
 - [Wizards: Definition and Design Recommendations](https://www.nngroup.com/articles/wizards/) — ウィザードの向き不向き
 - [Flexibility and Efficiency of Use](https://www.nngroup.com/articles/flexibility-efficiency-heuristic/) — 10原則の7番目
 - [Help and Documentation](https://www.nngroup.com/articles/help-and-documentation/) — 10原則の10番目
+- [Preventing User Errors: Avoiding Unconscious Slips](https://www.nngroup.com/articles/slips/) — 制約、提案、初期値、寛容な形式
+- [Preventing User Errors: Avoiding Conscious Mistakes](https://www.nngroup.com/articles/user-mistakes/) — 取り消し
+- [Website Forms Usability: Top 10 Recommendations](https://www.nngroup.com/articles/web-form-design/) — フォームの基本
+- [Stop Password Masking](https://www.nngroup.com/articles/stop-password-masking/) — パスワードを隠したままにしない
 
 ## 書籍
 

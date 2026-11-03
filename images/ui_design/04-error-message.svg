@@ -48,7 +48,7 @@
   <text x="420" y="138" class="err">例: name@example.com</text>
   <text x="420" y="170">電話番号</text>
   <rect x="420" y="178" width="300" height="30" rx="4" class="field"/>
-  <text x="430" y="198" class="value">09012345678</text>
+  <text x="430" y="198" class="value">09000000000</text>
   <text x="708" y="198" text-anchor="end" class="ok">✓</text>
   <rect x="620" y="222" width="100" height="34" rx="6" class="btn"/>
   <text x="670" y="244" text-anchor="middle" class="btntext">送信</text>

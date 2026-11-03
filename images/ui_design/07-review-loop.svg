@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 230" width="760" height="230" role="img" aria-labelledby="t d">
+  <title id="t">AI に画面を作らせるときの回し方</title>
+  <desc id="d">「ルールを書く」「AI が画面を作る」「チェックリストで見る」「直しをルールに足す」の四つの箱が矢印でつながり、最後の箱から最初の箱に戻る矢印がある。</desc>
+  <style>
+    text { font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif; font-size: 13px; fill: #222; }
+    .bad { fill: #b42318; font-weight: bold; font-size: 15px; }
+    .good { fill: #067647; font-weight: bold; font-size: 15px; }
+    .screen { fill: #fff; stroke: #9a9a9a; }
+    .field { fill: #fff; stroke: #b0b0b0; }
+    .muted { fill: #6b6b6b; font-size: 12px; }
+    .btn { fill: #1f5fbf; }
+    .btntext { fill: #fff; font-weight: bold; }
+    .ghost { fill: #fff; stroke: #1f5fbf; stroke-width: 1.5; }
+    .ghosttext { fill: #1f5fbf; font-weight: bold; }
+    .caption { font-size: 13px; fill: #444; }
+    .h { font-weight: bold; font-size: 15px; }
+    .textline { fill: #d5d5d5; }
+    .small { font-size: 12px; }
+    .link { fill: #1f5fbf; text-decoration: underline; }
+  </style>
+  <style>
+    .box { fill: #eef3fb; stroke: #1f5fbf; stroke-width: 1.5; }
+    .boxh { font-weight: bold; font-size: 13px; }
+    .sub { font-size: 11px; fill: #555; }
+    .arrow { fill: none; stroke: #555; stroke-width: 2; }
+  </style>
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#555"/>
+    </marker>
+  </defs>
+  <rect width="760" height="230" fill="#fff"/>
+
+  <rect x="20" y="50" width="160" height="70" rx="8" class="box"/>
+  <text x="100" y="80" text-anchor="middle" class="boxh">① ルールを書く</text>
+  <text x="100" y="100" text-anchor="middle" class="sub">CLAUDE.md に書く</text>
+
+  <rect x="210" y="50" width="150" height="70" rx="8" class="box"/>
+  <text x="285" y="80" text-anchor="middle" class="boxh">② AI が画面を作る</text>
+  <text x="285" y="100" text-anchor="middle" class="sub">ルールを読んで作る</text>
+
+  <rect x="390" y="50" width="160" height="70" rx="8" class="box"/>
+  <text x="470" y="80" text-anchor="middle" class="boxh">③ チェックリストで見る</text>
+  <text x="470" y="100" text-anchor="middle" class="sub">第1〜8章の観点で</text>
+
+  <rect x="580" y="50" width="160" height="70" rx="8" class="box"/>
+  <text x="660" y="80" text-anchor="middle" class="boxh">④ 直しをルールに足す</text>
+  <text x="660" y="100" text-anchor="middle" class="sub">画面ではなくルールを直す</text>
+
+  <line x1="180" y1="85" x2="208" y2="85" class="arrow" marker-end="url(#arr)"/>
+  <line x1="360" y1="85" x2="388" y2="85" class="arrow" marker-end="url(#arr)"/>
+  <line x1="550" y1="85" x2="578" y2="85" class="arrow" marker-end="url(#arr)"/>
+  <polyline points="660,120 660,160 100,160 100,124" class="arrow" marker-end="url(#arr)"/>
+  <text x="380" y="180" text-anchor="middle" class="muted">次の画面は、足したルールを読んで作られる</text>
+  <text x="20" y="218" class="caption">同じ指摘を二度したら、ルールにする合図</text>
+</svg>

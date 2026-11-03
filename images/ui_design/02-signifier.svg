@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300" width="760" height="300" role="img" aria-labelledby="t d">
+  <title id="t">押せるものは押せそうに、書く場所は枠で</title>
+  <desc id="d">左はリンクもボタンも本文と同じ黒い文字で、入力欄は線一本。右はリンクに下線と色、ボタンに枠と色、入力欄に枠がある。</desc>
+  <style>
+    text { font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif; font-size: 13px; fill: #222; }
+    .bad { fill: #b42318; font-weight: bold; font-size: 15px; }
+    .good { fill: #067647; font-weight: bold; font-size: 15px; }
+    .screen { fill: #fff; stroke: #9a9a9a; }
+    .field { fill: #fff; stroke: #b0b0b0; }
+    .muted { fill: #6b6b6b; font-size: 12px; }
+    .btn { fill: #1f5fbf; }
+    .btntext { fill: #fff; font-weight: bold; }
+    .ghost { fill: #fff; stroke: #1f5fbf; stroke-width: 1.5; }
+    .ghosttext { fill: #1f5fbf; font-weight: bold; }
+    .caption { font-size: 13px; fill: #444; }
+    .h { font-weight: bold; font-size: 15px; }
+    .textline { fill: #d5d5d5; }
+    .small { font-size: 12px; }
+    .link { fill: #1f5fbf; text-decoration: underline; }
+  </style>
+  <rect width="760" height="300" fill="#fff"/>
+
+  <text x="20" y="22" class="bad">避けたい例</text>
+  <rect x="20" y="34" width="340" height="220" rx="8" class="screen"/>
+  <text x="40" y="64" class="h">お申し込み</text>
+  <rect x="40" y="80" width="300" height="6" class="textline"/>
+  <rect x="40" y="92" width="260" height="6" class="textline"/>
+  <text x="40" y="120">詳しく見る</text>
+  <text x="40" y="152">メールアドレス</text>
+  <line x1="40" y1="178" x2="340" y2="178" stroke="#999"/>
+  <text x="40" y="214">申し込む</text>
+  <text x="20" y="282" class="caption">どれが押せて、どこに書けるのか分からない</text>
+
+  <text x="400" y="22" class="good">改善例</text>
+  <rect x="400" y="34" width="340" height="220" rx="8" class="screen"/>
+  <text x="420" y="64" class="h">お申し込み</text>
+  <rect x="420" y="80" width="300" height="6" class="textline"/>
+  <rect x="420" y="92" width="260" height="6" class="textline"/>
+  <text x="420" y="120" class="link">詳しく見る</text>
+  <text x="420" y="152">メールアドレス</text>
+  <rect x="420" y="160" width="300" height="30" rx="4" class="field"/>
+  <rect x="420" y="204" width="110" height="32" rx="6" class="btn"/>
+  <text x="475" y="225" text-anchor="middle" class="btntext">申し込む</text>
+  <text x="400" y="282" class="caption">押せるものは押せそうに。書く場所は枠で</text>
+</svg>

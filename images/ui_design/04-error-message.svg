@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 320" width="760" height="320" role="img" aria-labelledby="t d">
+  <title id="t">エラー文は、そばに、平易に、直し方つきで</title>
+  <desc id="d">左は画面の上に「入力内容に誤りがあります」とだけ出て、入力欄は空に戻っている。右は間違った欄のすぐ下に直し方が書かれ、入力は残っている。</desc>
+  <style>
+    text { font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif; font-size: 13px; fill: #222; }
+    .bad { fill: #b42318; font-weight: bold; font-size: 15px; }
+    .good { fill: #067647; font-weight: bold; font-size: 15px; }
+    .screen { fill: #fff; stroke: #9a9a9a; }
+    .field { fill: #fff; stroke: #b0b0b0; }
+    .muted { fill: #6b6b6b; font-size: 12px; }
+    .btn { fill: #1f5fbf; }
+    .btntext { fill: #fff; font-weight: bold; }
+    .ghost { fill: #fff; stroke: #1f5fbf; stroke-width: 1.5; }
+    .ghosttext { fill: #1f5fbf; font-weight: bold; }
+    .caption { font-size: 13px; fill: #444; }
+    .h { font-weight: bold; font-size: 15px; }
+    .textline { fill: #d5d5d5; }
+    .small { font-size: 12px; }
+    .link { fill: #1f5fbf; text-decoration: underline; }
+  </style>
+  <style>
+    .banner { fill: #fde8e8; stroke: #b42318; }
+    .err { fill: #b42318; font-size: 12px; }
+    .errfield { fill: #fff; stroke: #b42318; stroke-width: 2; }
+    .ok { fill: #067647; font-weight: bold; }
+    .value { font-size: 12px; }
+  </style>
+  <rect width="760" height="320" fill="#fff"/>
+
+  <text x="20" y="22" class="bad">避けたい例</text>
+  <rect x="20" y="34" width="340" height="240" rx="8" class="screen"/>
+  <rect x="40" y="50" width="300" height="28" rx="4" class="banner"/>
+  <text x="50" y="69" class="err">入力内容に誤りがあります</text>
+  <text x="40" y="106">メールアドレス</text>
+  <rect x="40" y="114" width="300" height="30" rx="4" class="field"/>
+  <text x="40" y="166">電話番号</text>
+  <rect x="40" y="174" width="300" height="30" rx="4" class="field"/>
+  <rect x="240" y="222" width="100" height="34" rx="6" class="btn"/>
+  <text x="290" y="244" text-anchor="middle" class="btntext">送信</text>
+  <text x="20" y="302" class="caption">どこが悪いのか分からず、入力も消えた</text>
+
+  <text x="400" y="22" class="good">改善例</text>
+  <rect x="400" y="34" width="340" height="240" rx="8" class="screen"/>
+  <text x="420" y="66">メールアドレス</text>
+  <rect x="420" y="74" width="300" height="30" rx="4" class="errfield"/>
+  <text x="430" y="94" class="value">taro@example</text>
+  <text x="420" y="122" class="err">メールアドレスの形式で入力してください</text>
+  <text x="420" y="138" class="err">例: name@example.com</text>
+  <text x="420" y="170">電話番号</text>
+  <rect x="420" y="178" width="300" height="30" rx="4" class="field"/>
+  <text x="430" y="198" class="value">09012345678</text>
+  <text x="708" y="198" text-anchor="end" class="ok">✓</text>
+  <rect x="620" y="222" width="100" height="34" rx="6" class="btn"/>
+  <text x="670" y="244" text-anchor="middle" class="btntext">送信</text>
+  <text x="400" y="302" class="caption">悪い欄のそばに、直し方つき。入力は残る</text>
+</svg>

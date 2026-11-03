@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 240" width="760" height="240" role="img" aria-labelledby="t d">
+  <title id="t">ボタンの言葉は動詞で、結果が分かるように</title>
+  <desc id="d">左は「本当に削除しますか？」に「キャンセル」「OK」のボタン。右は「この予約を削除しますか？」に「残す」「削除する」のボタン。</desc>
+  <style>
+    text { font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif; font-size: 13px; fill: #222; }
+    .bad { fill: #b42318; font-weight: bold; font-size: 15px; }
+    .good { fill: #067647; font-weight: bold; font-size: 15px; }
+    .screen { fill: #fff; stroke: #9a9a9a; }
+    .field { fill: #fff; stroke: #b0b0b0; }
+    .muted { fill: #6b6b6b; font-size: 12px; }
+    .btn { fill: #1f5fbf; }
+    .btntext { fill: #fff; font-weight: bold; }
+    .ghost { fill: #fff; stroke: #1f5fbf; stroke-width: 1.5; }
+    .ghosttext { fill: #1f5fbf; font-weight: bold; }
+    .caption { font-size: 13px; fill: #444; }
+    .h { font-weight: bold; font-size: 15px; }
+    .textline { fill: #d5d5d5; }
+    .small { font-size: 12px; }
+    .link { fill: #1f5fbf; text-decoration: underline; }
+  </style>
+  <style>
+    .dim { fill: #ececec; stroke: #ccc; }
+    .dialog { fill: #fff; stroke: #999; }
+    .danger { fill: #b42318; }
+    .ghostg { fill: #fff; stroke: #888; stroke-width: 1.5; }
+    .ghostgtext { fill: #333; font-weight: bold; }
+  </style>
+  <rect width="760" height="240" fill="#fff"/>
+
+  <text x="20" y="22" class="bad">避けたい例</text>
+  <rect x="20" y="34" width="340" height="170" rx="8" class="dim"/>
+  <rect x="60" y="64" width="260" height="110" rx="8" class="dialog"/>
+  <text x="80" y="100" class="h">本当に削除しますか？</text>
+  <rect x="150" y="128" width="80" height="30" rx="6" class="ghostg"/>
+  <text x="190" y="148" text-anchor="middle" class="ghostgtext">キャンセル</text>
+  <rect x="240" y="128" width="60" height="30" rx="6" class="btn"/>
+  <text x="270" y="148" text-anchor="middle" class="btntext">OK</text>
+  <text x="20" y="230" class="caption">OK を押すと何が起きる？ 読まないと分からない</text>
+
+  <text x="400" y="22" class="good">改善例</text>
+  <rect x="400" y="34" width="340" height="170" rx="8" class="dim"/>
+  <rect x="440" y="64" width="260" height="110" rx="8" class="dialog"/>
+  <text x="460" y="96" class="h">この予約を削除しますか？</text>
+  <text x="460" y="116" class="muted">削除すると元に戻せません</text>
+  <rect x="520" y="132" width="70" height="30" rx="6" class="ghostg"/>
+  <text x="555" y="152" text-anchor="middle" class="ghostgtext">残す</text>
+  <rect x="600" y="132" width="90" height="30" rx="6" class="danger"/>
+  <text x="645" y="152" text-anchor="middle" class="btntext">削除する</text>
+  <text x="400" y="230" class="caption">ボタンの言葉で結果が分かる。危ない方は色も変える</text>
+</svg>

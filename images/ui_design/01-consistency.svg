@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 290" width="760" height="290" role="img" aria-labelledby="t d">
+  <title id="t">同じ操作は同じ言葉・同じ色・同じ場所</title>
+  <desc id="d">左は三つの画面で保存のボタンが「登録」「保存」「確定」と変わり、色も位置も違う。右は三つの画面とも右下に青い「保存」がある。</desc>
+  <style>
+    text { font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif; font-size: 13px; fill: #222; }
+    .bad { fill: #b42318; font-weight: bold; font-size: 15px; }
+    .good { fill: #067647; font-weight: bold; font-size: 15px; }
+    .screen { fill: #fff; stroke: #9a9a9a; }
+    .field { fill: #fff; stroke: #b0b0b0; }
+    .muted { fill: #6b6b6b; font-size: 12px; }
+    .btn { fill: #1f5fbf; }
+    .btntext { fill: #fff; font-weight: bold; }
+    .ghost { fill: #fff; stroke: #1f5fbf; stroke-width: 1.5; }
+    .ghosttext { fill: #1f5fbf; font-weight: bold; }
+    .caption { font-size: 13px; fill: #444; }
+    .h { font-weight: bold; font-size: 15px; }
+    .textline { fill: #d5d5d5; }
+    .small { font-size: 12px; }
+    .link { fill: #1f5fbf; text-decoration: underline; }
+  </style>
+  <style>
+    .mini { fill: #fff; stroke: #9a9a9a; }
+    .minih { font-weight: bold; font-size: 12px; }
+    .green { fill: #2e9e4f; }
+    .orange { fill: #fff; stroke: #d97706; stroke-width: 1.5; }
+    .orangetext { fill: #d97706; font-weight: bold; font-size: 11px; }
+    .b11 { fill: #fff; font-weight: bold; font-size: 11px; }
+  </style>
+  <rect width="760" height="290" fill="#fff"/>
+
+  <text x="20" y="22" class="bad">避けたい例</text>
+  <rect x="20" y="34" width="108" height="200" rx="6" class="mini"/>
+  <text x="30" y="56" class="minih">一覧</text>
+  <rect x="30" y="72" width="88" height="5" class="textline"/>
+  <rect x="30" y="84" width="70" height="5" class="textline"/>
+  <rect x="74" y="194" width="44" height="26" rx="4" class="green"/>
+  <text x="96" y="211" text-anchor="middle" class="b11">登録</text>
+
+  <rect x="136" y="34" width="108" height="200" rx="6" class="mini"/>
+  <text x="146" y="56" class="minih">編集</text>
+  <rect x="146" y="66" width="44" height="26" rx="4" class="btn"/>
+  <text x="168" y="83" text-anchor="middle" class="b11">保存</text>
+  <rect x="146" y="104" width="88" height="5" class="textline"/>
+  <rect x="146" y="116" width="70" height="5" class="textline"/>
+
+  <rect x="252" y="34" width="108" height="200" rx="6" class="mini"/>
+  <text x="262" y="56" class="minih">設定</text>
+  <rect x="262" y="72" width="88" height="5" class="textline"/>
+  <rect x="262" y="84" width="70" height="5" class="textline"/>
+  <rect x="262" y="194" width="44" height="26" rx="4" class="orange"/>
+  <text x="284" y="211" text-anchor="middle" class="orangetext">確定</text>
+  <text x="20" y="270" class="caption">言葉も色も場所も、画面ごとに違う</text>
+
+  <text x="400" y="22" class="good">改善例</text>
+  <rect x="400" y="34" width="108" height="200" rx="6" class="mini"/>
+  <text x="410" y="56" class="minih">一覧</text>
+  <rect x="410" y="72" width="88" height="5" class="textline"/>
+  <rect x="410" y="84" width="70" height="5" class="textline"/>
+  <rect x="454" y="194" width="44" height="26" rx="4" class="btn"/>
+  <text x="476" y="211" text-anchor="middle" class="b11">保存</text>
+
+  <rect x="516" y="34" width="108" height="200" rx="6" class="mini"/>
+  <text x="526" y="56" class="minih">編集</text>
+  <rect x="526" y="72" width="88" height="5" class="textline"/>
+  <rect x="526" y="84" width="70" height="5" class="textline"/>
+  <rect x="570" y="194" width="44" height="26" rx="4" class="btn"/>
+  <text x="592" y="211" text-anchor="middle" class="b11">保存</text>
+
+  <rect x="632" y="34" width="108" height="200" rx="6" class="mini"/>
+  <text x="642" y="56" class="minih">設定</text>
+  <rect x="642" y="72" width="88" height="5" class="textline"/>
+  <rect x="642" y="84" width="70" height="5" class="textline"/>
+  <rect x="686" y="194" width="44" height="26" rx="4" class="btn"/>
+  <text x="708" y="211" text-anchor="middle" class="b11">保存</text>
+  <text x="400" y="270" class="caption">どの画面でも「保存」は右下の青</text>
+</svg>

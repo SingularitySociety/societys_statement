@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 320" width="760" height="320" role="img" aria-labelledby="t d">
+  <title id="t">近いものは仲間に見える</title>
+  <desc id="d">左はラベルが上下の入力欄のちょうど中間にあり、どちらの欄の名前か分からない。右はラベルが自分の欄のすぐ上にあり、「お届け先」と「お支払い」の塊が間隔で分かれている。</desc>
+  <style>
+    text { font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif; font-size: 13px; fill: #222; }
+    .bad { fill: #b42318; font-weight: bold; font-size: 15px; }
+    .good { fill: #067647; font-weight: bold; font-size: 15px; }
+    .screen { fill: #fff; stroke: #9a9a9a; }
+    .field { fill: #fff; stroke: #b0b0b0; }
+    .muted { fill: #6b6b6b; font-size: 12px; }
+    .btn { fill: #1f5fbf; }
+    .btntext { fill: #fff; font-weight: bold; }
+    .ghost { fill: #fff; stroke: #1f5fbf; stroke-width: 1.5; }
+    .ghosttext { fill: #1f5fbf; font-weight: bold; }
+    .caption { font-size: 13px; fill: #444; }
+    .h { font-weight: bold; font-size: 15px; }
+    .textline { fill: #d5d5d5; }
+    .small { font-size: 12px; }
+    .link { fill: #1f5fbf; text-decoration: underline; }
+  </style>
+  <rect width="760" height="320" fill="#fff"/>
+
+  <text x="20" y="22" class="bad">避けたい例</text>
+  <rect x="20" y="34" width="340" height="250" rx="8" class="screen"/>
+  <text x="40" y="60">氏名</text>
+  <rect x="40" y="68" width="300" height="28" rx="4" class="field"/>
+  <text x="40" y="124">住所</text>
+  <rect x="40" y="148" width="300" height="28" rx="4" class="field"/>
+  <text x="40" y="204">カード番号</text>
+  <rect x="40" y="228" width="300" height="28" rx="4" class="field"/>
+  <text x="20" y="310" class="caption">ラベルがどの欄のものか分からない。塊も見えない</text>
+
+  <text x="400" y="22" class="good">改善例</text>
+  <rect x="400" y="34" width="340" height="250" rx="8" class="screen"/>
+  <text x="420" y="58" class="h">お届け先</text>
+  <text x="420" y="80" class="small">氏名</text>
+  <rect x="420" y="86" width="300" height="28" rx="4" class="field"/>
+  <text x="420" y="132" class="small">住所</text>
+  <rect x="420" y="138" width="300" height="28" rx="4" class="field"/>
+  <text x="420" y="204" class="h">お支払い</text>
+  <text x="420" y="226" class="small">カード番号</text>
+  <rect x="420" y="232" width="300" height="28" rx="4" class="field"/>
+  <text x="400" y="310" class="caption">ラベルは自分の欄のすぐ上。塊ごとに間を空ける</text>
+</svg>

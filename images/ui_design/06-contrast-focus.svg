@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 260" width="760" height="260" role="img" aria-labelledby="t d">
+  <title id="t">文字は濃く、選ばれている部品には枠を</title>
+  <desc id="d">左は薄い灰色の文字で、ボタンが選ばれていても枠が出ない。右は濃い文字で、キーボードで選ばれているボタンに太い枠が出ている。</desc>
+  <style>
+    text { font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif; font-size: 13px; fill: #222; }
+    .bad { fill: #b42318; font-weight: bold; font-size: 15px; }
+    .good { fill: #067647; font-weight: bold; font-size: 15px; }
+    .screen { fill: #fff; stroke: #9a9a9a; }
+    .field { fill: #fff; stroke: #b0b0b0; }
+    .muted { fill: #6b6b6b; font-size: 12px; }
+    .btn { fill: #1f5fbf; }
+    .btntext { fill: #fff; font-weight: bold; }
+    .ghost { fill: #fff; stroke: #1f5fbf; stroke-width: 1.5; }
+    .ghosttext { fill: #1f5fbf; font-weight: bold; }
+    .caption { font-size: 13px; fill: #444; }
+    .h { font-weight: bold; font-size: 15px; }
+    .textline { fill: #d5d5d5; }
+    .small { font-size: 12px; }
+    .link { fill: #1f5fbf; text-decoration: underline; }
+  </style>
+  <style>
+    .pale { fill: #c4c4c4; font-weight: bold; font-size: 15px; }
+    .pale2 { fill: #cfcfcf; }
+    .focus { fill: none; stroke: #1f5fbf; stroke-width: 3; }
+  </style>
+  <rect width="760" height="260" fill="#fff"/>
+
+  <text x="20" y="22" class="bad">避けたい例</text>
+  <rect x="20" y="34" width="340" height="190" rx="8" class="screen"/>
+  <text x="40" y="70" class="pale">ご注文内容の確認</text>
+  <text x="40" y="100" class="pale2">合計 3,200円（送料込み）</text>
+  <rect x="40" y="140" width="110" height="32" rx="6" class="btn"/>
+  <text x="95" y="161" text-anchor="middle" class="btntext">注文を確定</text>
+  <rect x="166" y="140" width="80" height="32" rx="6" class="ghost"/>
+  <text x="206" y="161" text-anchor="middle" class="ghosttext">戻る</text>
+  <text x="20" y="250" class="caption">薄い灰色は読めない。選ばれているボタンも分からない</text>
+
+  <text x="400" y="22" class="good">改善例</text>
+  <rect x="400" y="34" width="340" height="190" rx="8" class="screen"/>
+  <text x="420" y="70" class="h">ご注文内容の確認</text>
+  <text x="420" y="100">合計 3,200円（送料込み）</text>
+  <rect x="416" y="136" width="118" height="40" rx="8" class="focus"/>
+  <rect x="420" y="140" width="110" height="32" rx="6" class="btn"/>
+  <text x="475" y="161" text-anchor="middle" class="btntext">注文を確定</text>
+  <rect x="546" y="140" width="80" height="32" rx="6" class="ghost"/>
+  <text x="586" y="161" text-anchor="middle" class="ghosttext">戻る</text>
+  <text x="400" y="250" class="caption">文字は濃く。選ばれている部品に枠が出る</text>
+</svg>

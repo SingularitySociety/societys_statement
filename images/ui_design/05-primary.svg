@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300" width="760" height="300" role="img" aria-labelledby="t d">
+  <title id="t">一画面に主役は一つ</title>
+  <desc id="d">左は同じ大きさの青いボタンが8個並び、「削除」が「保存」の隣にある。右は青い「保存」が一つだけで、残りはメニューに入り、「削除」は離れた場所に赤い文字で置かれている。</desc>
+  <style>
+    text { font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif; font-size: 13px; fill: #222; }
+    .bad { fill: #b42318; font-weight: bold; font-size: 15px; }
+    .good { fill: #067647; font-weight: bold; font-size: 15px; }
+    .screen { fill: #fff; stroke: #9a9a9a; }
+    .field { fill: #fff; stroke: #b0b0b0; }
+    .muted { fill: #6b6b6b; font-size: 12px; }
+    .btn { fill: #1f5fbf; }
+    .btntext { fill: #fff; font-weight: bold; }
+    .ghost { fill: #fff; stroke: #1f5fbf; stroke-width: 1.5; }
+    .ghosttext { fill: #1f5fbf; font-weight: bold; }
+    .caption { font-size: 13px; fill: #444; }
+    .h { font-weight: bold; font-size: 15px; }
+    .textline { fill: #d5d5d5; }
+    .small { font-size: 12px; }
+    .link { fill: #1f5fbf; text-decoration: underline; }
+  </style>
+  <style>
+    .b11 { fill: #fff; font-weight: bold; font-size: 11px; }
+    .ghostg { fill: #fff; stroke: #888; stroke-width: 1.5; }
+    .ghostgtext { fill: #333; font-weight: bold; }
+    .dangertext { fill: #b42318; }
+  </style>
+  <rect width="760" height="300" fill="#fff"/>
+
+  <text x="20" y="22" class="bad">避けたい例</text>
+  <rect x="20" y="34" width="340" height="230" rx="8" class="screen"/>
+  <rect x="40" y="56" width="300" height="6" class="textline"/>
+  <rect x="40" y="68" width="240" height="6" class="textline"/>
+  <rect x="40" y="80" width="280" height="6" class="textline"/>
+  <rect x="40" y="130" width="65" height="30" rx="4" class="btn"/><text x="72" y="149" text-anchor="middle" class="b11">保存</text>
+  <rect x="115" y="130" width="65" height="30" rx="4" class="btn"/><text x="147" y="149" text-anchor="middle" class="b11">削除</text>
+  <rect x="190" y="130" width="65" height="30" rx="4" class="btn"/><text x="222" y="149" text-anchor="middle" class="b11">複製</text>
+  <rect x="265" y="130" width="65" height="30" rx="4" class="btn"/><text x="297" y="149" text-anchor="middle" class="b11">共有</text>
+  <rect x="40" y="170" width="65" height="30" rx="4" class="btn"/><text x="72" y="189" text-anchor="middle" class="b11">印刷</text>
+  <rect x="115" y="170" width="65" height="30" rx="4" class="btn"/><text x="147" y="189" text-anchor="middle" class="b11">書き出し</text>
+  <rect x="190" y="170" width="65" height="30" rx="4" class="btn"/><text x="222" y="189" text-anchor="middle" class="b11">戻る</text>
+  <rect x="265" y="170" width="65" height="30" rx="4" class="btn"/><text x="297" y="189" text-anchor="middle" class="b11">公開</text>
+  <text x="20" y="290" class="caption">ボタンが8個で主役がない。削除が保存の隣</text>
+
+  <text x="400" y="22" class="good">改善例</text>
+  <rect x="400" y="34" width="340" height="230" rx="8" class="screen"/>
+  <rect x="690" y="48" width="30" height="26" rx="4" class="ghostg"/>
+  <text x="705" y="66" text-anchor="middle" class="ghostgtext">…</text>
+  <rect x="420" y="90" width="300" height="6" class="textline"/>
+  <rect x="420" y="102" width="240" height="6" class="textline"/>
+  <rect x="420" y="114" width="280" height="6" class="textline"/>
+  <text x="420" y="240" class="dangertext">削除</text>
+  <rect x="560" y="220" width="80" height="32" rx="6" class="ghostg"/>
+  <text x="600" y="241" text-anchor="middle" class="ghostgtext">キャンセル</text>
+  <rect x="650" y="220" width="70" height="32" rx="6" class="btn"/>
+  <text x="685" y="241" text-anchor="middle" class="btntext">保存</text>
+  <text x="400" y="290" class="caption">主ボタンは一つ。残りはメニューへ。削除は離す</text>
+</svg>

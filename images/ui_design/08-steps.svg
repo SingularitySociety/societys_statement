@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 350" width="760" height="350" role="img" aria-labelledby="t1 d1">
+  <title id="t1">手順の何番目かを見せる</title>
+  <desc id="d1">左は手順の表示がなく、いま何番目か分からない画面。右は四つの手順と現在地が表示された画面。</desc>
+  <style>
+    text { font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif; font-size: 13px; fill: #222; }
+    .bad { fill: #b42318; font-weight: bold; font-size: 15px; }
+    .good { fill: #067647; font-weight: bold; font-size: 15px; }
+    .screen { fill: #fff; stroke: #9a9a9a; }
+    .field { fill: #fff; stroke: #b0b0b0; }
+    .muted { fill: #6b6b6b; font-size: 12px; }
+    .btn { fill: #1f5fbf; }
+    .btntext { fill: #fff; font-weight: bold; }
+    .done { fill: #cfd8e3; stroke: #8da2bd; }
+    .now { fill: #1f5fbf; stroke: #1f5fbf; }
+    .todo { fill: #fff; stroke: #8da2bd; }
+    .nowtext { fill: #fff; font-weight: bold; font-size: 12px; }
+    .steptext { font-size: 12px; }
+    .caption { font-size: 13px; fill: #444; }
+    .h { font-weight: bold; font-size: 15px; }
+  </style>
+  <rect width="760" height="350" fill="#fff"/>
+
+  <text x="20" y="22" class="bad">避けたい例</text>
+  <rect x="20" y="34" width="340" height="270" rx="8" class="screen"/>
+  <text x="40" y="72" class="h">お届け先</text>
+  <text x="40" y="120">郵便番号</text>
+  <rect x="40" y="128" width="140" height="30" rx="4" class="field"/>
+  <text x="40" y="190">住所</text>
+  <rect x="40" y="198" width="300" height="30" rx="4" class="field"/>
+  <rect x="240" y="256" width="100" height="34" rx="6" class="btn"/>
+  <text x="290" y="278" text-anchor="middle" class="btntext">次へ</text>
+  <text x="20" y="332" class="caption">いま何番目？ あと何画面？ 画面からは分からない</text>
+
+  <text x="400" y="22" class="good">改善例</text>
+  <rect x="400" y="34" width="340" height="270" rx="8" class="screen"/>
+  <text x="420" y="58" class="muted">ホーム › 注文 › お届け先</text>
+  <line x1="438" y1="88" x2="702" y2="88" stroke="#8da2bd"/>
+  <circle cx="438" cy="88" r="12" class="done"/>
+  <text x="438" y="92" text-anchor="middle" class="steptext">✓</text>
+  <circle cx="526" cy="88" r="12" class="now"/>
+  <text x="526" y="92" text-anchor="middle" class="nowtext">2</text>
+  <circle cx="614" cy="88" r="12" class="todo"/>
+  <text x="614" y="92" text-anchor="middle" class="steptext">3</text>
+  <circle cx="702" cy="88" r="12" class="todo"/>
+  <text x="702" y="92" text-anchor="middle" class="steptext">4</text>
+  <text x="438" y="116" text-anchor="middle" class="steptext">お客様情報</text>
+  <text x="526" y="116" text-anchor="middle" class="steptext" font-weight="bold">お届け先</text>
+  <text x="614" y="116" text-anchor="middle" class="steptext">お支払い</text>
+  <text x="702" y="116" text-anchor="middle" class="steptext">確認</text>
+  <text x="420" y="150">郵便番号</text>
+  <rect x="420" y="158" width="140" height="30" rx="4" class="field"/>
+  <text x="420" y="210">住所</text>
+  <rect x="420" y="218" width="300" height="30" rx="4" class="field"/>
+  <rect x="580" y="258" width="140" height="34" rx="6" class="btn"/>
+  <text x="650" y="280" text-anchor="middle" class="btntext">次へ：お支払い</text>
+  <text x="400" y="332" class="caption">2番目で、あと2画面と分かる</text>
+</svg>

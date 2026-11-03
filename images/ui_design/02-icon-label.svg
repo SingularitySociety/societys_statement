@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 190" width="760" height="190" role="img" aria-labelledby="t d">
+  <title id="t">アイコンには言葉を添える</title>
+  <desc id="d">左はアイコンだけが五つ並んだツールバー。右は同じアイコンの下に「共有」「絞り込み」「保存」「通知」「設定」の言葉がある。</desc>
+  <style>
+    text { font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif; font-size: 13px; fill: #222; }
+    .bad { fill: #b42318; font-weight: bold; font-size: 15px; }
+    .good { fill: #067647; font-weight: bold; font-size: 15px; }
+    .screen { fill: #fff; stroke: #9a9a9a; }
+    .field { fill: #fff; stroke: #b0b0b0; }
+    .muted { fill: #6b6b6b; font-size: 12px; }
+    .btn { fill: #1f5fbf; }
+    .btntext { fill: #fff; font-weight: bold; }
+    .ghost { fill: #fff; stroke: #1f5fbf; stroke-width: 1.5; }
+    .ghosttext { fill: #1f5fbf; font-weight: bold; }
+    .caption { font-size: 13px; fill: #444; }
+    .h { font-weight: bold; font-size: 15px; }
+    .textline { fill: #d5d5d5; }
+    .small { font-size: 12px; }
+    .link { fill: #1f5fbf; text-decoration: underline; }
+  </style>
+  <style>
+    .ic { fill: none; stroke: #333; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+    .icf { fill: #333; }
+    .lbl { font-size: 11px; }
+  </style>
+  <rect width="760" height="190" fill="#fff"/>
+
+  <text x="20" y="22" class="bad">避けたい例</text>
+  <rect x="20" y="34" width="340" height="86" rx="8" class="screen"/>
+  <g transform="translate(56,72)"><rect x="-8" y="-2" width="16" height="12" class="ic"/><line x1="0" y1="2" x2="0" y2="-12" class="ic"/><polyline points="-5,-7 0,-12 5,-7" class="ic"/></g>
+  <g transform="translate(124,72)"><path d="M-10 -10 H10 L2 0 V9 L-2 7 V0 Z" class="ic"/></g>
+  <g transform="translate(192,72)"><rect x="-9" y="-9" width="18" height="18" rx="2" class="ic"/><rect x="-5" y="-9" width="10" height="6" class="icf"/><rect x="-6" y="2" width="12" height="7" class="ic"/></g>
+  <g transform="translate(260,72)"><path d="M-7 3 V-3 A7 7 0 0 1 7 -3 V3 L10 7 H-10 Z" class="ic"/><line x1="-2" y1="10" x2="2" y2="10" class="ic"/></g>
+  <g transform="translate(328,72)"><circle r="8" class="ic" stroke-width="4" stroke-dasharray="3 2.5"/><circle r="3" class="icf"/></g>
+  <text x="20" y="166" class="caption">どれが何？ 押して確かめるしかない</text>
+
+  <text x="400" y="22" class="good">改善例</text>
+  <rect x="400" y="34" width="340" height="86" rx="8" class="screen"/>
+  <g transform="translate(436,66)"><rect x="-8" y="-2" width="16" height="12" class="ic"/><line x1="0" y1="2" x2="0" y2="-12" class="ic"/><polyline points="-5,-7 0,-12 5,-7" class="ic"/><text y="30" text-anchor="middle" class="lbl">共有</text></g>
+  <g transform="translate(504,66)"><path d="M-10 -10 H10 L2 0 V9 L-2 7 V0 Z" class="ic"/><text y="30" text-anchor="middle" class="lbl">絞り込み</text></g>
+  <g transform="translate(572,66)"><rect x="-9" y="-9" width="18" height="18" rx="2" class="ic"/><rect x="-5" y="-9" width="10" height="6" class="icf"/><rect x="-6" y="2" width="12" height="7" class="ic"/><text y="30" text-anchor="middle" class="lbl">保存</text></g>
+  <g transform="translate(640,66)"><path d="M-7 3 V-3 A7 7 0 0 1 7 -3 V3 L10 7 H-10 Z" class="ic"/><line x1="-2" y1="10" x2="2" y2="10" class="ic"/><text y="30" text-anchor="middle" class="lbl">通知</text></g>
+  <g transform="translate(708,66)"><circle r="8" class="ic" stroke-width="4" stroke-dasharray="3 2.5"/><circle r="3" class="icf"/><text y="30" text-anchor="middle" class="lbl">設定</text></g>
+  <text x="400" y="166" class="caption">アイコンの下に短い言葉。意味が一目で分かる</text>
+</svg>

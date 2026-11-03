@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 320" width="760" height="320" role="img" aria-labelledby="t4 d4">
+  <title id="t4">モードを作らない</title>
+  <desc id="d4">左は「削除モード：オン」の切り替えがあり、行をタップすると削除される一覧。右は各行に「開く」と「削除」が別々にある一覧。</desc>
+  <style>
+    text { font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif; font-size: 13px; fill: #222; }
+    .bad { fill: #b42318; font-weight: bold; font-size: 15px; }
+    .good { fill: #067647; font-weight: bold; font-size: 15px; }
+    .screen { fill: #fff; stroke: #9a9a9a; }
+    .row { fill: #fff; stroke: #d0d0d0; }
+    .mode { fill: #fde8e8; stroke: #b42318; }
+    .modetext { fill: #b42318; font-size: 12px; font-weight: bold; }
+    .hint { fill: #b42318; font-size: 11px; }
+    .link { fill: #1f5fbf; text-decoration: underline; }
+    .ghost { fill: #fff; stroke: #888; }
+    .ghosttext { fill: #333; font-size: 12px; }
+    .caption { font-size: 13px; fill: #444; }
+    .h { font-weight: bold; font-size: 15px; }
+  </style>
+  <rect width="760" height="320" fill="#fff"/>
+
+  <text x="20" y="22" class="bad">避けたい例</text>
+  <rect x="20" y="34" width="340" height="240" rx="8" class="screen"/>
+  <text x="40" y="66" class="h">書類</text>
+  <rect x="222" y="48" width="118" height="26" rx="13" class="mode"/>
+  <text x="281" y="66" text-anchor="middle" class="modetext">削除モード：オン</text>
+  <rect x="40" y="92" width="300" height="36" rx="4" class="row"/>
+  <text x="52" y="115">契約書A.pdf</text>
+  <text x="330" y="115" text-anchor="end" class="hint">タップで削除</text>
+  <rect x="40" y="140" width="300" height="36" rx="4" class="row"/>
+  <text x="52" y="163">見積書_10月.xlsx</text>
+  <text x="330" y="163" text-anchor="end" class="hint">タップで削除</text>
+  <rect x="40" y="188" width="300" height="36" rx="4" class="row"/>
+  <text x="52" y="211">議事録.docx</text>
+  <text x="330" y="211" text-anchor="end" class="hint">タップで削除</text>
+  <text x="20" y="302" class="caption">同じタップが、モードで「開く」にも「削除」にもなる</text>
+
+  <text x="400" y="22" class="good">改善例</text>
+  <rect x="400" y="34" width="340" height="240" rx="8" class="screen"/>
+  <text x="420" y="66" class="h">書類</text>
+  <rect x="420" y="92" width="300" height="36" rx="4" class="row"/>
+  <text x="432" y="115">契約書A.pdf</text>
+  <text x="620" y="115" class="link">開く</text>
+  <rect x="660" y="99" width="48" height="22" rx="4" class="ghost"/>
+  <text x="684" y="115" text-anchor="middle" class="ghosttext">削除</text>
+  <rect x="420" y="140" width="300" height="36" rx="4" class="row"/>
+  <text x="432" y="163">見積書_10月.xlsx</text>
+  <text x="620" y="163" class="link">開く</text>
+  <rect x="660" y="147" width="48" height="22" rx="4" class="ghost"/>
+  <text x="684" y="163" text-anchor="middle" class="ghosttext">削除</text>
+  <rect x="420" y="188" width="300" height="36" rx="4" class="row"/>
+  <text x="432" y="211">議事録.docx</text>
+  <text x="620" y="211" class="link">開く</text>
+  <rect x="660" y="195" width="48" height="22" rx="4" class="ghost"/>
+  <text x="684" y="211" text-anchor="middle" class="ghosttext">削除</text>
+  <text x="400" y="302" class="caption">タップの意味は一つ。削除は行ごとの「削除」だけ</text>
+</svg>

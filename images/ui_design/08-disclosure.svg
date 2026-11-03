@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" width="760" height="380" role="img" aria-labelledby="t5 d5">
+  <title id="t5">段階的に見せる・良い初期値</title>
+  <desc id="d5">左は設定が8項目すべて空欄で一度に並ぶ画面。右はよく使う三つに初期値が入り、残りは「詳細設定を表示」に折りたたまれている画面。</desc>
+  <style>
+    text { font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif; font-size: 13px; fill: #222; }
+    .bad { fill: #b42318; font-weight: bold; font-size: 15px; }
+    .good { fill: #067647; font-weight: bold; font-size: 15px; }
+    .screen { fill: #fff; stroke: #9a9a9a; }
+    .field { fill: #fff; stroke: #b0b0b0; }
+    .small { font-size: 12px; }
+    .muted { fill: #6b6b6b; font-size: 12px; }
+    .value { fill: #222; font-size: 12px; }
+    .sw { fill: #1f5fbf; }
+    .swknob { fill: #fff; }
+    .link { fill: #1f5fbf; }
+    .btn { fill: #1f5fbf; }
+    .btntext { fill: #fff; font-weight: bold; }
+    .caption { font-size: 13px; fill: #444; }
+    .h { font-weight: bold; font-size: 15px; }
+  </style>
+  <rect width="760" height="380" fill="#fff"/>
+
+  <text x="20" y="22" class="bad">避けたい例</text>
+  <rect x="20" y="34" width="340" height="300" rx="8" class="screen"/>
+  <text x="40" y="64" class="h">通知の設定</text>
+  <text x="40" y="96" class="small">通知</text><rect x="190" y="80" width="150" height="22" rx="4" class="field"/>
+  <text x="40" y="126" class="small">配信先</text><rect x="190" y="110" width="150" height="22" rx="4" class="field"/>
+  <text x="40" y="156" class="small">言語</text><rect x="190" y="140" width="150" height="22" rx="4" class="field"/>
+  <text x="40" y="186" class="small">頻度</text><rect x="190" y="170" width="150" height="22" rx="4" class="field"/>
+  <text x="40" y="216" class="small">時間帯</text><rect x="190" y="200" width="150" height="22" rx="4" class="field"/>
+  <text x="40" y="246" class="small">曜日</text><rect x="190" y="230" width="150" height="22" rx="4" class="field"/>
+  <text x="40" y="276" class="small">件名の書式</text><rect x="190" y="260" width="150" height="22" rx="4" class="field"/>
+  <text x="40" y="306" class="small">署名</text><rect x="190" y="290" width="150" height="22" rx="4" class="field"/>
+  <text x="20" y="362" class="caption">すべて空欄で、全部を一度に決めさせる</text>
+
+  <text x="400" y="22" class="good">改善例</text>
+  <rect x="400" y="34" width="340" height="300" rx="8" class="screen"/>
+  <text x="420" y="64" class="h">通知の設定</text>
+  <text x="420" y="100">通知を受け取る</text>
+  <rect x="640" y="86" width="44" height="22" rx="11" class="sw"/>
+  <circle cx="673" cy="97" r="8" class="swknob"/>
+  <text x="692" y="101" class="small">オン</text>
+  <text x="420" y="144">配信先</text>
+  <rect x="520" y="128" width="200" height="26" rx="4" class="field"/>
+  <text x="530" y="146" class="value">you@example.com</text>
+  <text x="420" y="188">言語</text>
+  <rect x="520" y="172" width="200" height="26" rx="4" class="field"/>
+  <text x="530" y="190" class="value">日本語</text>
+  <text x="708" y="190" text-anchor="end" class="muted">▾</text>
+  <line x1="420" y1="218" x2="720" y2="218" stroke="#ddd"/>
+  <text x="420" y="246" class="link">▸ 詳細設定を表示</text>
+  <text x="420" y="266" class="muted">頻度・時間帯・曜日・件名の書式・署名</text>
+  <rect x="640" y="288" width="80" height="32" rx="6" class="btn"/>
+  <text x="680" y="309" text-anchor="middle" class="btntext">保存</text>
+  <text x="400" y="362" class="caption">よく使う三つに初期値。残りは開いたときだけ</text>
+</svg>

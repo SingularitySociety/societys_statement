@@ -27,6 +27,8 @@ nav_order: 91
 - [エラーを回避する](https://www.sociomedia.co.jp/9138)
 - [フィッツの法則](https://www.sociomedia.co.jp/9146)
 - [ヒックの法則](https://www.sociomedia.co.jp/9177)
+- [メンタルモデル](https://www.sociomedia.co.jp/9012)、[マッピング](https://www.sociomedia.co.jp/9049)、[モードレス](https://www.sociomedia.co.jp/9094)、[フリップフロップ問題を避ける](https://www.sociomedia.co.jp/9502)
+- [プリコンピュテーション](https://www.sociomedia.co.jp/9123)、[タスクコヒーレンス](https://www.sociomedia.co.jp/9194)、[ショートカットを用意する](https://www.sociomedia.co.jp/9228)、[モバイルでは包括的より階層的に](https://www.sociomedia.co.jp/9801)
 
 **デジタル庁デザインシステム** — <https://design.digital.go.jp/>
 
@@ -36,6 +38,7 @@ nav_order: 91
 - [スイッチ](https://design.digital.go.jp/components/switch/)、[チェックボックス: 使い方](https://design.digital.go.jp/components/checkbox/usage/)、[テキスト入力: 使い方](https://design.digital.go.jp/components/input-text/usage/)
 - [カラー](https://design.digital.go.jp/foundations/color/)、[タイポグラフィ](https://design.digital.go.jp/foundations/typography/)、[余白](https://design.digital.go.jp/foundations/spacing/)
 - [ウェブアクセシビリティ](https://design.digital.go.jp/webaccessibility/)
+- [ステップナビゲーション](https://design.digital.go.jp/components/step-navigation/)、[パンくずナビゲーション: 使い方](https://design.digital.go.jp/components/breadcrumb/usage/)、[プログレスインジケーター](https://design.digital.go.jp/components/progress-indicator/)、[ディスクロージャー](https://design.digital.go.jp/components/disclosure/)
 
 **WAIC「WCAG 2.1（日本語訳）」** — <https://waic.jp/translations/WCAG21/>
 
@@ -55,12 +58,21 @@ nav_order: 91
 - [Error-Message Guidelines](https://www.nngroup.com/articles/error-message-guidelines/) — エラー文の書き方
 - [The Principle of Proximity in Gestalt Psychology](https://www.nngroup.com/articles/gestalt-proximity/) — 近いものはまとまって見える
 - [Fitts's Law and Its Applications in UX](https://www.nngroup.com/articles/fitts-law/) — 大きく近いものは押しやすい
+- [Progress Indicators Make a Slow System Less Insufferable](https://www.nngroup.com/articles/progress-indicators/) — 処理中の表示と待ち時間の目安
+- [Breadcrumbs: 11 Design Guidelines for Desktop and Mobile](https://www.nngroup.com/articles/breadcrumbs/) — パンくず
+- [Designing Empty States in Complex Applications: 3 Guidelines](https://www.nngroup.com/articles/empty-state-interface-design/) — 空の画面
+- [Mental Models and User Experience Design](https://www.nngroup.com/articles/mental-models/) — メンタルモデル
+- [Progressive Disclosure](https://www.nngroup.com/articles/progressive-disclosure/) — 段階的開示
+- [The Power of Defaults](https://www.nngroup.com/articles/the-power-of-defaults/) — 初期値の力
+- [Wizards: Definition and Design Recommendations](https://www.nngroup.com/articles/wizards/) — ウィザードの向き不向き
+- [Flexibility and Efficiency of Use](https://www.nngroup.com/articles/flexibility-efficiency-heuristic/) — 10原則の7番目
+- [Help and Documentation](https://www.nngroup.com/articles/help-and-documentation/) — 10原則の10番目
 
 ## 書籍
 
 | 書籍 | 向いている目的 |
 | --- | --- |
-| D. A. ノーマン『[誰のためのデザイン？ 増補・改訂版 — 認知科学者のデザイン原論](https://www.shin-yo-sha.co.jp/book/b455574.html)』新曜社、2015年 | 人が操作に迷う理由と、分かりやすいデザインの原理を理解する。シグニファイア・フィードバック・制約の出どころ |
+| D. A. ノーマン『[誰のためのデザイン？ 増補・改訂版 — 認知科学者のデザイン原論](https://www.shin-yo-sha.co.jp/book/b455574.html)』新曜社、2015年 | 人が操作に迷う理由と、分かりやすいデザインの原理を理解する。シグニファイア・フィードバック・制約・概念モデル・対応づけの出どころ |
 | Jenifer Tidwell『[デザイニング・インターフェース 第2版](https://www.oreilly.co.jp/books/9784873115313/)』オライリー・ジャパン、2011年 | 画面構成・ナビゲーション・入力などの解決パターンを実務で引く。画面例には時代を感じるが、パターンの体系は今も使える |
 
 前者は考え方の土台、後者はパターン集です。まず一冊なら前者です。

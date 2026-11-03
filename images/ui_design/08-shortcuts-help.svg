@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" width="760" height="340" role="img" aria-labelledby="t6 d6">
+  <title id="t6">初心者にも熟練者にも</title>
+  <desc id="d6">左は長い説明文が上にあり、毎回5画面の手順を通る画面。右は「前回と同じ内容で注文」の近道と、欄のそばの短いヒントがある画面。</desc>
+  <style>
+    text { font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif; font-size: 13px; fill: #222; }
+    .bad { fill: #b42318; font-weight: bold; font-size: 15px; }
+    .good { fill: #067647; font-weight: bold; font-size: 15px; }
+    .screen { fill: #fff; stroke: #9a9a9a; }
+    .field { fill: #fff; stroke: #b0b0b0; }
+    .textline { fill: #c9c9c9; }
+    .muted { fill: #6b6b6b; font-size: 12px; }
+    .btn { fill: #1f5fbf; }
+    .btntext { fill: #fff; font-weight: bold; }
+    .second { fill: #fff; stroke: #1f5fbf; stroke-width: 1.5; }
+    .secondtext { fill: #1f5fbf; font-weight: bold; }
+    .key { fill: #f4f4f4; stroke: #aaa; }
+    .keytext { font-size: 11px; fill: #444; }
+    .qmark { fill: #fff; stroke: #1f5fbf; }
+    .qtext { fill: #1f5fbf; font-size: 11px; font-weight: bold; }
+    .tip { fill: #fffbe6; stroke: #d9c36a; }
+    .tiptext { font-size: 11px; fill: #333; }
+    .caption { font-size: 13px; fill: #444; }
+    .h { font-weight: bold; font-size: 15px; }
+  </style>
+  <rect width="760" height="340" fill="#fff"/>
+
+  <text x="20" y="22" class="bad">避けたい例</text>
+  <rect x="20" y="34" width="340" height="262" rx="8" class="screen"/>
+  <text x="40" y="64" class="h">注文（1/5）</text>
+  <text x="40" y="90" class="muted">ご利用方法</text>
+  <rect x="40" y="98" width="300" height="6" class="textline"/>
+  <rect x="40" y="110" width="290" height="6" class="textline"/>
+  <rect x="40" y="122" width="300" height="6" class="textline"/>
+  <rect x="40" y="134" width="280" height="6" class="textline"/>
+  <rect x="40" y="146" width="300" height="6" class="textline"/>
+  <rect x="40" y="158" width="200" height="6" class="textline"/>
+  <text x="40" y="196">商品</text>
+  <rect x="40" y="204" width="300" height="28" rx="4" class="field"/>
+  <rect x="240" y="248" width="100" height="32" rx="6" class="btn"/>
+  <text x="290" y="269" text-anchor="middle" class="btntext">次へ</text>
+  <text x="20" y="324" class="caption">毎回同じ5画面。説明は長文で、読まれない</text>
+
+  <text x="400" y="22" class="good">改善例</text>
+  <rect x="400" y="34" width="340" height="262" rx="8" class="screen"/>
+  <text x="420" y="64" class="h">注文</text>
+  <rect x="420" y="78" width="200" height="30" rx="6" class="second"/>
+  <text x="520" y="98" text-anchor="middle" class="secondtext">前回と同じ内容で注文</text>
+  <rect x="420" y="124" width="300" height="28" rx="4" class="field"/>
+  <text x="430" y="143" class="muted">商品を検索</text>
+  <rect x="676" y="129" width="38" height="18" rx="3" class="key"/>
+  <text x="695" y="142" text-anchor="middle" class="keytext">⌘K</text>
+  <text x="420" y="186">法人番号</text>
+  <circle cx="492" cy="182" r="8" class="qmark"/>
+  <text x="492" y="186" text-anchor="middle" class="qtext">?</text>
+  <rect x="508" y="168" width="212" height="24" rx="4" class="tip"/>
+  <text x="518" y="184" class="tiptext">請求書に印字します（13桁）</text>
+  <rect x="420" y="200" width="200" height="28" rx="4" class="field"/>
+  <rect x="600" y="248" width="120" height="32" rx="6" class="btn"/>
+  <text x="660" y="269" text-anchor="middle" class="btntext">注文へ進む</text>
+  <text x="400" y="324" class="caption">初めてなら手順どおり。慣れたら近道。助けは欄のそばに</text>
+</svg>

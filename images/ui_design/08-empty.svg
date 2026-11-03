@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 280" width="760" height="280" role="img" aria-labelledby="t2 d2">
+  <title id="t2">空の画面も状態のうち</title>
+  <desc id="d2">左は見出しの下が真っ白な一覧画面。右は「まだ案件がありません」の説明と登録ボタンがある画面。</desc>
+  <style>
+    text { font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif; font-size: 13px; fill: #222; }
+    .bad { fill: #b42318; font-weight: bold; font-size: 15px; }
+    .good { fill: #067647; font-weight: bold; font-size: 15px; }
+    .screen { fill: #fff; stroke: #9a9a9a; }
+    .muted { fill: #6b6b6b; font-size: 12px; }
+    .btn { fill: #1f5fbf; }
+    .btntext { fill: #fff; font-weight: bold; }
+    .caption { font-size: 13px; fill: #444; }
+    .h { font-weight: bold; font-size: 15px; }
+    .big { font-weight: bold; font-size: 15px; }
+  </style>
+  <rect width="760" height="280" fill="#fff"/>
+
+  <text x="20" y="22" class="bad">避けたい例</text>
+  <rect x="20" y="34" width="340" height="200" rx="8" class="screen"/>
+  <text x="40" y="66" class="h">案件一覧</text>
+  <line x1="40" y1="80" x2="340" y2="80" stroke="#ddd"/>
+  <text x="20" y="262" class="caption">何も出ない。壊れている？ 読み込み中？ 条件が悪い？</text>
+
+  <text x="400" y="22" class="good">改善例</text>
+  <rect x="400" y="34" width="340" height="200" rx="8" class="screen"/>
+  <text x="420" y="66" class="h">案件一覧</text>
+  <line x1="420" y1="80" x2="720" y2="80" stroke="#ddd"/>
+  <text x="570" y="126" text-anchor="middle" class="big">まだ案件がありません</text>
+  <text x="570" y="150" text-anchor="middle" class="muted">最初の案件を登録すると、ここに一覧が出ます</text>
+  <rect x="500" y="170" width="140" height="34" rx="6" class="btn"/>
+  <text x="570" y="192" text-anchor="middle" class="btntext">＋ 案件を登録</text>
+  <text x="400" y="262" class="caption">いまの状態と、次にすることが分かる</text>
+</svg>

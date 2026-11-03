@@ -36,17 +36,17 @@ nav_order: 91
 部品ごとの使い方とアクセシビリティ。この連載で引いたページ:
 
 - [ボタン: 使い方](https://design.digital.go.jp/components/button/usage/)、[ボタン: アクセシビリティ](https://design.digital.go.jp/components/button/accessibility/)
-- [スイッチ](https://design.digital.go.jp/components/switch/)、[チェックボックス: 使い方](https://design.digital.go.jp/components/checkbox/usage/)、[テキスト入力: 使い方](https://design.digital.go.jp/components/input-text/usage/)
+- [スイッチ](https://design.digital.go.jp/components/switch/)、[チェックボックス: 使い方](https://design.digital.go.jp/components/checkbox/usage/)、[インプットテキスト: 使い方](https://design.digital.go.jp/components/input-text/usage/)
 - [カラー](https://design.digital.go.jp/foundations/color/)、[タイポグラフィ](https://design.digital.go.jp/foundations/typography/)、[余白](https://design.digital.go.jp/foundations/spacing/)
 - [ウェブアクセシビリティ](https://design.digital.go.jp/webaccessibility/)
 - [ステップナビゲーション](https://design.digital.go.jp/components/step-navigation/)、[パンくずナビゲーション: 使い方](https://design.digital.go.jp/components/breadcrumb/usage/)、[プログレスインジケーター](https://design.digital.go.jp/components/progress-indicator/)、[ディスクロージャー](https://design.digital.go.jp/components/disclosure/)
 - [インプットテキスト: 使い方](https://design.digital.go.jp/components/input-text/usage/) — 入力値の文字種を限定しない
 
-**ウェブアクセシビリティ基盤委員会（WAIC）「WCAG 2.1（日本語訳）」** — <https://waic.jp/translations/WCAG21/>。**「WCAG 2.2（日本語訳）」** — <https://waic.jp/translations/WCAG22/>（第9章で引く達成基準3.3.7 冗長な入力項目、3.3.8 アクセシブルな認証）。WCAG はウェブコンテンツ・アクセシビリティ・ガイドラインの略
+**ウェブアクセシビリティ基盤委員会（WAIC）「WCAG 2.1（日本語訳）」** — <https://waic.jp/translations/WCAG21/>。**「WCAG 2.2（日本語訳）」** — <https://waic.jp/translations/WCAG22/>（第8章で引く達成基準3.3.7 冗長な入力項目、3.3.8 アクセシブルな認証）。WCAG はウェブコンテンツ・アクセシビリティ・ガイドラインの略
 
-**Apple「Human Interface Guidelines」（日本語）** — <https://developer.apple.com/jp/design/human-interface-guidelines/>。第9章で引くページ: [データの入力](https://developer.apple.com/jp/design/human-interface-guidelines/entering-data)、[取り消し/やり直し](https://developer.apple.com/jp/design/human-interface-guidelines/undo-and-redo)
+**Apple「Human Interface Guidelines」（日本語）** — <https://developer.apple.com/jp/design/human-interface-guidelines/>。第8章で引くページ: [データの入力](https://developer.apple.com/jp/design/human-interface-guidelines/entering-data)、[取り消し/やり直し](https://developer.apple.com/jp/design/human-interface-guidelines/undo-and-redo)
 
-**導線・ログイン・入力の基準（第8・9章）**
+**導線・ログイン・入力の基準（第7・8章）**
 
 - GOV.UK Design System「[Back link](https://design-system.service.gov.uk/components/back-link/)」 — 入口が多いなら「戻る」ではなく行き先を書く
 

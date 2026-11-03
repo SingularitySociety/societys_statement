@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" width="760" height="340" role="img" aria-labelledby="t d">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" width="760" height="400" role="img" aria-labelledby="t d">
   <title id="t">システムが分かることは聞かない</title>
-  <desc id="d">左は郵便番号のあとに都道府県と市区町村を手で入れさせ、生年月日と年齢を両方入れさせるフォーム。右は郵便番号から住所が自動で入り、年齢は生年月日から自動で計算されるフォーム。</desc>
+  <desc id="d">左は郵便番号のあとに都道府県と市区町村を手で入れさせ、生年月日と年齢を両方入れさせるフォーム。右は郵便番号から住所が自動で入って番地の欄だけが残り、年齢は生年月日から自動で計算されるフォーム。</desc>
   <style>
     text { font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif; font-size: 13px; fill: #222; }
     .bad { fill: #b42318; font-weight: bold; font-size: 15px; }
@@ -23,10 +23,10 @@
     .ok { fill: #067647; font-weight: bold; }
     .auto { fill: #eef6ee; stroke: #8fc39a; }
   </style>
-  <rect width="760" height="340" fill="#fff"/>
+  <rect width="760" height="400" fill="#fff"/>
 
   <text x="20" y="22" class="bad">避けたい例</text>
-  <rect x="20" y="34" width="340" height="262" rx="8" class="screen"/>
+  <rect x="20" y="34" width="340" height="330" rx="8" class="screen"/>
   <text x="40" y="62" class="small">郵便番号</text>
   <rect x="40" y="68" width="120" height="26" rx="4" class="field"/><text x="48" y="86" class="value">100-0014</text>
   <text x="40" y="118" class="small">都道府県</text>
@@ -39,19 +39,21 @@
   <rect x="220" y="180" width="60" height="26" rx="4" class="field"/>
   <text x="40" y="236" class="small">ふりがな</text>
   <rect x="40" y="242" width="300" height="26" rx="4" class="field"/>
-  <text x="20" y="324" class="caption">分かることまで、全部入れさせる</text>
+  <text x="20" y="390" class="caption">分かることまで、全部入れさせる</text>
 
   <text x="400" y="22" class="good">改善例</text>
-  <rect x="400" y="34" width="340" height="262" rx="8" class="screen"/>
+  <rect x="400" y="34" width="340" height="330" rx="8" class="screen"/>
   <text x="420" y="62" class="small">郵便番号</text>
   <rect x="420" y="68" width="120" height="26" rx="4" class="field"/><text x="428" y="86" class="value">100-0014</text>
   <text x="420" y="118" class="small">住所</text>
   <rect x="420" y="124" width="300" height="26" rx="4" class="auto"/><text x="428" y="142" class="value">東京都千代田区永田町</text>
-  <text x="420" y="166" class="muted">郵便番号から入りました。続きの番地を足してください</text>
-  <text x="420" y="196" class="small">生年月日</text>
-  <rect x="420" y="202" width="160" height="26" rx="4" class="field"/><text x="428" y="220" class="value">1990/01/01</text>
-  <text x="600" y="220" class="muted">年齢は自動で計算</text>
-  <text x="420" y="254" class="small">ふりがな</text>
-  <rect x="420" y="260" width="300" height="26" rx="4" class="auto"/><text x="428" y="278" class="value">やまだ たろう</text>
-  <text x="400" y="324" class="caption">分かることは自動で入れ、足りない分だけ聞く</text>
+  <text x="420" y="164" class="muted">郵便番号から入りました</text>
+  <text x="420" y="190" class="small">番地・建物名</text>
+  <rect x="420" y="196" width="300" height="26" rx="4" class="field"/>
+  <text x="420" y="242" class="small">生年月日</text>
+  <rect x="420" y="248" width="160" height="26" rx="4" class="field"/><text x="428" y="266" class="value">1990/01/01</text>
+  <text x="600" y="266" class="muted">年齢は自動で計算</text>
+  <text x="420" y="300" class="small">ふりがな</text>
+  <rect x="420" y="306" width="300" height="26" rx="4" class="auto"/><text x="428" y="324" class="value">やまだ たろう</text>
+  <text x="400" y="390" class="caption">分かることは自動で入れ、足りない分だけ聞く</text>
 </svg>

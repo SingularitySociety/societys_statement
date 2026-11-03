@@ -35,6 +35,8 @@ AI に画面を一つずつ頼むと、画面ごとに言葉・色・配置が�
 - 色だけで状態を区別しない。文字と背景のコントラスト比は 4.5 対 1 以上
 - ボタン・入力欄・見出しは共通部品を使う。画面ごとに新しく作らない
 - 一画面の主ボタンは一つ。保存ボタンは常に右下
+- 手続きが複数の画面に分かれるときは、何段階あり、いま何番目かを出す
+- たまにしか使わない設定は「詳細設定」に折りたたみ、よく使う項目には初期値を入れる
 ```
 
 機械で判定できるものは、お願いより lint（自動検査）に任せるほうが確実です。アクセシビリティの基本（画像の代替テキスト、ラベルのない入力欄など）は、React なら [eslint-plugin-jsx-a11y](https://www.npmjs.com/package/eslint-plugin-jsx-a11y)、Vue なら [eslint-plugin-vuejs-accessibility](https://www.npmjs.com/package/eslint-plugin-vuejs-accessibility) が指摘してくれます。できた画面は、ブラウザに入っている [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview?hl=ja) のアクセシビリティ診断で点数が出ます。設定のしかたは[AIハーネス入門](../harness/README.md)の lint の章を見てください。
@@ -49,6 +51,7 @@ AI が画面を出したら、コードを読む前に画面を開いて、次�
 4. **操作の結果** … 押したら何か変わるか。間違えたら戻れるか。エラー文はそばに出るか（[第4章](04-feedback-errors.md)）
 5. **配置** … 塊はいくつか。主役は一つか。押しやすい大きさか（[第5章](05-layout.md)）
 6. **誰でも** … Tab キーだけで通せるか。色だけで区別していないか（[第6章](06-accessibility.md)）
+7. **流れ** … いまどこで、次に何をするかが分かるか。初期値は入っているか（[第8章](08-wayfinding.md)）
 
 直すときは、画面を直させるのではなく「ルールを CLAUDE.md に足す」ことを先にします。同じ指摘を二度しているなら、それはルールにするべき合図です。
 
@@ -73,6 +76,8 @@ AI が画面を出したら、コードを読む前に画面を開いて、次�
 - [ ] 押した直後に、画面のどこかが変わる
 - [ ] 取り消せる。取り消せない操作にだけ確認が出る
 - [ ] エラー文は欄のそばに、直し方つきで出る。入力は消えない
+- [ ] 手順が複数の画面に分かれるなら、いま何番目かが見える
+- [ ] よく使う項目に初期値が入り、たまにしか使わない設定は折りたたまれている
 
 **誰でも**
 
@@ -82,7 +87,7 @@ AI が画面を出したら、コードを読む前に画面を開いて、次�
 
 ## 出典
 
-この章は、第1章から第6章の出典を指示文と観点に組み替えたものです。lint と診断の道具については次を参照してください。
+この章は、第1章から第6章と第8章の出典を指示文と観点に組み替えたものです。lint と診断の道具については次を参照してください。
 
 - [eslint-plugin-jsx-a11y](https://www.npmjs.com/package/eslint-plugin-jsx-a11y)、[eslint-plugin-vuejs-accessibility](https://www.npmjs.com/package/eslint-plugin-vuejs-accessibility)
 - Chrome「[Lighthouse の概要](https://developer.chrome.com/docs/lighthouse/overview?hl=ja)」

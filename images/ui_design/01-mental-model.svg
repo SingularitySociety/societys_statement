@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300" width="760" height="300" role="img" aria-labelledby="t d">
+  <title id="t">作り手の絵は、画面を通してしか伝わらない</title>
+  <desc id="d">作り手の頭の中の絵、画面、利用者の頭の中の絵の三つが矢印でつながり、作り手は画面を通してしか利用者に伝えられないことを示す図。画面が一貫していれば利用者の絵は作り手の絵に近づき、画面ごとに違えば絵が崩れる。</desc>
+  <style>
+    text { font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif; font-size: 13px; fill: #222; }
+    .bad { fill: #b42318; font-weight: bold; font-size: 15px; }
+    .good { fill: #067647; font-weight: bold; font-size: 15px; }
+    .screen { fill: #fff; stroke: #9a9a9a; }
+    .field { fill: #fff; stroke: #b0b0b0; }
+    .muted { fill: #6b6b6b; font-size: 12px; }
+    .btn { fill: #1f5fbf; }
+    .btntext { fill: #fff; font-weight: bold; }
+    .ghost { fill: #fff; stroke: #1f5fbf; stroke-width: 1.5; }
+    .ghosttext { fill: #1f5fbf; font-weight: bold; }
+    .caption { font-size: 13px; fill: #444; }
+    .h { font-weight: bold; font-size: 15px; }
+    .textline { fill: #d5d5d5; }
+    .small { font-size: 12px; }
+    .link { fill: #1f5fbf; text-decoration: underline; }
+    .box { fill: #eef3fb; stroke: #1f5fbf; stroke-width: 1.5; }
+    .boxh { font-weight: bold; font-size: 13px; }
+    .sub { font-size: 11px; fill: #555; }
+    .arrow { fill: none; stroke: #555; stroke-width: 2; }
+    .src { fill: #fff; stroke: #999; }
+    .q { fill: #b42318; font-weight: bold; font-size: 14px; }
+  </style>
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#555"/>
+    </marker>
+  </defs>
+  <rect width="760" height="300" fill="#fff"/>
+
+  <rect x="20" y="50" width="200" height="90" rx="8" class="box"/>
+  <text x="120" y="82" text-anchor="middle" class="boxh">作り手の頭の中の絵</text>
+  <text x="120" y="104" text-anchor="middle" class="sub">「こう動く仕組みだ」</text>
+  <text x="120" y="122" text-anchor="middle" class="sub">概念モデル</text>
+
+  <rect x="280" y="50" width="200" height="90" rx="8" class="box"/>
+  <text x="380" y="82" text-anchor="middle" class="boxh">画面</text>
+  <text x="380" y="104" text-anchor="middle" class="sub">見た目・場所・言葉・振る舞い</text>
+  <text x="380" y="122" text-anchor="middle" class="sub">作り手が伝えられる唯一の手段</text>
+
+  <rect x="540" y="50" width="200" height="90" rx="8" class="box"/>
+  <text x="640" y="82" text-anchor="middle" class="boxh">利用者の頭の中の絵</text>
+  <text x="640" y="104" text-anchor="middle" class="sub">「たぶんこう動くはず」</text>
+  <text x="640" y="122" text-anchor="middle" class="sub">メンタルモデル</text>
+
+  <line x1="220" y1="95" x2="278" y2="95" class="arrow" marker-end="url(#arr)"/>
+  <line x1="480" y1="95" x2="538" y2="95" class="arrow" marker-end="url(#arr)"/>
+  <line x1="220" y1="40" x2="540" y2="40" stroke="#b42318" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="380" y="30" text-anchor="middle" class="q">直接は伝わらない</text>
+
+  <text x="380" y="190" text-anchor="middle" class="caption">画面が一貫していれば、利用者の絵は作り手の絵に近づく</text>
+  <text x="380" y="214" text-anchor="middle" class="caption">画面ごとに言葉や振る舞いが違えば、利用者は絵を作れず、毎回読んで確かめることになる</text>
+  <text x="380" y="256" text-anchor="middle" class="muted">利用者の絵には、ほかのサービスで学んだことも入っている（外側の一貫性）</text>
+</svg>

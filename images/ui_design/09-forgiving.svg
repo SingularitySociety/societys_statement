@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300" width="760" height="300" role="img" aria-labelledby="t d">
+  <title id="t">形式や文字種で突き返さない</title>
+  <desc id="d">左は電話番号にハイフンを入れると「ハイフンなしで入力してください」、カナを半角で入れると「全角で入力してください」と突き返すフォーム。右はどちらの書き方でも受け付け、そろえた結果を確認画面で見せるフォーム。</desc>
+  <style>
+    text { font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif; font-size: 13px; fill: #222; }
+    .bad { fill: #b42318; font-weight: bold; font-size: 15px; }
+    .good { fill: #067647; font-weight: bold; font-size: 15px; }
+    .screen { fill: #fff; stroke: #9a9a9a; }
+    .field { fill: #fff; stroke: #b0b0b0; }
+    .muted { fill: #6b6b6b; font-size: 12px; }
+    .btn { fill: #1f5fbf; }
+    .btntext { fill: #fff; font-weight: bold; }
+    .ghost { fill: #fff; stroke: #1f5fbf; stroke-width: 1.5; }
+    .ghosttext { fill: #1f5fbf; font-weight: bold; }
+    .caption { font-size: 13px; fill: #444; }
+    .h { font-weight: bold; font-size: 15px; }
+    .textline { fill: #d5d5d5; }
+    .small { font-size: 12px; }
+    .link { fill: #1f5fbf; text-decoration: underline; }
+    .value { font-size: 12px; }
+    .err { fill: #b42318; font-size: 12px; }
+    .errfield { fill: #fff; stroke: #b42318; stroke-width: 2; }
+    .ok { fill: #067647; font-weight: bold; }
+    .auto { fill: #eef6ee; stroke: #8fc39a; }
+  </style>
+  <rect width="760" height="300" fill="#fff"/>
+
+  <text x="20" y="22" class="bad">避けたい例</text>
+  <rect x="20" y="34" width="340" height="222" rx="8" class="screen"/>
+  <text x="40" y="62" class="small">電話番号</text>
+  <rect x="40" y="68" width="300" height="26" rx="4" class="errfield"/><text x="48" y="86" class="value">090-0000-0000</text>
+  <text x="40" y="112" class="err">ハイフンなしで入力してください</text>
+  <text x="40" y="146" class="small">フリガナ</text>
+  <rect x="40" y="152" width="300" height="26" rx="4" class="errfield"/><text x="48" y="170" class="value">ﾔﾏﾀﾞ ﾀﾛｳ</text>
+  <text x="40" y="196" class="err">全角カタカナで入力してください</text>
+  <rect x="240" y="214" width="100" height="30" rx="6" class="btn"/><text x="290" y="234" text-anchor="middle" class="btntext">送信</text>
+  <text x="20" y="284" class="caption">機械の都合で、人に書き直させる</text>
+
+  <text x="400" y="22" class="good">改善例</text>
+  <rect x="400" y="34" width="340" height="222" rx="8" class="screen"/>
+  <text x="420" y="62" class="small">電話番号</text>
+  <rect x="420" y="68" width="300" height="26" rx="4" class="field"/><text x="428" y="86" class="value">090-0000-0000</text>
+  <text x="708" y="86" text-anchor="end" class="ok">✓</text>
+  <text x="420" y="112" class="muted">ハイフンはあってもなくても大丈夫です</text>
+  <text x="420" y="146" class="small">フリガナ</text>
+  <rect x="420" y="152" width="300" height="26" rx="4" class="field"/><text x="428" y="170" class="value">ﾔﾏﾀﾞ ﾀﾛｳ</text>
+  <text x="708" y="170" text-anchor="end" class="ok">✓</text>
+  <text x="420" y="196" class="muted">確認画面では「ヤマダ タロウ」にそろえて表示します</text>
+  <rect x="620" y="214" width="100" height="30" rx="6" class="btn"/><text x="670" y="234" text-anchor="middle" class="btntext">確認へ</text>
+  <text x="400" y="284" class="caption">どちらでも受け付け、そろえるのはシステムの仕事</text>
+</svg>

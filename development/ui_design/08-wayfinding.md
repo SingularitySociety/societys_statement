@@ -29,6 +29,14 @@ nav_order: 8
 
 ![左は手順の表示がなく、いま何番目か分からない画面。右は「1 お客様情報、2 お届け先、3 お支払い、4 確認」の手順表示と現在地の表示がある画面](../../images/ui_design/08-steps.svg)
 
+### 「戻る」ではなく行き先を書く
+
+画面の中に「戻る」ボタンを作らないことです。一つの画面に来る道は一つとは限りません。一覧から来た人、検索結果から来た人、メールのリンクから来た人がいて、「戻る」がどこへ行くのかは人によって違います。来た道を戻るのは、ブラウザや OS の「戻る」の仕事です（[第1章](01-consistency.md)の外側の一貫性）。
+
+それでもリンクが要るなら、行き先を書きます。「注文一覧へ」「設定へ」「ホームへ」です。英国政府のデザインシステムの「[Back link](https://design-system.service.gov.uk/components/back-link/)」は、単純な手続きなら「Back」でよいが、入口が多い複雑なサービスでは「Go back to [page]」のように行き先を書くよう勧めています。「Back」では、どこへ戻るのか分からないからです。戻るリンクを置くなら、利用者が最後に見た状態のその画面へ戻すこと、パンくずと併用しないことも、同じページの指針です。
+
+![左は注文の詳細画面に「戻る」ボタンがあるが、その画面には一覧・検索・メールの三つの入口があり、どこに戻るのか分からない。右は「注文一覧へ」と行き先を書いたリンクと現在地の表示があり、前の画面に戻るのはブラウザに任せている](../../images/ui_design/08-back.svg)
+
 ### 処理中は「待っている」と見せる
 
 押してから結果が出るまでに間があるなら、処理中であることを見せます。NN/g の「[Progress Indicators Make a Slow System Less Insufferable](https://www.nngroup.com/articles/progress-indicators/)」は、1秒を超える待ちには処理中の表示を出すよう勧めています。表示の種類は長さで使い分けます。数秒で終わるなら回転する印、10秒以上かかるなら進み具合が分かる棒にし、終わる見込みも示します。デジタル庁は、一時的な待ちには「[プログレスインジケーター](https://design.digital.go.jp/components/progress-indicator/)」、手続き全体の進み具合にはステップナビゲーション、と使い分けを定めています。
@@ -44,12 +52,13 @@ nav_order: 8
 | 4画面に分かれた申し込みで、各画面に「次へ」しかない | 上部に「1 お客様情報、2 お届け先、3 お支払い、4 確認」を出し、現在地を塗る |
 | 「送信」を押しても画面が変わらず、もう一度押される | 押した直後にボタンを「送信中…」にし、回転する印を出す |
 | 検索結果がないとき、何も表示されない | 「一致するものはありません。条件を減らしてみてください」と出す |
+| どこから来ても同じ「戻る」ボタン | 行き先を書く。「注文一覧へ」「設定へ」。来た道を戻るのはブラウザに任せる |
 
 ## 2. 利用者の頭の中の絵に合わせる
 
 ### 概念モデル
 
-利用者は、初めての画面でも「たぶんこう動くはず」という絵を頭の中に持っています。ノーマンはこれを概念モデルと呼びます。NN/g の「[Mental Models and User Experience Design](https://www.nngroup.com/articles/mental-models/)」は、メンタルモデルとは利用者がそのシステムについて信じていることだ、と説明しています。その絵と画面の動きが合っていれば迷いません。ずれていれば、説明を読んでも迷います。
+利用者は、初めての画面でも「たぶんこう動くはず」という絵を頭の中に持っています。ノーマンはこれを概念モデルと呼びます。NN/g の「[Mental Models and User Experience Design](https://www.nngroup.com/articles/mental-models/)」は、メンタルモデルとは利用者がそのシステムについて信じていることだ、と説明しています。その絵と画面の動きが合っていれば迷いません。ずれていれば、説明を読んでも迷います。一貫性がこの絵をどう作るかは、[第1章](01-consistency.md)の「一貫性はメンタルモデルを作る」にあります。
 
 身近な例は、スマホの写真アプリです。利用者は「アルバムは写真を入れる箱」と思っています。アルバムから写真を外したら元の写真まで消える仕組みだと、その絵とずれて事故になります。ソシオメディアの「[メンタルモデル](https://www.sociomedia.co.jp/9012)」は、利用者が想像する利用モデルに合った構成と動きにせよ、と言っています。
 
@@ -128,6 +137,7 @@ NN/g の10原則の10番目「ヘルプと文書（Help and Documentation）」�
 - NN/g「[Wizards: Definition and Design Recommendations](https://www.nngroup.com/articles/wizards/)」 — ウィザードの向き不向き
 - NN/g「[Flexibility and Efficiency of Use](https://www.nngroup.com/articles/flexibility-efficiency-heuristic/)」 — 10原則の7番目
 - NN/g「[Help and Documentation](https://www.nngroup.com/articles/help-and-documentation/)」 — 10原則の10番目
+- GOV.UK Design System「[Back link](https://design-system.service.gov.uk/components/back-link/)」 — 入口が多いなら「戻る」ではなく行き先を書く
 - デジタル庁デザインシステム「[ステップナビゲーション](https://design.digital.go.jp/components/step-navigation/)」「[パンくずナビゲーション: 使い方](https://design.digital.go.jp/components/breadcrumb/usage/)」「[プログレスインジケーター](https://design.digital.go.jp/components/progress-indicator/)」「[ディスクロージャー](https://design.digital.go.jp/components/disclosure/)」
 - ソシオメディア「ヒューマンインターフェース ガイドライン」 — [メンタルモデル](https://www.sociomedia.co.jp/9012)、[マッピング](https://www.sociomedia.co.jp/9049)、[モードレス](https://www.sociomedia.co.jp/9094)、[プリコンピュテーション](https://www.sociomedia.co.jp/9123)、[タスクコヒーレンス](https://www.sociomedia.co.jp/9194)、[ショートカットを用意する](https://www.sociomedia.co.jp/9228)、[フリップフロップ問題を避ける](https://www.sociomedia.co.jp/9502)、[モバイルでは包括的より階層的に](https://www.sociomedia.co.jp/9801)
 - D. A. ノーマン『[誰のためのデザイン？ 増補・改訂版](https://www.shin-yo-sha.co.jp/book/b455574.html)』新曜社、2015年 — 概念モデル、対応づけ、モードによる操作ミス

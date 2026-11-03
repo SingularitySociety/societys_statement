@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 280" width="760" height="280" role="img" aria-labelledby="t d">
+  <title id="t">入力したものを失わせない</title>
+  <desc id="d">左は画面を閉じるときに「保存されていない変更があります。破棄しますか？」と聞かれ、破棄すると書いたものが消える。右は書いた端から下書きとして自動保存され、「保存しました」の表示と「元に戻す」がある。</desc>
+  <style>
+    text { font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif; font-size: 13px; fill: #222; }
+    .bad { fill: #b42318; font-weight: bold; font-size: 15px; }
+    .good { fill: #067647; font-weight: bold; font-size: 15px; }
+    .screen { fill: #fff; stroke: #9a9a9a; }
+    .field { fill: #fff; stroke: #b0b0b0; }
+    .muted { fill: #6b6b6b; font-size: 12px; }
+    .btn { fill: #1f5fbf; }
+    .btntext { fill: #fff; font-weight: bold; }
+    .ghost { fill: #fff; stroke: #1f5fbf; stroke-width: 1.5; }
+    .ghosttext { fill: #1f5fbf; font-weight: bold; }
+    .caption { font-size: 13px; fill: #444; }
+    .h { font-weight: bold; font-size: 15px; }
+    .textline { fill: #d5d5d5; }
+    .small { font-size: 12px; }
+    .link { fill: #1f5fbf; text-decoration: underline; }
+    .value { font-size: 12px; }
+    .err { fill: #b42318; font-size: 12px; }
+    .errfield { fill: #fff; stroke: #b42318; stroke-width: 2; }
+    .ok { fill: #067647; font-weight: bold; }
+    .auto { fill: #eef6ee; stroke: #8fc39a; }
+  </style>
+  <style>
+    .dim { fill: #ececec; stroke: #ccc; }
+    .dialog { fill: #fff; stroke: #999; }
+    .danger { fill: #b42318; }
+    .ghostg { fill: #fff; stroke: #888; stroke-width: 1.5; }
+    .ghostgtext { fill: #333; font-weight: bold; }
+  </style>
+  <rect width="760" height="280" fill="#fff"/>
+
+  <text x="20" y="22" class="bad">避けたい例</text>
+  <rect x="20" y="34" width="340" height="210" rx="8" class="dim"/>
+  <rect x="50" y="70" width="280" height="120" rx="8" class="dialog"/>
+  <text x="70" y="100" class="h">保存されていない変更があります</text>
+  <text x="70" y="122" class="muted">破棄すると、書いた内容は戻せません</text>
+  <rect x="150" y="144" width="80" height="30" rx="6" class="ghostg"/><text x="190" y="164" text-anchor="middle" class="ghostgtext">キャンセル</text>
+  <rect x="240" y="144" width="70" height="30" rx="6" class="danger"/><text x="275" y="164" text-anchor="middle" class="btntext">破棄</text>
+  <text x="20" y="268" class="caption">押し間違い一つで、書いたものが全部消える</text>
+
+  <text x="400" y="22" class="good">改善例</text>
+  <rect x="400" y="34" width="340" height="210" rx="8" class="screen"/>
+  <text x="420" y="62" class="h">議事録（下書き）</text>
+  <text x="720" y="62" text-anchor="end" class="muted">保存しました 14:32</text>
+  <rect x="420" y="80" width="300" height="6" class="textline"/>
+  <rect x="420" y="92" width="260" height="6" class="textline"/>
+  <rect x="420" y="104" width="280" height="6" class="textline"/>
+  <rect x="420" y="116" width="180" height="6" class="textline"/>
+  <line x1="420" y1="150" x2="720" y2="150" stroke="#ddd"/>
+  <text x="420" y="178" class="muted">書いた端から保存されます。閉じても続きから書けます</text>
+  <text x="420" y="214" class="link">元に戻す</text>
+  <text x="520" y="214" class="link">変更履歴</text>
+  <text x="400" y="268" class="caption">自動で保存し、取り消しと履歴で守る</text>
+</svg>

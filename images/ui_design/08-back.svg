@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 330" width="760" height="330" role="img" aria-labelledby="t d">
+  <title id="t">「戻る」ではなく行き先を書く</title>
+  <desc id="d">左は注文の詳細画面に「戻る」ボタンがあるが、その画面には一覧・検索・メールの三つの入口があり、どこに戻るのか分からない。右は「注文一覧へ」と行き先を書いたリンクと現在地の表示があり、前の画面に戻るのはブラウザに任せている。</desc>
+  <style>
+    text { font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif; font-size: 13px; fill: #222; }
+    .bad { fill: #b42318; font-weight: bold; font-size: 15px; }
+    .good { fill: #067647; font-weight: bold; font-size: 15px; }
+    .screen { fill: #fff; stroke: #9a9a9a; }
+    .field { fill: #fff; stroke: #b0b0b0; }
+    .muted { fill: #6b6b6b; font-size: 12px; }
+    .btn { fill: #1f5fbf; }
+    .btntext { fill: #fff; font-weight: bold; }
+    .ghost { fill: #fff; stroke: #1f5fbf; stroke-width: 1.5; }
+    .ghosttext { fill: #1f5fbf; font-weight: bold; }
+    .caption { font-size: 13px; fill: #444; }
+    .h { font-weight: bold; font-size: 15px; }
+    .textline { fill: #d5d5d5; }
+    .small { font-size: 12px; }
+    .link { fill: #1f5fbf; text-decoration: underline; }
+    .box { fill: #eef3fb; stroke: #1f5fbf; stroke-width: 1.5; }
+    .boxh { font-weight: bold; font-size: 13px; }
+    .sub { font-size: 11px; fill: #555; }
+    .arrow { fill: none; stroke: #555; stroke-width: 2; }
+    .src { fill: #fff; stroke: #999; }
+    .q { fill: #b42318; font-weight: bold; font-size: 14px; }
+  </style>
+  <rect width="760" height="330" fill="#fff"/>
+
+  <text x="20" y="22" class="bad">避けたい例</text>
+  <rect x="20" y="40" width="80" height="30" rx="6" class="src"/><text x="60" y="60" text-anchor="middle" class="small">一覧</text>
+  <rect x="120" y="40" width="80" height="30" rx="6" class="src"/><text x="160" y="60" text-anchor="middle" class="small">検索結果</text>
+  <rect x="220" y="40" width="80" height="30" rx="6" class="src"/><text x="260" y="60" text-anchor="middle" class="small">メール</text>
+  <line x1="60" y1="70" x2="170" y2="104" class="arrow"/>
+  <line x1="160" y1="70" x2="180" y2="104" class="arrow"/>
+  <line x1="260" y1="70" x2="190" y2="104" class="arrow"/>
+  <rect x="20" y="106" width="340" height="170" rx="8" class="screen"/>
+  <rect x="40" y="122" width="70" height="26" rx="4" class="ghost"/><text x="75" y="140" text-anchor="middle" class="ghosttext">← 戻る</text>
+  <text x="130" y="140" class="q">どこへ？</text>
+  <text x="40" y="178" class="h">注文 1001 の詳細</text>
+  <rect x="40" y="196" width="300" height="6" class="textline"/>
+  <rect x="40" y="208" width="240" height="6" class="textline"/>
+  <rect x="40" y="220" width="280" height="6" class="textline"/>
+  <text x="20" y="310" class="caption">入口が三つあるので、「戻る」の行き先は一つに決まらない</text>
+
+  <text x="400" y="22" class="good">改善例</text>
+  <rect x="400" y="40" width="80" height="30" rx="6" class="src"/><text x="440" y="60" text-anchor="middle" class="small">一覧</text>
+  <rect x="500" y="40" width="80" height="30" rx="6" class="src"/><text x="540" y="60" text-anchor="middle" class="small">検索結果</text>
+  <rect x="600" y="40" width="80" height="30" rx="6" class="src"/><text x="640" y="60" text-anchor="middle" class="small">メール</text>
+  <line x1="440" y1="70" x2="550" y2="104" class="arrow"/>
+  <line x1="540" y1="70" x2="560" y2="104" class="arrow"/>
+  <line x1="640" y1="70" x2="570" y2="104" class="arrow"/>
+  <rect x="400" y="106" width="340" height="170" rx="8" class="screen"/>
+  <text x="420" y="130" class="muted">ホーム › 注文 › 注文 1001</text>
+  <text x="420" y="156" class="link">← 注文一覧へ</text>
+  <text x="420" y="190" class="h">注文 1001 の詳細</text>
+  <rect x="420" y="208" width="300" height="6" class="textline"/>
+  <rect x="420" y="220" width="240" height="6" class="textline"/>
+  <rect x="420" y="232" width="280" height="6" class="textline"/>
+  <text x="420" y="262" class="muted">前の画面に戻るのは、ブラウザの戻るに任せる</text>
+  <text x="400" y="310" class="caption">行き先を書く。来た道を戻るのはブラウザの仕事</text>
+</svg>

@@ -14,6 +14,8 @@ has_children: true
 
 > 🧭 **入口を固める前に** — そもそも持たなければ、守る必要も漏れる心配もありません。「何を持つか・誰に任せるか・何を信じるか」から考え直す → [セキュリティはゼロベースで考える](security-zero-base.md)
 
+> 🎬 **動画で学ぶ** — 詐欺・乗っ取り・情報漏えいから身を守る、短い動画と確認テストがあります。家庭向け・社員向け・管理者向け・開発者向けなど、立場ごとに選べます → [セキュリティ教育（動画とテスト）](https://singularitysociety.github.io/security-education/)
+
 ---
 
 ## 1. このページについて
@@ -203,6 +205,7 @@ has_children: true
 - [セキュリティはゼロベースで考える](security-zero-base.md) — 持たない・自前で作らない・過信しない・続ける・全体で守る。入口を固める前に読む考え方
 - [付録：最近の手口と「組み合わせ型」攻撃](security-modern-attacks.md) — 偽採用・OSS DM・ディープフェイク会議・MFA回避など最新の複合事例
 - [なりすまし・フィッシング系の攻撃と対策](security-phishing.md)
+- [セキュリティ教育（動画とテスト）](https://singularitysociety.github.io/security-education/) — 詐欺・乗っ取り・情報漏えいから身を守る短い動画と確認テスト
 - [ブートキャンプ](../../bootcamp.md)
 
 ---

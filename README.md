@@ -41,7 +41,6 @@
 
 - [イベント開催の進め方](./events/event-hosting.md)
 - [宴会（懇親会）の進め方](./events/party.md)
-- [イベント準備テンプレート](./events/event-template.md)
 
 ## ブートキャンプ・技術
 
